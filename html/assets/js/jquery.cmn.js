@@ -2,7 +2,7 @@ $(window).on('load', function() {
 	_pageScroll();
 	_fixedHeader();
 	_preload();
-	faqDrop();
+	faqClick();
 	_modalOpen();
 	if ($(window).width() < 1180) {
 		_setSpMenu();
@@ -54,11 +54,6 @@ function _setSpMenu(){
 			$(".menuBtn").addClass("menu-open");
     }
 	});
-	$(".toggle .header-nav-item").click(function(e) {
-		e.preventDefault();
-		$(this).next('.megamenu').slideToggle("fast");
-		$('.megamenu').not($(this).next('div')).slideUp("fast");
-	});
 }
 
 
@@ -100,17 +95,16 @@ $(window).scroll(function (){
 	  var position = $(this).offset().top;
 	  var scroll = $(window).scrollTop();
 	  var windowHeight = $(window).height();
-	  if (scroll > position - windowHeight + windowHeight/2.5){
+	  if (scroll > position - windowHeight + windowHeight/4){
 			$(this).addClass('moved');
 	  }
 	});
 });
 
 
-function faqDrop() {
-	$('.q_box').on('click', function () {
-		$(this).toggleClass('opened');
-		$(this).next('.a_box').slideToggle(300);
+function faqClick() {
+	$('.js-accordion__trigger').click(function(){
+		$(this).parents('.js-accordion').toggleClass('active');
 	});
 }
 

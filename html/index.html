@@ -41,7 +41,7 @@
 				<nav class="global_navi">
 					<p class="sp_title">MENU</p>
 					<ul class="navi_ul">
-						<li><a href="./works/" class="header-nav-item less_tab">HOME</a></li>
+						<li><a href="./jobs/" class="header-nav-item less_tab">HOME</a></li>
 						<li class="toggle">
 							<p class="header-nav-item">会社を知る</p>
 							<div class="megamenu">
@@ -53,7 +53,7 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="./works/" class="header-nav-item">仕事を知る</a></li>
+						<li><a href="./jobs/" class="header-nav-item">仕事を知る</a></li>
 						<li><a href="./interview/" class="header-nav-item">人を知る</a></li>
 						<li><a href="./recruitment/" class="header-nav-item">募集要項</a></li>
 					</ul>
@@ -436,6 +436,8 @@
 		<a class="hash" href="#top" style="">pagetop</a>
 	</div>
 
+	<div id="js-loader" class="loader"></div>
+
 
 	<script type="text/javascript">
 		//news slider
@@ -480,6 +482,13 @@
 				});
 			});
 		});
+	</script>
+
+
+	<script type="text/javascript">
+	$(window).on('load',function(){
+		$("#js-loader").fadeOut();
+	});
 	</script>
 
 
