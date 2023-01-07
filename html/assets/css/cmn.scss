@@ -273,8 +273,8 @@ Layout Set
 	&__red {
     background-color: $red;
   }
-	&__bluebg {
-		background: url(../images/top/blue_bg01.jpg) no-repeat;
+	&__pink {
+		background-color: $bgPink;
     background-size: cover;
   }
 	&__grad {
@@ -302,9 +302,6 @@ Header
 	position: fixed;
 	left: 0;
 	top: 0;
-	@include spc {
-		height: 106px;
-	}
   @include less_tab {
     height: 64px;
   }
@@ -431,10 +428,6 @@ Header
 		margin: 0 auto;
 		overflow: auto;
 		-webkit-overflow-scrolling: touch;
-	}
-	@include spc {
-		margin-top: 120px;
-		background: #fff;
 	}
   @include less_tab {
     padding-bottom: 10px;
@@ -722,7 +715,7 @@ Footer
 	z-index: 1;
 	padding-top: 100px;
 	@include sp {
-		padding-top: 80px;
+		padding-top: 32px;
 	}
 	&::before {
 		content: "";
@@ -1056,7 +1049,7 @@ Footer
 	height: 480px;
 	overflow: hidden;
 	@include sp {
-		height: auto;
+		height: 160px;
 	}
 	.inner {
 		@include flex(center, center);
@@ -1120,9 +1113,7 @@ Footer
 			position: relative;
 		}
 		img {
-			@include over_sp {
-				@include centerItem;
-			}
+			@include centerItem;
 		}
 	}
 	.float_link {
@@ -1301,7 +1292,7 @@ Common Parts
 			left: 50%;
 			margin-left: -50px;
 			bottom: -1px;
-			background-color: $blue;
+			background-color: $red;
 		}
 	}
 	&.end {
@@ -1330,8 +1321,6 @@ Common Parts
 		@include eng(4rem);
 		line-height: 1;
 		text-transform: capitalize;
-		letter-spacing: .04em;
-		color: $blue;
 		@include sp {
 			font-size: 2.4rem;
 		}
@@ -1346,7 +1335,6 @@ Common Parts
 	.jp_small {
 		font-weight: 700;
 		font-size: 1.8rem;
-		color: #bbb;
 		@include less_tab {
 			font-size: 1.3rem;
 		}
@@ -1510,6 +1498,9 @@ Common Parts
 		color: $blue;
 		position: relative;
 		z-index: 1;
+		@include sp {
+			font-size: 4.1vw;
+		}
 	}
 	&.blue {
 		&::after {
@@ -1602,6 +1593,10 @@ Common Parts
 		padding: 10px 30px;
 		height: 56px;
 	}
+	@include sp {
+		padding: 10px 24px 10px 10px;
+		height: 48px;
+	}
 	&:hover {
 		background-color: $bgPink;
 		color: $red;
@@ -1613,6 +1608,10 @@ Common Parts
 		margin-top: -8px;
 		@include less_tab {
 			margin-top: -7px;
+		}
+		@include sp {
+			right: 8px;
+			margin-top: -5px;
 		}
 	}
 	&.mauto {
@@ -1816,10 +1815,9 @@ Common Parts
 }
 .page_top_text {
   text-align: center;
-  font-size: 2.2rem;
+	line-height: 2.4;
   @include less_tab {
     text-align: left;
-    font-size: 1.7rem;
   }
 }
 .white_text {
@@ -1952,6 +1950,7 @@ HOME
 		top: 0;
 		z-index: 3;
 		overflow: hidden;
+		background: rgba(0,0,0,.3);
 		.textArea {
 			width: 92%;
 			height: 100%;
@@ -1964,11 +1963,14 @@ HOME
 				width: 88%;
 			}
 			.main_catch {
-				@include eng(6.4rem, 900);
+				@include eng(5vw, 900);
 				text-align: center;
 				line-height: 1.2;
 				color: white;
 				letter-spacing: .1em;
+				@include tab {
+					font-size: 4rem;
+				}
 				@include sp {
 					font-size: 3.2rem;
 				}
@@ -1996,6 +1998,14 @@ HOME
 	img {
 		@include centerItem;
 		animation: main_bg 20s ease;
+	}
+	video {
+		background-size: cover;
+		height: auto;
+		min-height: 100%;
+		min-width: 100%;
+		width: auto;
+		@include centerItem;
 	}
 }
 @keyframes main_bg {
@@ -2921,9 +2931,6 @@ Under PageTitle
 	background-size: cover;
 	background-position: center top;
 	background-repeat: no-repeat;
-	@include over_tab {
-		background-attachment: fixed;
-	}
 }
 .sq_carat {
 	display: block;
@@ -2937,6 +2944,9 @@ Under PageTitle
 	@include less_tab {
 		width: 90vw;
 		max-width: 300px;
+	}
+	@include sp {
+		width: 50vw;
 	}
 	.title_sq_1 {
 		fill: none;
@@ -3327,6 +3337,10 @@ Under PageTitle
 			z-index: 1;
 			background: rgba(0,0,0,0);
 			transition: all .3s $easeInOutSine;
+			@include sp {
+				height: auto;
+				padding: 32px 80px 32px 40px;
+			}
 			.tit {
 				@include flex(flex-start, flex-start);
 				flex-direction: column-reverse;
@@ -3334,11 +3348,18 @@ Under PageTitle
 				.jp {
 					font-size: 1.4rem;
 					transition: all .3s $easeInOutSine;
+					@include sp {
+						margin-top: 1px;
+					}
 				}
 				.eng {
-					@include eng(3rem);
+					font-size: 2.8rem;
 					line-height: 1;
 					transition: all .3s $easeInOutSine;
+					font-weight: bold;
+					span {
+						@include eng(3rem);
+					}
 				}
 			}
 			.inText {
@@ -3354,43 +3375,28 @@ Under PageTitle
 			}
 		}
 		.bg_image {
-			position: absolute;
-			left: 0;
-			top: 0;
 			width: 100%;
-			height: 100%;
+			height: 14vw;
 			overflow: hidden;
+			position: relative;
+			@include sp {
+				height: 44vw;
+			}
 			img {
 				@include centerItem;
-				opacity: 0;
 				transform: scale(1.05);
 				transition: all .3s $easeInOutSine;
 			}
 		}
 		&:hover {
 			.inner {
-				background: rgba(0,0,0,.5);
-				.tit {
-					.jp {
-						color: white;
-					}
-					.eng {
-						color: white;
-					}
-				}
-				.inText {
-					color: white;
-				}
+				background: rgba(0,0,0,.1);
 				.arrow-gray {
-					background: rgba(255,255,255,.3);
-					i {
-						color: white;
-					}
+					background: rgba(255,255,255,.8);
 				}
 			}
 			.bg_image {
 				img {
-					opacity: 1;
 					transform: scale(1);
 				}
 			}
@@ -3812,8 +3818,505 @@ Under PageTitle
 	@include flex;
 	margin: 80px auto 0;
 	max-width: 800px;
+	@include sp {
+		margin-top: 40px;
+	}
 	.btn-red {
 		width: 49%;
+		@include sp {
+			font-size: 3vw;
+		}
+	}
+}
+.js_intro {
+	width: 100%;
+	position: relative;
+	padding: 50px 0 32px;
+	overflow: hidden;
+	margin-top: 80px;
+	.tit {
+		text-align: center;
+		margin-bottom: 10px;
+		position: relative;
+		z-index: 1;
+		@include sp {
+			margin-bottom: 24px;
+		}
+		.jp {
+			color: white;
+			font-size: 3rem;
+			font-weight: bold;
+			@include sp {
+				font-size: 5.6vw;
+			}
+		}
+		.eng {
+			@include eng(1.5rem);
+			color: #777;
+		}
+	}
+	.inner {
+		width: 88%;
+		margin: 0 auto;
+		max-width: 960px;
+		@include flex;
+		position: relative;
+		z-index: 1;
+		@include sp {
+			flex-direction: column-reverse;
+		}
+		.img_side {
+			width: 160px;
+			@include sp {
+				margin: 24px auto 0;
+			}
+			.ms_hm {
+				width: 100%;
+				height: 160px;
+				border-radius: 80px;
+				overflow: hidden;
+				display: block;
+				position: relative;
+				img {
+					@include centerItem;
+				}
+			}
+			p {
+				font-weight: bold;
+				color: white;
+				text-align: center;
+				margin-top: 8px;
+			}
+		}
+		.text_side {
+			width: calc(100% - 210px);
+			color: white;
+			@include sp {
+				width: 100%;
+			}
+		}
+	}
+	.js_bg_img {
+		@include centerItem;
+	}
+}
+
+
+
+/**************
+人を知る
+**************/
+.staff_list {
+	width: 100%;
+	@include inline-flex;
+	li {
+		margin-top: 20px;
+		position: relative;
+		@include over_tab {
+			width: 32%;
+			&:not(:nth-child(3n)) {
+				margin-right: 2%;
+			}
+		}
+		@include sp {
+			width: 100%;
+			display: flex;
+		}
+		.img {
+			overflow: hidden;
+			position: relative;
+			@include sp {
+				width: 40vw;
+				height: 36vw;
+			}
+			img {
+				display: block;
+				transform: scale(1);
+				transition: all .2s $easeInOutSine;
+				@include sp {
+					@include centerItem;
+				}
+			}
+		}
+		.inner {
+			background-color: $dark;
+			padding: 24px 36px;
+			position: relative;
+			transition: all .2s $easeInOutSine;
+			@include sp {
+				width: calc(100% - 40vw);
+				height: 36vw;
+				@include flex(flex-start, center);
+				flex-direction: column;
+				padding: 0 24px;
+			}
+			.initial {
+				@include eng(3.2rem);
+				color: white;
+				@include sp {
+					font-size: 2.4rem;
+				}
+			}
+			.busho {
+				color: #ccc;
+				font-size: 1.4rem;
+			}
+			i {
+				position: absolute;
+				color: white;
+				@include over_sp {
+					right: 32px;
+					top: 35px;
+					opacity: 0;
+					transition: all .2s $easeInOutSine;
+				}
+				@include sp {
+					opacity: 1;
+					right: 16px;
+					bottom: 16px;
+				}
+			}
+		}
+		&:hover {
+			.img {
+				img {
+					transform: scale(1.1);
+				}
+			}
+			.inner {
+				background-color: $navy;
+				i {
+					opacity: 1;
+					transform: translateX(10px);
+				}
+			}
+		}
+	}
+}
+
+.staffTitle {
+	width: 100%;
+	height: calc(100vh - 96px);
+  position: relative;
+  overflow: hidden;
+	background-color: #f1f1f1;
+	@include over_tab {
+		margin-top: 96px;
+	}
+	@include less_tab {
+		margin-top: 64px;
+	}
+  @include sp {
+    height: auto;
+		padding-bottom: 48px;
+		background-color: #fff;
+  }
+	.title_image {
+		@include over_tab {
+			background-attachment: fixed;
+		}
+		@include sp {
+			position: relative;
+			height: 40vh;
+			width: 100%;
+		}
+	}
+  .title_inner {
+    position: relative;
+		height: 100%;
+		@include sp {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+		}
+    .message-area {
+      position: absolute;
+			left: 8vw;
+			top: 45vh;
+			z-index: 2;
+			font-size: 3.2rem;
+			line-height: 1.5;
+	    white-space: nowrap;
+	    transform: translate(0,-30%);
+			@include sp {
+				left: 6vw;
+		    top: 24vh;
+		    font-size: 3.3vw;
+			}
+			p {
+				margin-bottom: 5px;
+				display: block;
+				opacity: 0;
+				animation: blurIn 1.2s $easeInOutSine forwards;
+				span {
+					display: inline-block;
+			    background-color: $black;
+			    color: #fff;
+			    padding: 0.1em 0.5em;
+					font-weight: bold;
+				}
+			}
+    }
+		.sq_carat {
+			@include sp {
+				display: none;
+			}
+		}
+  }
+	.staff_info {
+		background-color: $black;
+		color: white;
+		@include flex(center, center);
+		flex-direction: column;
+		padding: 24px;
+		position: absolute;
+		bottom: 0;
+		left: 12vw;
+		z-index: 2;
+		box-shadow: 0 0 12px rgba(0,0,0,.1);
+		animation: animateBack 1s $easeInOutSine 1s forwards;
+		@include sp {
+			left: 6vw;
+			bottom: 10px;
+			padding: 16px;
+		}
+		.initial {
+			@include eng(5.6rem);
+			line-height: 1.2;
+			@include sp {
+				font-size: 2.4rem;
+			}
+		}
+		.busho {
+			font-size: 1.4rem;
+			@include sp {
+				font-size: 3vw;
+			}
+		}
+	}
+}
+@keyframes animateBack {
+	0% {
+		background-color: $black;
+		color: white;
+	}
+	100% {
+		background-color: white;
+		color: $black;
+	}
+}
+.myWork {
+	@include over_tab {
+		text-align: center;
+	}
+	li {
+		&:not(:last-child) {
+			&::after {
+				content: '\f063';
+			  font-family: 'Font Awesome 5 Free';
+			  font-weight: 900;
+				color: $red;
+				display: block;
+				text-align: center;
+				margin: 3px auto;
+				line-height: 1;
+			}
+		}
+	}
+}
+.q_tit {
+	@include flex(flex-start, flex-start);
+	margin-bottom: 15px;
+	@include sp {
+		margin-top: 40px;
+	}
+	.q_icon {
+		@include eng(4rem);
+		@include sp {
+			font-size: 7vw;
+			color: $red;
+		}
+	}
+	.text {
+		font-size: 2.4rem;
+		font-weight: bold;
+		line-height: 1.5;
+    padding-top: 13px;
+    padding-left: 8px;
+		@include sp {
+			font-size: 4.3vw;
+			padding-top: 9px;
+		}
+	}
+}
+.int_img_section {
+	margin: 56px auto 0;
+	@include over_sp {
+		@include flex(flex-start, space-between);
+	}
+	.q_side {
+		@include over_sp {
+			width: 64%;
+			padding-right: 8%;
+		}
+		.q_tit {
+			margin-top: 0;
+		}
+	}
+	.img_side {
+		background-color: $red;
+		@include over_sp {
+			width: 36%;
+		}
+		@include sp {
+			width: 72vw;
+			margin: 40px auto;
+		}
+	}
+	&.reverse {
+		@include over_sp {
+			flex-direction: row-reverse;
+		}
+		.q_side {
+			@include over_sp {
+				padding-right: 0;
+				padding-left: 8%;
+			}
+		}
+		&.moved {
+			.img_side {
+				img {
+					animation: imgRotate .8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+				}
+			}
+		}
+	}
+	&.moved {
+		.img_side {
+			img {
+				animation: imgRotateR .8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+			}
+		}
+	}
+}
+@keyframes imgRotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(4deg);
+	}
+}
+@keyframes imgRotateR {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(-4deg);
+	}
+}
+.ans_area {
+	padding: 0 16px;
+	.emphasis {
+		font-size: 2rem;
+		line-height: 1.4;
+		margin-bottom: 15px;
+		@include sp {
+			font-size: 1.6rem;
+			font-weight: bold;
+		}
+		span {
+			background: linear-gradient(transparent 30%, #f2d5d5 30%);
+		}
+	}
+}
+.int_last {
+	margin-top: 80px;
+	width: 100%;
+	position: relative;
+	img {
+		width: 100%;
+	}
+	.text_area {
+		width: 80%;
+		background-color: white;
+		margin: -64px auto 0;
+		position: relative;
+		z-index: 1;
+		padding: 32px 40px;
+		@include sp {
+			width: 100%;
+			margin: 0 auto;
+			padding: 16px 20px 24px;
+		}
+		.tit {
+			text-align: center;
+			font-size: 2.4rem;
+			font-weight: bold;
+			margin-bottom: 16px;
+			letter-spacing: .1em;
+			line-height: 1.5;
+			@include sp {
+				font-size: 1.6rem;
+				margin-bottom: 8px;
+			}
+			span {
+				@include eng(2.7rem);
+				color: $red;
+				@include sp {
+					font-size: 1.6rem;
+				}
+			}
+		}
+		.inner {
+			@include over_tab {
+				text-align: center;
+			}
+		}
+		.characters {
+			display: block;
+			width: 200px;
+			position: absolute;
+			right: -40px;
+			top: -56px;
+			z-index: 2;
+			@include sp {
+				width: 80px;
+				top: -28px;
+				right: -20px;
+			}
+		}
+	}
+}
+.int_section {
+	position: relative;
+	padding-bottom: 0;
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 320px;
+		background-color: $bgPink;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+}
+.int_bottoms {
+	@include flex;
+	margin: 0 auto;
+	max-width: 800px;
+	@include sp {
+		margin-top: 10px;
+	}
+	.btn-red {
+		width: 49%;
+		@include sp {
+			font-size: 3vw;
+		}
 	}
 }
 
