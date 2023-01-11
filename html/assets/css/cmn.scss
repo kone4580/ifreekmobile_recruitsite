@@ -1242,7 +1242,7 @@ Common Parts
 		content: '';
 		width: 5px;
 		height: 30px;
-		background-color: $blue;
+		background-color: $orange;
 		margin-right: 13px;
 		position: absolute;
 		left: 0;
@@ -1509,6 +1509,44 @@ Common Parts
 		span {
 			background-color: $blue;
 			color: white;
+		}
+	}
+	&.bgPink {
+		&::after {
+			background-color: $red;
+		}
+		span {
+			background-color: $bgPink;
+			color: $red;
+		}
+	}
+}
+
+.lined_title2 {
+	width: 100%;
+	text-align: center;
+	position: relative;
+	margin-bottom: 40px;
+	border-bottom: 1px $gray solid;
+	span {
+		display: inline-block;
+		padding: 0 8px 16px;
+		font-size: 2.4rem;
+		letter-spacing: .1em;
+		position: relative;
+		z-index: 1;
+		@include sp {
+			font-size: 4.1vw;
+		}
+		&::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 4px;
+			bottom: -1px;
+			position: absolute;
+			left: 0;
+			background-color: $red;
 		}
 	}
 }
@@ -4316,6 +4354,604 @@ Under PageTitle
 		width: 49%;
 		@include sp {
 			font-size: 3vw;
+		}
+	}
+}
+
+
+
+/**************
+データで見る
+**************/
+.comp_datas {
+	width: 100%;
+	max-width: 920px;
+	margin: 0 auto;
+	@include over_sp {
+		@include flex;
+		flex-wrap: wrap;
+	}
+	.box {
+		box-shadow: 0 0 24px rgba(0,0,0,.1);
+		background-color: white;
+		padding: 28px 40px;
+		position: relative;
+		@include over_sp {
+			width: 48%;
+			height: 400px;
+			margin-bottom: 32px;
+		}
+		@include sp {
+			margin-bottom: 24px;
+		}
+		.tit {
+			font-weight: bold;
+			font-size: 2.4rem;
+			text-align: center;
+			@include sp {
+				font-size: 6vw;
+			}
+		}
+		.num {
+			@include eng(5rem, 700);
+			letter-spacing: -1px;
+			line-height: 1;
+		}
+		.percent {
+			@include eng(1.6rem, 700);
+			letter-spacing: 0;
+		}
+		.unit {
+			font-size: 2rem;
+			font-weight: bold;
+			margin-left: 4px;
+		}
+		.info_text {
+			font-weight: bold;
+			text-align: center;
+			line-height: 1.5;
+			@include sp {
+				font-size: 3vw;
+			}
+		}
+		.num_text {
+			opacity: 0;
+		}
+		&.moved {
+			.num_text {
+				animation: fadeIn .3s $easeInOutSine forwards;
+			}
+		}
+	}
+	.box_01 {
+		.women {
+			position: absolute;
+			top: 52%;
+			left: 8%;
+			color: $red;
+		}
+		.men {
+			position: absolute;
+			top: 52%;
+			right: 4%;
+			color: $blue;
+		}
+		.women_text {
+			font-weight: bold;
+			position: absolute;
+			left: 12%;
+			top: 64%;
+		}
+		.men_text {
+			font-weight: bold;
+			position: absolute;
+			right: 10%;
+			top: 64%;
+		}
+		.info_g01 {
+			width: 98%;
+			display: block;
+			margin: 30px auto 16px;
+		}
+	}
+	.box_02 {
+		.num_text {
+			color: $red;
+			text-align: center;
+			margin: 24px auto 20px;
+			.num {
+				font-size: 7.2rem;
+			}
+		}
+		.info_g02 {
+			width: 80%;
+			display: block;
+			margin: 40px auto 12px;
+		}
+	}
+	.box_03 {
+		.num_text {
+			color: $red;
+			text-align: center;
+			margin: 18px auto 16px;
+			.num {
+				font-size: 7.2rem;
+			}
+		}
+		.horizontal_graph {
+			width: 240px;
+			margin: 16px auto;
+			.item {
+				@include flex(center, flex-start);
+				.left_text {
+					width: 40px;
+					font-size: 1.2rem;
+					font-weight: bold;
+					color: #565656;
+				}
+				.meter {
+					background-color: #c9caca;
+					height: 24px;
+					border-radius: 0 24px 24px 0;
+					margin-right: 8px;
+					transition: all .5s $easeInOutSine .3s;
+				}
+				.num_text {
+					margin: 3px 0 0;
+					.num {
+						font-size: 2rem;
+					}
+					.percent {
+						font-size: 1.2rem;
+					}
+				}
+				&:first-child {
+					.meter {
+						background-color: $red;
+						width: 1px;
+					}
+				}
+				&:nth-child(2) {
+					.meter {
+						width: 1px;
+					}
+				}
+				&:nth-child(3) {
+					.meter {
+						width: 1px;
+					}
+				}
+				&:nth-child(4) {
+					.meter {
+						width: 1px;
+					}
+				}
+				&:nth-child(5) {
+					.meter {
+						width: 1px;
+					}
+				}
+			}
+		}
+		&.moved {
+			.horizontal_graph {
+				.item {
+					&:first-child {
+						.meter {
+							width: 140px;
+						}
+					}
+					&:nth-child(2) {
+						.meter {
+							width: 120px;
+						}
+					}
+					&:nth-child(3) {
+						.meter {
+							width: 40px;
+						}
+					}
+					&:nth-child(4) {
+						.meter {
+							width: 13px;
+						}
+					}
+					&:nth-child(5) {
+						.meter {
+							width: 6.5px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.box_04 {
+		.grad {
+			position: absolute;
+			top: 56%;
+			left: 28%;
+			color: #c9c923;
+		}
+		.carr {
+			position: absolute;
+			top: 56%;
+			right: 24%;
+			color: $red;
+		}
+		.grad_text {
+			font-weight: bold;
+			position: absolute;
+			left: 10%;
+			top: 56%;
+		}
+		.carr_text {
+			font-weight: bold;
+			position: absolute;
+			right: 12%;
+			top: 56%;
+		}
+		.info_g04 {
+			width: 100%;
+			display: block;
+			margin: 40px auto 106px
+		}
+	}
+	.box_05 {
+		.jt_ratio {
+			width: 100%;
+			position: relative;
+			margin: 32px auto 48px;
+		}
+		.info_g05 {
+			width: 80%;
+			display: block;
+			margin: 0 auto 0 0;
+		}
+		.num_text {
+			position: absolute;
+			color: white;
+			&.jt_num01 {
+				left: 12%;
+				top: 40%;
+				.num {
+					font-size: 6rem;
+				}
+			}
+			&.jt_num02 {
+				left: 54%;
+				top: 20%;
+				.num {
+					font-size: 2.8rem;
+				}
+				.percent {
+					font-size: 1.3rem;
+				}
+			}
+			&.jt_num03 {
+				left: 66%;
+				top: 42%;
+				.num {
+					font-size: 4.2rem;
+				}
+				.percent {
+					font-size: 1.5rem;
+				}
+			}
+			&.jt_num04 {
+				left: 51%;
+				top: 78%;
+				.num {
+					font-size: 2.4rem;
+				}
+				.percent {
+					font-size: 1.2rem;
+				}
+			}
+		}
+		.jt_text {
+			font-weight: bold;
+			color: #595757;
+			font-size: 1.2rem;
+			position: absolute;
+			&.jt_text01 {
+				left: 15%;
+				top: 27%;
+				color: white;
+			}
+			&.jt_text02 {
+				left: 64%;
+				top: 1%;
+			}
+			&.jt_text03 {
+				left: 81%;
+				top: 23%;
+			}
+			&.jt_text04 {
+				left: 66%;
+				top: 87%;
+			}
+		}
+	}
+	.box_06 {
+		.num_text {
+			color: $red;
+			text-align: center;
+			margin: 24px auto 0;
+			.num {
+				font-size: 7.2rem;
+			}
+		}
+		.info_g06 {
+			display: block;
+			width: 110px;
+			margin: 22px auto 20px;
+		}
+	}
+	.box_07 {
+		.num_text {
+			color: $red;
+			position: absolute;
+			left: 61%;
+			top: 48%;
+			.num {
+				font-size: 6.5rem;
+			}
+		}
+		.info_g07 {
+			display: block;
+			width: 50%;
+			margin: 40px auto 36px 10%;
+		}
+	}
+	.box_08 {
+		.num_text {
+			color: $red;
+			text-align: center;
+			margin: 32px auto 0;
+			.num {
+				font-size: 7.2rem;
+			}
+		}
+		.info_g08 {
+			display: block;
+			width: 200px;
+			margin: 12px auto 36px;
+		}
+	}
+	.box_09 {
+		.vertical_graph {
+			width: 240px;
+			height: 200px;
+			margin: 32px auto 28px;
+			@include flex(flex-end, space-between);
+			.item {
+				width: 20%;
+				@include flex(center, flex-end);
+				flex-direction: column-reverse;
+				text-align: center;
+				.left_text {
+					font-size: 1.2rem;
+					font-weight: bold;
+					color: #565656;
+				}
+				.meter {
+					background-color: #c9caca;
+					width: 40px;
+					border-radius: 16px 16px 0 0;
+					transition: all .5s $easeInOutSine .3s;
+				}
+				.num_text {
+					margin: 0;
+					.num {
+						font-size: 2rem;
+					}
+					.percent {
+						font-size: 1.2rem;
+					}
+				}
+				&:first-child {
+					.meter {
+						height: 1px;
+					}
+				}
+				&:nth-child(2) {
+					.meter {
+						height: 1px;
+					}
+				}
+				&:nth-child(3) {
+					.meter {
+						height: 1px;
+					}
+				}
+				&:nth-child(4) {
+					.meter {
+						height: 1px;
+					}
+				}
+			}
+		}
+		&.moved {
+			.vertical_graph {
+				.item {
+					&:first-child {
+						.meter {
+							height: 50px;
+						}
+					}
+					&:nth-child(2) {
+						.meter {
+							height: 133px;
+						}
+					}
+					&:nth-child(3) {
+						.meter {
+							background-color: $red;
+							height: 150px;
+						}
+					}
+					&:nth-child(4) {
+						.meter {
+							height: 13px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.box_10 {
+		.women {
+			position: absolute;
+			top: 52%;
+			left: 8%;
+			color: $red;
+		}
+		.men {
+			position: absolute;
+			top: 52%;
+			right: 5%;
+			color: $blue;
+		}
+		.women_text {
+			font-weight: bold;
+			position: absolute;
+			left: 12%;
+			top: 64%;
+		}
+		.men_text {
+			font-weight: bold;
+			position: absolute;
+			right: 11%;
+			top: 64%;
+		}
+		.info_g10 {
+			width: 98%;
+			display: block;
+			margin: 30px auto 16px;
+		}
+	}
+}
+
+
+
+/**************
+福利厚生
+**************/
+.welf_top {
+	background-color: $bgPink;
+	padding: 24px;
+}
+.welf_top_bold {
+	margin-bottom: 10px;
+	p {
+		text-align: center;
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+}
+.caption {
+	font-weight: bold;
+	font-size: 1.4rem;
+	text-align: center;
+	margin-top: 4px;
+	@include sp {
+		font-size: 1.2rem;
+		line-height: 1.4;
+	}
+}
+.welf_content {
+	width: 100%;
+	margin: 40px auto;
+	@include over_tab {
+		@include flex(flex-start, space-between);
+	}
+	.lesson_flow {
+		border: 1px #ddd solid;
+		padding: 40px;
+		@include over_tab {
+			width: 52%;
+		}
+		.item {
+			width: 100%;
+			@include flex(flex-start, space-between);
+			position: relative;
+			&:not(:last-child) {
+				padding-bottom: 32px;
+				&::after {
+					content: "";
+					display: block;
+					width: 1px;
+					height: calc(100% - 40px);
+					position: absolute;
+					left: 10px;
+					top: 40px;
+					background-color: $red;
+				}
+			}
+			.leftSide {
+				width: 140px;
+				.step {
+					width: 100%;
+					text-align: center;
+					background-color: $red;
+					border-radius: 4px;
+					color: white;
+					padding: 10px 0;
+					@include eng(1.6rem);
+				}
+				.tit {
+					margin-top: 8px;
+					padding-left: 24px;
+				}
+			}
+			.inner {
+				width: calc(100% - 180px);
+			}
+		}
+	}
+	.lesson_disc {
+		width: 40%;
+		padding-top: 32px;
+	}
+}
+.welf_box {
+	padding: 40px;
+	background-color: white;
+	border: 1px $gray solid;
+}
+.welf_tit {
+	font-size: 1.8rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.allowance {
+	@include flex;
+	width: 100%;
+	dt {
+		width: 100px;
+		height: 32px;
+		@include flex(center, center);
+		color: white;
+		background-color: $red;
+		font-weight: bold;
+		border-radius: 4px;
+	}
+	dd {
+		width: calc(100% - 110px);
+		font-size: 1.8rem;
+		color: $red;
+		font-weight: bold;
+	}
+}
+.welfares {
+	width: 100%;
+	@include over_tab {
+		@include flex;
+	}
+	.welf_box {
+		@include over_tab {
+			width: 32%;
+			height: 240px;
 		}
 	}
 }

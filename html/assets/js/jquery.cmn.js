@@ -90,7 +90,7 @@ $(function(){
 });
 
 
-$(window).scroll(function (){
+$(window).on('load scroll', function(){
 	$(".animation").each(function(){
 	  var position = $(this).offset().top;
 	  var scroll = $(window).scrollTop();
