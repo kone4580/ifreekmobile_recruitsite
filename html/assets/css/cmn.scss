@@ -8,8 +8,8 @@ Sass Mixin
 $widthWide: 1440px;
 $widthPC: 1160px;
 $widthPCs: 1159.9px;
-$widthTab: 769px;
-$widthTabs: 768.9px;
+$widthTab: 821px;
+$widthTabs: 820.9px;
 $widthSP: 560px;
 $widthSPs: 559.9px;
 
@@ -1955,6 +1955,18 @@ Common Parts
 		opacity: 1;
 	}
 }
+@keyframes popup {
+  0% {
+    transform: translateY(40px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1.0);
+  }
+  80%, 100% {
+    opacity: 1;
+  }
+}
 
 
 
@@ -3717,25 +3729,48 @@ Under PageTitle
 		}
 	}
 }
+.job_work_bg {
+	margin: 24px auto 80px;
+	width: 100%;
+	background-color: $red;
+	padding: 48px 0;
+	position: relative;
+	.charac_02 {
+		display: block;
+		width: 240px;
+		transform: translateX(309px);
+		position: absolute;
+		right: -88px;
+    top: 150px;
+		@include sp {
+			width: 154px;
+			right: -44px;
+			top: 160px;
+		}
+	}
+	&.moved {
+		.charac_02 {
+			animation: charac_slideIn .5s $easeInOutSine forwards;
+		}
+	}
+}
 .job_work {
 	max-width: 100%;
 	margin: 0 auto;
-	padding: 4px;
-	border: 2px #999 solid;
-	background-color: white;
 	@include over_tab {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
 	.tit {
-		background-color: $dark;
-		font-size: 1.6rem;
+		background-color: white;
 		font-weight: bold;
 		@include flex(center, center);
 		flex-direction: column;
 		line-height: 1.5;
-		color: white;
+		color: $red;
+		font-size: 2.4rem;
+		border-radius: 8px;
 		@include over_tab {
 			width: 28%;
 			height: 160px;
@@ -3752,9 +3787,9 @@ Under PageTitle
 		}
 	}
 	.inner {
+		color: white;
 		@include over_tab {
-			width: 72%;
-			padding: 40px;
+			width: 64%;
 		}
 		@include less_tab {
 			padding: 20px 24px;
@@ -3956,6 +3991,12 @@ Under PageTitle
 				margin-right: 2%;
 			}
 		}
+		@include tab {
+			width: 48%;
+			&:nth-child(odd) {
+				margin-right: 4%;
+			}
+		}
 		@include sp {
 			width: 100%;
 			display: flex;
@@ -4044,13 +4085,16 @@ Under PageTitle
 	@include less_tab {
 		margin-top: 64px;
 	}
+	@include tab {
+		height: calc(64vh - 64px);
+	}
   @include sp {
     height: auto;
 		padding-bottom: 48px;
 		background-color: #fff;
   }
 	.title_image {
-		@include over_tab {
+		@include over_pc {
 			background-attachment: fixed;
 		}
 		@include sp {
@@ -4078,6 +4122,10 @@ Under PageTitle
 			line-height: 1.5;
 	    white-space: nowrap;
 	    transform: translate(0,-30%);
+			@include tab {
+				top: 45%;
+				font-size: 3vw;
+			}
 			@include sp {
 				left: 6vw;
 		    top: 24vh;
@@ -4157,9 +4205,11 @@ Under PageTitle
 			  font-weight: 900;
 				color: $red;
 				display: block;
-				text-align: center;
 				margin: 3px auto;
 				line-height: 1;
+				@include over_tab {
+					text-align: center;
+				}
 			}
 		}
 	}
@@ -4441,17 +4491,29 @@ Under PageTitle
 			position: absolute;
 			left: 12%;
 			top: 64%;
+			@include sp {
+				top: 66%;
+			}
 		}
 		.men_text {
 			font-weight: bold;
 			position: absolute;
 			right: 10%;
 			top: 64%;
+			@include sp {
+				top: 66%;
+			}
 		}
 		.info_g01 {
 			width: 98%;
 			display: block;
 			margin: 30px auto 16px;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g01 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
 		}
 	}
 	.box_02 {
@@ -4467,6 +4529,12 @@ Under PageTitle
 			width: 80%;
 			display: block;
 			margin: 40px auto 12px;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g02 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
 		}
 	}
 	.box_03 {
@@ -4593,7 +4661,13 @@ Under PageTitle
 		.info_g04 {
 			width: 100%;
 			display: block;
-			margin: 40px auto 106px
+			margin: 40px auto 106px;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g04 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
 		}
 	}
 	.box_05 {
@@ -4606,6 +4680,12 @@ Under PageTitle
 			width: 80%;
 			display: block;
 			margin: 0 auto 0 0;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g05 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
 		}
 		.num_text {
 			position: absolute;
@@ -4613,8 +4693,15 @@ Under PageTitle
 			&.jt_num01 {
 				left: 12%;
 				top: 40%;
+				@include sp {
+					left: 10%;
+					top: 37%;
+				}
 				.num {
 					font-size: 6rem;
+					@include sp {
+						font-size: 13vw;
+					}
 				}
 			}
 			&.jt_num02 {
@@ -4622,9 +4709,15 @@ Under PageTitle
 				top: 20%;
 				.num {
 					font-size: 2.8rem;
+					@include sp {
+						font-size: 5vw;
+					}
 				}
 				.percent {
 					font-size: 1.3rem;
+					@include sp {
+						font-size: 2vw;
+					}
 				}
 			}
 			&.jt_num03 {
@@ -4632,19 +4725,34 @@ Under PageTitle
 				top: 42%;
 				.num {
 					font-size: 4.2rem;
+					@include sp {
+						font-size: 8vw;
+					}
 				}
 				.percent {
 					font-size: 1.5rem;
+					@include sp {
+						font-size: 2.2vw;
+					}
 				}
 			}
 			&.jt_num04 {
 				left: 51%;
 				top: 78%;
+				@include sp {
+					top: 76%;
+				}
 				.num {
 					font-size: 2.4rem;
+					@include sp {
+						font-size: 4vw;
+					}
 				}
 				.percent {
 					font-size: 1.2rem;
+					@include sp {
+						font-size: 1.8vw;
+					}
 				}
 			}
 		}
@@ -4653,10 +4761,20 @@ Under PageTitle
 			color: #595757;
 			font-size: 1.2rem;
 			position: absolute;
+			@include sp {
+				font-size: 2.6vw;
+			}
 			&.jt_text01 {
 				left: 15%;
 				top: 27%;
 				color: white;
+				@include sp {
+					left: 12%;
+					top: 22%;
+					@include sp {
+						font-size: 3vw;
+					}
+				}
 			}
 			&.jt_text02 {
 				left: 64%;
@@ -4685,6 +4803,12 @@ Under PageTitle
 			display: block;
 			width: 110px;
 			margin: 22px auto 20px;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g06 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
 		}
 	}
 	.box_07 {
@@ -4701,6 +4825,12 @@ Under PageTitle
 			display: block;
 			width: 50%;
 			margin: 40px auto 36px 10%;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g07 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
 		}
 	}
 	.box_08 {
@@ -4716,6 +4846,12 @@ Under PageTitle
 			display: block;
 			width: 200px;
 			margin: 12px auto 36px;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g08 {
+				animation: popup .5s $easeInOutSine .3s forwards;
+			}
 		}
 	}
 	.box_09 {
@@ -4817,17 +4953,29 @@ Under PageTitle
 			position: absolute;
 			left: 12%;
 			top: 64%;
+			@include sp {
+				top: 66%;
+			}
 		}
 		.men_text {
 			font-weight: bold;
 			position: absolute;
 			right: 11%;
 			top: 64%;
+			@include sp {
+				top: 66%;
+			}
 		}
 		.info_g10 {
 			width: 98%;
 			display: block;
 			margin: 30px auto 16px;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g10 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
 		}
 	}
 }
