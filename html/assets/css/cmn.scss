@@ -3742,10 +3742,14 @@ Under PageTitle
 		position: absolute;
 		right: -88px;
     top: 150px;
+		@include tab {
+			width: 186px;
+	    top: 200px;
+		}
 		@include sp {
 			width: 154px;
-			right: -44px;
-			top: 160px;
+			right: -64px;
+			top: 282px;
 		}
 	}
 	&.moved {
@@ -3768,8 +3772,6 @@ Under PageTitle
 		@include flex(center, center);
 		flex-direction: column;
 		line-height: 1.5;
-		color: $red;
-		font-size: 2.4rem;
 		border-radius: 8px;
 		@include over_tab {
 			width: 28%;
@@ -3778,9 +3780,15 @@ Under PageTitle
 		@include less_tab {
 			padding: 16px;
 		}
-		span {
+		.work_name {
+			text-align: center;
+			color: $red;
 			font-size: 2.4rem;
+		}
+		span {
+			font-size: 3.2rem;
 			display: block;
+			color: $black;
 			@include less_tab {
 				font-size: 2rem;
 			}
@@ -3818,6 +3826,31 @@ Under PageTitle
 		bottom: 0;
 		margin-left: -20px;
 	}
+}
+/* 練習用 */
+.bigboxA {
+	background-color: black;
+	display: flex;
+}
+.boxA {
+	width: 300px;
+	height: 400px;
+	padding: 20px 30px 40px 50px;
+	background-color: #f52a2a;
+	margin: 30px 20px 30px 0;
+	color: white;
+}
+.boxB {
+	width: 300px;
+	height: 400px;
+	padding: 20px 30px 40px 50px;
+	background-color: rgb(24, 32, 230);
+	margin: 30px 0 30px 20px;
+}
+.ddd_text {
+	margin: 30px auto 30px auto;
+	text-align: center;
+	display: block;
 }
 .radiused {
 	border-radius: 16px;

@@ -3306,11 +3306,15 @@ Under PageTitle
     position: absolute;
     right: -88px;
     top: 150px; }
+    @media (min-width: 560px) and (max-width: 820.9px) {
+      .job_work_bg .charac_02 {
+        width: 186px;
+        top: 200px; } }
     @media (max-width: 559.9px) {
       .job_work_bg .charac_02 {
         width: 154px;
-        right: -44px;
-        top: 160px; } }
+        right: -64px;
+        top: 282px; } }
   .job_work_bg.moved .charac_02 {
     animation: charac_slideIn 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards; }
 
@@ -3330,8 +3334,6 @@ Under PageTitle
     justify-content: center;
     flex-direction: column;
     line-height: 1.5;
-    color: #E5004F;
-    font-size: 2.4rem;
     border-radius: 8px; }
     @media (min-width: 821px) {
       .job_work .tit {
@@ -3340,9 +3342,14 @@ Under PageTitle
     @media (max-width: 820.9px) {
       .job_work .tit {
         padding: 16px; } }
+    .job_work .tit .work_name {
+      text-align: center;
+      color: #E5004F;
+      font-size: 2.4rem; }
     .job_work .tit span {
-      font-size: 2.4rem;
-      display: block; }
+      font-size: 3.2rem;
+      display: block;
+      color: #1b1b1b; }
       @media (max-width: 820.9px) {
         .job_work .tit span {
           font-size: 2rem; } }
@@ -3376,6 +3383,31 @@ Under PageTitle
     left: 50%;
     bottom: 0;
     margin-left: -20px; }
+
+/* 練習用 */
+.bigboxA {
+  background-color: black;
+  display: flex; }
+
+.boxA {
+  width: 300px;
+  height: 400px;
+  padding: 20px 30px 40px 50px;
+  background-color: #f52a2a;
+  margin: 30px 20px 30px 0;
+  color: white; }
+
+.boxB {
+  width: 300px;
+  height: 400px;
+  padding: 20px 30px 40px 50px;
+  background-color: #1820e6;
+  margin: 30px 0 30px 20px; }
+
+.ddd_text {
+  margin: 30px auto 30px auto;
+  text-align: center;
+  display: block; }
 
 .radiused {
   border-radius: 16px; }
