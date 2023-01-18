@@ -70,7 +70,7 @@ function _pageScroll(){
 }
 
 
-/* タブ切り替え */
+
 /* タブ切り替え */
 $(function(){
   $('.tab-target').eq(0).addClass('current');
