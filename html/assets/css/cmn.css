@@ -3308,14 +3308,18 @@ Under PageTitle
   width: 100%;
   background-color: #E5004F;
   padding: 48px 0;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
+  @media (max-width: 559.9px) {
+    .job_work_bg {
+      margin-bottom: 64px; } }
   .job_work_bg .charac_02 {
     display: block;
     width: 240px;
     transform: translateX(309px);
     position: absolute;
     right: -88px;
-    top: 150px; }
+    bottom: -20px; }
     @media (min-width: 560px) and (max-width: 820.9px) {
       .job_work_bg .charac_02 {
         width: 186px;
@@ -3324,7 +3328,7 @@ Under PageTitle
       .job_work_bg .charac_02 {
         width: 154px;
         right: -64px;
-        top: 282px; } }
+        bottom: -16px; } }
   .job_work_bg.moved .charac_02 {
     animation: charac_slideIn 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards; }
 
@@ -3356,13 +3360,17 @@ Under PageTitle
       text-align: center;
       color: #E5004F;
       font-size: 2.4rem; }
+      @media (max-width: 820.9px) {
+        .job_work .tit .work_name {
+          font-size: 2rem; } }
     .job_work .tit span {
       font-size: 3.2rem;
       display: block;
       color: #1b1b1b; }
       @media (max-width: 820.9px) {
         .job_work .tit span {
-          font-size: 2rem; } }
+          font-size: 2rem;
+          display: inline; } }
   .job_work .inner {
     color: white; }
     @media (min-width: 821px) {
@@ -4604,7 +4612,7 @@ Under PageTitle
       align-items: flex-start;
       justify-content: space-between; } }
   .flow_wrap .con_flow {
-    width: 19%;
+    width: 23.5%;
     background: #ffffff;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;

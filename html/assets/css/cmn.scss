@@ -3745,13 +3745,17 @@ Under PageTitle
 	background-color: $red;
 	padding: 48px 0;
 	position: relative;
+	overflow: hidden;
+	@include sp {
+		margin-bottom: 64px;
+	}
 	.charac_02 {
 		display: block;
 		width: 240px;
 		transform: translateX(309px);
 		position: absolute;
 		right: -88px;
-    top: 150px;
+    bottom: -20px;
 		@include tab {
 			width: 186px;
 	    top: 200px;
@@ -3759,7 +3763,7 @@ Under PageTitle
 		@include sp {
 			width: 154px;
 			right: -64px;
-			top: 282px;
+			bottom: -16px;
 		}
 	}
 	&.moved {
@@ -3794,6 +3798,9 @@ Under PageTitle
 			text-align: center;
 			color: $red;
 			font-size: 2.4rem;
+			@include less_tab {
+				font-size: 2rem;
+			}
 		}
 		span {
 			font-size: 3.2rem;
@@ -3801,6 +3808,7 @@ Under PageTitle
 			color: $black;
 			@include less_tab {
 				font-size: 2rem;
+				display: inline;
 			}
 		}
 	}
@@ -5249,7 +5257,7 @@ Under PageTitle
 		@include flex(flex-start, space-between);
 	}
 	.con_flow {
-		width: 19%;
+		width: 23.5%;
 		background: #ffffff;
     box-shadow: 4px 4px 15px rgba(0,0,0,.1);
     border-radius: 10px;
