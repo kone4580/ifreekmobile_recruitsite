@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>ES事業部 | 株式会社アイフリークモバイル リクルートサイト</title>
+	<title>エントリー | 株式会社アイフリークモバイル リクルートサイト</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="株式会社アイフリークモバイルの採用サイトです。" />
 
@@ -71,8 +71,8 @@
 	<div class="pageTitle">
 		<div class="title_inner">
 			<div class="text-area">
-				<h1 class="jp">ワークスタイル</h1>
-				<p class="eng">WORK STYLE</p>
+				<h1 class="jp">エントリー</h1>
+				<p class="eng">ENTRY</p>
 			</div>
 			<div class="sq_carat">
 				<?xml version="1.0" encoding="UTF-8"?>
@@ -89,129 +89,240 @@
 
 		<div class="breadcrumbs">
 			<a href="../">HOME</a> >
-			<a href="./">仕事内容</a> >
-			ES事業部
+			エントリー
 		</div>
 
-		<div class="title_image" style="background-image: url(../assets/images/title/title_workstyle.jpg);"></div>
+		<div class="title_image" style="background-image: url(../assets/images/title/title_data.jpg);"></div>
 	</div>
 
 
 	<main id="main_wrap" role="main">
 
-		<div class="page_section">
-			<div class="middlewrap">
-				<div class="work_links">
-					<ul>
-						<li><a href="./ccs.html">CCS事業部</a></li>
-						<li><a href="./ces.html">CES事業部</a></li>
-						<li><a href="./gc.html">GC事業部</a></li>
-						<li><a href="./cra.html">CRA事業部</a></li>
-						<li><a href="./ftc.html">FTC事業部</a></li>
-						<li><a href="./ds.html">DS事業部</a></li>
-						<li><a href="./acs.html">ACS事業部</a></li>
-						<li class="active"><a href="./es.html">ES事業部</a></li>
-						<li><a href="./challet.html">チャレット部</a></li>
-						<li><a href="./app.html">アプリ部</a></li>
-						<li><a href="./management.html">管理部</a></li>
-					</ul>
-				</div>
-
-				<div class="work_st_tit">
-					<h2 class="jp">ES事業部</h2>
-					<p class="eng"></p>
-				</div>
-			</div>
-
-
-			<div class="job_work_bg animation">
-				<div class="middlewrap">
-					<div class="job_work">
-						<div class="tit">
-							<h3 class="work_name">主な<span>仕事内容</span></h3>
-						</div>
-						<div class="inner">
-							<p>1.事務サポートからシステム開発に至るまで、多岐にわたる案件のご紹介を致します。クライアントから寄せられる期待にこれからも長く応え続けるため、エンジニアやIT業務のサポートをする人材をお迎えします。<br>2.最初は自分ができることからスタートしていただきます。少しずつ経験を積んでもらい、IT知識が身につく事務サポート業務やゆくゆくはエンジニアを目指すことも可能となるので、働く幅が広がるのが魅力です。<br>3.最初は知識が無くても、できる業務からスタートしお任せします。簡単なITサポートから始めて、ゆくゆくはエンジニアとして活躍することも目指せます。スキルアップしたい方、手に職をつけたい方も大歓迎です。</p>
-						</div>
-					</div>
-				</div>
-				<img src="../assets/images/top/charac_02.png" class="charac_02" alt="キャラクター２">
-				<img src="" alt="">
-			</div>
-
-
-			<div class="middlewrap">
-				<div class="flex_content">
-					<div class="item item_4">
-						<h3 class="center_tit_mini">特徴</h3>
-						<p>1.研修終了後は各案件への配属となりますが、配属後も孤立させることはなく、先輩社員や営業メンバーが手厚くフォローします。定期的に面談をする機会もありますので、現場での悩みや職場環境に対する要望、これから目指すキャリアのことなど、気になることは気軽に何でも相談できる環境です。<br>2.まずは基礎研修を受けることからスタートして、徐々にスキルの範囲を広げていきましょう。事務にプラスしてIT知識も身につき「一歩上の事務」としてずっと活躍していく道や、スキルを身に付けて将来はエンジニアを目指す道など、自分のやる気次第で選択の幅が増えキャリアの可能性を広げられます。</p>
-					</div>
-
-					<div class="item item_4">
-						<img src="../assets/images/page/gc_img01.jpg" class="radiused" alt="">
-					</div>
-				</div>
-
-				<div class="flex_content flex_content_r mt80">
-					<div class="item item_4">
-						<h3 class="center_tit_mini">身につく技術</h3>
-						<p>1.最初は簡単なデータ入力等のITサポート事務や先輩のサポート業務からお任せしていきます。ゆくゆくは・SEのサポート業務、ヘルプデスク・アプリ開発・プログラミングや運用・大手ソーシャルゲームの動作テスト・インフラ運用、ネットワーク構築　等スキルや経験、キャリアプランに沿って様々な仕事に携われスキルを身に付けられます。<br>2.基礎から学べる研修がありますので、入社後はスキルに応じた業務から始められます。また資格取得に向けた研修もご用意してますので、自分の目指す方向性に向けて成長を感じていけます。少しずつできることを増やしながら知識・スキルを高めていき、現場での実業務にも活かせます。</p>
-					</div>
-
-					<div class="item item_4">
-						<img src="../assets/images/page/gc_img02.jpg" class="radiused" alt="">
-					</div>
-				</div>
-			</div>
-
-
-			<div class="js_intro">
-				<div class="tit">
-					<h3 class="jp">事業部を紹介してください！</h3>
-					<p class="eng">FROM MANAGER</p>
-				</div>
-
-				<div class="inner">
-					<div class="img_side">
-						<div class="ms_hm">
-							<img src="../assets/images/page/manager.png" class="" alt="事業部長">
-						</div>
-						<p>ES事業部 部長</p>
-					</div>
-					<div class="text_side">
-						<p>
-							アイフリークグループでは【誰かをhappyにする事で、自分もhappyになる　想いを伝えて世界を変える】をメッセージとして掲げています。happyになる時は人によって違うと思いますが、それぞれがhappyを感じれるようACS事業部では可能な限りサポートさせて頂きます。<br>是非ご応募下さい。お待ちしております。
-						</p>
-					</div>
-				</div>
-				<img src="../assets/images/page/js_ccs_bg.jpg" class="js_bg_img" alt="">
-			</div>
-
-
-			<div class="wrap mt80">
+		<div class="page_section page_section__pink">
+			<div class="wrap">
 				<div class="big-title center">
-					<h2 class="jp">所属社員インタビュー</h2>
-					<p class="eng">STAFF INTERVIEW</p>
+					<h2 class="jp">エントリフォーム</h2>
+					<p class="eng">ENTRY FORM</p>
 				</div>
 
-				<div class="belong_staffs">
-					<div class="item">
-						<div class="img">
-							<img src="../assets/images/page/int_thumb10.jpg" alt="">
+				<div class="bg-white">
+					<p class="mb20 text-center">必要事項をご記入の上、下記確認ボタンを押して下さい。</p>
+
+					<form action="" method="post" enctype="multipart/form-data">
+						<table class="contact_table">
+							<tbody>
+								<tr>
+									<th>
+										<div class="hissu_cell">お名前<span class="hissu">必須</span></div>
+									</th>
+									<td>
+										<input type="text" name="namae" class="c-input w60p" placeholder="例）山田 太郎" value="<?php echo htmlspecialchars($_POST['namae'], ENT_QUOTES, 'UTF-8'); ?>">
+										<?php if ($error['namae'] == 'blank') : ?>
+											<span class="help-block">お名前を入力してください。</span>
+										<?php endif; ?>
+									</td>
+								</tr>
+
+								<tr>
+									<th>
+										<div class="hissu_cell">ふりがな<span class="hissu">必須</span></div>
+									</th>
+									<td>
+										<input type="text" id="kana" name="kana" class="c-input" placeholder="例）やまだ たろう" value="<?php echo htmlspecialchars($_POST['kana'], ENT_QUOTES, 'UTF-8'); ?>">
+										<?php if ($error['kana'] == 'blank') : ?>
+											<span class="help-block">ふりがなを入力してください。</span>
+										<?php endif; ?>
+									</td>
+								</tr>
+
+								<tr>
+									<th>
+										<div class="hissu_cell">メールアドレス<span class="hissu">必須</span></div>
+									</th>
+									<td>
+										<input type="email" data-type="email" name="email" class="c-input" placeholder="例）taro@domain.jp" value="<?php echo htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8'); ?>">
+										<?php if ($error['email'] == 'blank') : ?>
+											<span class="help-block">メールアドレスを入力してください。</span>
+										<?php elseif ($error['email'] == 'error') : ?>
+											<span class="help-block">メールアドレスが不正です。</span>
+										<?php endif; ?>
+									</td>
+								</tr>
+
+								<tr>
+									<th>
+										<div class="hissu_cell">メールアドレス（確認用）<span class="hissu">必須</span></div>
+									</th>
+									<td>
+										<input type="email" data-type="email" name="confirm_email" class="c-input" placeholder="例）taro@domain.jp" value="<?php echo htmlspecialchars($_POST['confirm_email'], ENT_QUOTES, 'UTF-8'); ?>">
+										<?php if ($error['confirm_email'] == 'blank') : ?>
+											<span class="help-block">メールアドレス（確認用）を入力してください。</span>
+										<?php elseif ($error['confirm_email'] == 'diff') : ?>
+											<span class="help-block">メールアドレスが一致しません。</span>
+										<?php endif; ?>
+									</td>
+								</tr>
+
+								<tr>
+									<th>
+										<div class="hissu_cell">電話番号<span class="hissu">必須</span></div>
+									</th>
+									<td>
+										<input type="tel" name="tel" class="c-input w60p" placeholder="例）012-345-6789" value="<?php echo htmlspecialchars($_POST['tel'], ENT_QUOTES, 'UTF-8'); ?>">
+										<?php if ($error['tel'] == 'blank') : ?>
+											<span class="help-block">電話番号を入力してください。</span>
+										<?php endif; ?>
+									</td>
+								</tr>
+
+								<tr>
+									<th>希望事業部<br>※複数選択可</th>
+									<td>
+										<div class="c-radio-list">
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="1">
+													CCS事業部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="2">
+													CES事業部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="3">
+													GC事業部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="4">
+													CRA事業部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="5">
+													FTC事業部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="6">
+													DS事業部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="7">
+													ACS事業部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="8">
+													ES事業部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="9">
+													チャレット部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="10">
+													アプリ部
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="division" value="11">
+													管理部
+												</label>
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<th>希望職種<br>※複数選択可</th>
+									<td>
+										<div class="c-radio-list">
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="occupation" value="1">
+													エンジニア
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="occupation" value="2">
+													営業
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="occupation" value="3">
+													デザイナー
+												</label>
+											</div>
+
+											<div class="c-radio-list__item">
+												<label>
+													<input type="checkbox" name="occupation" value="4">
+													営業サポート・事務
+												</label>
+											</div>
+										</div>
+									</td>
+								</tr>
+
+								<tr>
+									<th>メッセージ</th>
+									<td>
+										<textarea class="c-textarea" id="sonota" rows="5" name="sonota"><?php echo htmlspecialchars($_POST['sonota'], ENT_QUOTES, 'UTF-8'); ?></textarea>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+
+						<div class="privacyCheck">
+							<h5>個人情報のお取り扱いについて</h5>
+							<p>本入力フォームおよびメールでご連絡頂きました、お客様の個人情報につきましては、厳重に管理を行っております。<br>
+							法令等に基づき正規の手続きによって司法捜査機関による開示要求が行われた場合を除き、第三者に開示もしくは提供することはございません。</p>
+							<div class="accept"><label><input type="checkbox" name="accept" id="accept" value="同意する"<?php if($_POST['accept'] == '同意する') { echo ' checked';} ?>><span>個人情報のお取り扱いに同意する</span></label></div>
+							<?php if ($error['accept'] == 'blank') : ?>
+								<span class="help-block">同意は必須です。</span>
+							<?php endif; ?>
 						</div>
-						<div class="inner">
-							<h3 class="name">K.I.</h3>
-							<p>ES事業部 / 営業事務</p>
-							<p>入社4年目</p>
+
+						<div class="form-group form-btn">
+							<div class="input-zone">
+								<input id="btn_confirm" type="submit" value="送信" class="btn-confirm">
+							</div>
 						</div>
-						<a href="../interview/staff10.html" class="float_link"></a>
-					</div>
+					</form>
 				</div>
 
-				<div class="ws_bottoms">
-					<a href="../recruitment/" class="btn-red">募集要項<i class="fas fa-angle-right"></i></a>
-					<a href="./" class="btn-red">一覧に戻る<i class="fas fa-angle-right"></i></a>
-				</div>
+
 			</div>
 		</div>
 
@@ -309,49 +420,22 @@
 	<div id="js-loader" class="loader"></div>
 
 
-	<script type="text/javascript">
-		//news slider
-		var slider1 = new Swiper ('.top_interview_slider', {
-			slidesPerView: 2,
-			spaceBetween: 16,
-			watchSlidesVisibility: !0,
-			loop: false,
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev"
-			},
-			breakpoints: {
-				768: {
-					spaceBetween: 20,
-					slidesPerView: 1.5
-				},
-				1e3: {
-					spaceBetween: 24,
-					slidesPerView: 4.2
-				}
-			},
+	<script>
+		$(window).on('load', function() {
+			_confirmCheck();
 		});
-	</script>
-
-
-	<script type="text/javascript">
-		$(function() {
-			var animationFlag = true;
-			$(window).scroll(function(){
-				$(".count_num").each(function(){
-					var position = $(this).offset().top;
-					var scroll = $(window).scrollTop();
-					var windowHeight = $(window).height();
-					if (scroll > position - windowHeight + windowHeight/4){
-					if(animationFlag) {
-							animationFlag = false;
-							$('#count1').animateNumber({ number: 20}, 900);
-							$('#count2').animateNumber({ number: 700}, 900);
-						}
-					}
-				});
-			});
+		$("#accept").change(function(){
+			_confirmCheck();
 		});
+		function _confirmCheck(){
+			if($("#accept").prop('checked')){
+				$("#btn_confirm").prop("disabled", false);
+				$("#btn_confirm").addClass("hoverOn");
+			} else {
+				$("#btn_confirm").prop("disabled", true);
+				$("#btn_confirm").removeClass("hoverOn");
+			}
+		}
 	</script>
 
 
