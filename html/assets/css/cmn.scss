@@ -5070,10 +5070,17 @@ Under PageTitle
 		@include over_tab {
 			width: 52%;
 		}
+		@include sp {
+			width: 100%;
+			padding: 0;
+			border: none;
+		}
 		.item {
 			width: 100%;
-			@include flex(flex-start, space-between);
 			position: relative;
+			@include over_sp {
+				@include flex(flex-start, space-between);
+			}
 			&:not(:last-child) {
 				padding-bottom: 32px;
 				&::after {
@@ -5087,8 +5094,25 @@ Under PageTitle
 					background-color: $red;
 				}
 			}
+			&:last-child {
+				@include sp {
+					&::after {
+						content: "";
+						display: block;
+						width: 1px;
+						height: calc(100% - 40px);
+						position: absolute;
+						left: 10px;
+						top: 40px;
+						background-color: $red;
+					}
+				}
+			}
 			.leftSide {
 				width: 140px;
+				@include sp {
+					width: 100%;
+				}
 				.step {
 					width: 100%;
 					text-align: center;
@@ -5101,31 +5125,51 @@ Under PageTitle
 				.tit {
 					margin-top: 8px;
 					padding-left: 24px;
+					@include sp {
+						margin-top: 18px;
+						padding-left: 40px;
+					}
 				}
 			}
 			.inner {
 				width: calc(100% - 180px);
+				@include sp {
+					width: 100%;
+					padding: 16px 0 0 40px;
+				}
 			}
 		}
 	}
 	.lesson_disc {
 		width: 40%;
 		padding-top: 32px;
+		@include sp {
+			width: 100%;
+			padding-top: 56px;
+		}
 	}
 }
 .welf_box {
-	padding: 40px;
+	padding: 32px 40px;
 	background-color: white;
 	border: 1px $gray solid;
+	@include sp {
+		padding: 24px;
+	}
 }
 .welf_tit {
 	font-size: 1.8rem;
 	font-weight: bold;
 	margin-bottom: 10px;
+	@include sp {
+		text-align: center;
+	}
 }
 .allowance {
-	@include flex;
 	width: 100%;
+	@include over_sp {
+		@include flex;
+	}
 	dt {
 		width: 100px;
 		height: 32px;
@@ -5134,23 +5178,59 @@ Under PageTitle
 		background-color: $red;
 		font-weight: bold;
 		border-radius: 4px;
+		@include sp {
+			width: 100%;
+		}
 	}
 	dd {
 		width: calc(100% - 110px);
 		font-size: 1.8rem;
 		color: $red;
 		font-weight: bold;
+		@include sp {
+			width: 100%;
+			margin-top: 8px;
+			font-size: 1.5rem;
+		}
 	}
 }
 .welfares {
 	width: 100%;
-	@include over_tab {
+	@include over_sp {
 		@include flex;
 	}
 	.welf_box {
-		@include over_tab {
+		@include over_sp {
 			width: 32%;
-			height: 240px;
+		}
+		@include sp {
+			&:not(:last-child) {
+				margin-bottom: 24px;
+			}
+		}
+		.welfare_il {
+			width: 100%;
+			height: 100px;
+			padding: 0 0 24px;
+			.welf_il {
+				display: block;
+				height: 100%;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+.welfare_il {
+	background-color: white;
+	width: 100%;
+	@include sp {
+		height: 100px;
+	}
+	.welf_il {
+		@include sp {
+			display: block;
+			height: 100%;
+			margin: 0 auto;
 		}
 	}
 }

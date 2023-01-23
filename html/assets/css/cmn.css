@@ -4436,12 +4436,19 @@ Under PageTitle
     @media (min-width: 821px) {
       .welf_content .lesson_flow {
         width: 52%; } }
+    @media (max-width: 559.9px) {
+      .welf_content .lesson_flow {
+        width: 100%;
+        padding: 0;
+        border: none; } }
     .welf_content .lesson_flow .item {
       width: 100%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
       position: relative; }
+      @media (min-width: 560px) {
+        .welf_content .lesson_flow .item {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between; } }
       .welf_content .lesson_flow .item:not(:last-child) {
         padding-bottom: 32px; }
         .welf_content .lesson_flow .item:not(:last-child)::after {
@@ -4453,8 +4460,21 @@ Under PageTitle
           left: 10px;
           top: 40px;
           background-color: #E5004F; }
+      @media (max-width: 559.9px) {
+        .welf_content .lesson_flow .item:last-child::after {
+          content: "";
+          display: block;
+          width: 1px;
+          height: calc(100% - 40px);
+          position: absolute;
+          left: 10px;
+          top: 40px;
+          background-color: #E5004F; } }
       .welf_content .lesson_flow .item .leftSide {
         width: 140px; }
+        @media (max-width: 559.9px) {
+          .welf_content .lesson_flow .item .leftSide {
+            width: 100%; } }
         .welf_content .lesson_flow .item .leftSide .step {
           width: 100%;
           text-align: center;
@@ -4470,27 +4490,47 @@ Under PageTitle
         .welf_content .lesson_flow .item .leftSide .tit {
           margin-top: 8px;
           padding-left: 24px; }
+          @media (max-width: 559.9px) {
+            .welf_content .lesson_flow .item .leftSide .tit {
+              margin-top: 18px;
+              padding-left: 40px; } }
       .welf_content .lesson_flow .item .inner {
         width: calc(100% - 180px); }
+        @media (max-width: 559.9px) {
+          .welf_content .lesson_flow .item .inner {
+            width: 100%;
+            padding: 16px 0 0 40px; } }
   .welf_content .lesson_disc {
     width: 40%;
     padding-top: 32px; }
+    @media (max-width: 559.9px) {
+      .welf_content .lesson_disc {
+        width: 100%;
+        padding-top: 56px; } }
 
 .welf_box {
-  padding: 40px;
+  padding: 32px 40px;
   background-color: white;
   border: 1px #979797 solid; }
+  @media (max-width: 559.9px) {
+    .welf_box {
+      padding: 24px; } }
 
 .welf_tit {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 10px; }
+  @media (max-width: 559.9px) {
+    .welf_tit {
+      text-align: center; } }
 
 .allowance {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%; }
+  @media (min-width: 560px) {
+    .allowance {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; } }
   .allowance dt {
     width: 100px;
     height: 32px;
@@ -4501,23 +4541,53 @@ Under PageTitle
     background-color: #E5004F;
     font-weight: bold;
     border-radius: 4px; }
+    @media (max-width: 559.9px) {
+      .allowance dt {
+        width: 100%; } }
   .allowance dd {
     width: calc(100% - 110px);
     font-size: 1.8rem;
     color: #E5004F;
     font-weight: bold; }
+    @media (max-width: 559.9px) {
+      .allowance dd {
+        width: 100%;
+        margin-top: 8px;
+        font-size: 1.5rem; } }
 
 .welfares {
   width: 100%; }
-  @media (min-width: 821px) {
+  @media (min-width: 560px) {
     .welfares {
       display: flex;
       align-items: center;
       justify-content: space-between; } }
-  @media (min-width: 821px) {
+  @media (min-width: 560px) {
     .welfares .welf_box {
-      width: 32%;
-      height: 240px; } }
+      width: 32%; } }
+  @media (max-width: 559.9px) {
+    .welfares .welf_box:not(:last-child) {
+      margin-bottom: 24px; } }
+  .welfares .welf_box .welfare_il {
+    width: 100%;
+    height: 100px;
+    padding: 0 0 24px; }
+    .welfares .welf_box .welfare_il .welf_il {
+      display: block;
+      height: 100%;
+      margin: 0 auto; }
+
+.welfare_il {
+  background-color: white;
+  width: 100%; }
+  @media (max-width: 559.9px) {
+    .welfare_il {
+      height: 100px; } }
+  @media (max-width: 559.9px) {
+    .welfare_il .welf_il {
+      display: block;
+      height: 100%;
+      margin: 0 auto; } }
 
 /**************
 募集要項
