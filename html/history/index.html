@@ -23,6 +23,27 @@
 
 	<script type="text/javascript" src="../assets/js/jquery.animateNumber.min.js"></script>
 
+	<script type="text/javascript">
+		window.addEventListener('DOMContentLoaded', () => {
+
+			const observer = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					const id = entry.target.getAttribute('id');
+					if (entry.intersectionRatio > 0) {
+						document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+		      } else {
+		        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+		      }
+				});
+			});
+
+			// Track all sections that have an `id` applied
+			document.querySelectorAll('section[id]').forEach((section) => {
+			observer.observe(section);
+			});
+		});
+	</script>
+
 </head>
 
 <body>
@@ -99,10 +120,87 @@
 	<main id="main_wrap" role="main">
 
 		<div class="page_section">
-			<div class="wrap">
-				<div class="underconst">
-					<p>準備中です</p>
+			<div class="history_container">
+
+				<div class="rightColumn">
+					<div id="historyContent">
+						<section id="hc01" class="anchor">
+							<div class="history_inner">
+								<div class="history_tit">
+									<p class="eng">history 01</p>
+									<h3 class="jp">創業期</h3>
+								</div>
+
+								<div class="history_img">
+
+								</div>
+								<p></p>
+							</div>
+						</section>
+
+
+						<section id="hc02" class="anchor">
+							<h2><img src="../assets/images/page/hc_tit01.png" class="hc_tit01" alt="健康診断対応（代行）のご案内"></h2>
+							<p>ケイ・ティ・メディカルでは、健康診断に伴う関連業務を一括して受託しています。<br><br>健康診断の日程調整や費用の精算、そして健康診断結果のデータ管理などをアウトソーシングすることで、企業と従業員の負担軽減を図りませんか。ケイ・ティ・メディカルでは、独自の健診機関ネットワークや事務センターを活かし、企業様の課題やご要望に合った、きめ細やかな対応を実現可能としています。</p>
+							<div class="mid_img">
+								<img src="../assets/images/page/hc_img01.jpg" alt="健康診断対応">
+							</div>
+						</section>
+
+
+						<section id="hc03" class="anchor">
+							<h2><img src="../assets/images/page/hc_tit01.png" class="hc_tit01" alt="健康診断対応（代行）のご案内"></h2>
+							<p>ケイ・ティ・メディカルでは、健康診断に伴う関連業務を一括して受託しています。<br><br>健康診断の日程調整や費用の精算、そして健康診断結果のデータ管理などをアウトソーシングすることで、企業と従業員の負担軽減を図りませんか。ケイ・ティ・メディカルでは、独自の健診機関ネットワークや事務センターを活かし、企業様の課題やご要望に合った、きめ細やかな対応を実現可能としています。</p>
+							<div class="mid_img">
+								<img src="../assets/images/page/hc_img01.jpg" alt="健康診断対応">
+							</div>
+						</section>
+
+
+						<section id="hc04" class="anchor">
+							<h2><img src="../assets/images/page/hc_tit01.png" class="hc_tit01" alt="健康診断対応（代行）のご案内"></h2>
+							<p>ケイ・ティ・メディカルでは、健康診断に伴う関連業務を一括して受託しています。<br><br>健康診断の日程調整や費用の精算、そして健康診断結果のデータ管理などをアウトソーシングすることで、企業と従業員の負担軽減を図りませんか。ケイ・ティ・メディカルでは、独自の健診機関ネットワークや事務センターを活かし、企業様の課題やご要望に合った、きめ細やかな対応を実現可能としています。</p>
+							<div class="mid_img">
+								<img src="../assets/images/page/hc_img01.jpg" alt="健康診断対応">
+							</div>
+						</section>
+					</div>
 				</div>
+
+
+				<aside class="leftColumn">
+					<nav class="sidebar-sticky">
+						<div class="sidebar-sticky-in">
+							<ul class="side_links">
+								<li>
+									<a href="#hc01">
+										<span class="num">01</span>
+										<span class="txt">創業期</span>
+									</a>
+								</li>
+								<li>
+									<a href="#hc02">
+										<span class="num">02</span>
+										<span class="txt">創業から上場までの<br>成長期</span>
+									</a>
+								</li>
+								<li>
+									<a href="#hc03">
+										<span class="num">03</span>
+										<span class="txt">上場後の事業内容の<br>編纂</span>
+									</a>
+								</li>
+								<li>
+									<a href="#hc04">
+										<span class="num">04</span>
+										<span class="txt">現在まで</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</aside>
+
 			</div>
 		</div>
 
