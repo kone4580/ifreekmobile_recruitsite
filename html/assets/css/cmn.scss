@@ -1905,8 +1905,8 @@ Common Parts
 
 /* Others */
 .anchor {
-	padding-top: 100px;
-	margin-top: -100px;
+	padding-top: 70px;
+	margin-top: -70px;
 	@include less_tab {
 		padding-top: 80px;
 		margin-top: -80px;
@@ -2993,7 +2993,7 @@ Under PageTitle
           font-size: 3rem;
         }
         @include sp {
-          font-size: 2.2rem;
+          font-size: 1.6rem;
 					font-weight: 700;
         }
       }
@@ -3003,6 +3003,10 @@ Under PageTitle
 				line-height: 1;
 				@include less_tab {
 					font-size: 2rem;
+				}
+				@include sp {
+					font-size: 4vw;
+					margin-bottom: 8px;
 				}
 			}
     }
@@ -3251,19 +3255,22 @@ Under PageTitle
 **************/
 .history_container {
 	width: 100%;
-	padding-left: 6vw;
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	@include over_tab {
-		display: flex;
-		flex-direction: row-reverse;
-		flex-wrap: wrap;
-		justify-content: space-between;
+		padding-left: 6vw;
+	}
+	@include less_tab {
+		flex-direction: column-reverse;
 	}
 	.leftColumn {
 		@include over_tab {
 			width: 240px;
 		}
 		@include less_tab {
-			margin-top: 32px;
+			margin-bottom: 40px;
 		}
 	}
 	.rightColumn {
@@ -3284,14 +3291,21 @@ Sidebar
 			top: 132px;
 		}
 	}
-	@include less_tab {
-		display: none;
-	}
 }
 .side_links {
+	@include less_tab {
+		@include flex(center, center);
+		flex-wrap: wrap;
+		width: 100%;
+	}
 	li {
 		&:not(:last-child) {
-			margin-bottom: 10px;
+			@include over_tab {
+				margin-bottom: 10px;
+			}
+			@include less_tab {
+				margin-right: 5px;
+			}
 		}
 		a {
 			@include flex(center, space-between);
@@ -3301,10 +3315,28 @@ Sidebar
 			color: #999;
 			font-size: 1.4rem;
 			line-height: 1.5;
+			@include less_tab {
+				@include flex(center, center);
+				height: 24px;
+				width: auto;
+				padding: 0;
+				font-size: 1.1rem;
+				border: 1px $red solid;
+				border-radius: 4px;
+			}
 			.num {
 				@include eng(2rem);
 				width: 48px;
 				@include flex(center, flex-start);
+				@include less_tab {
+					font-size: 1.1rem;
+					width: 24px;
+					background-color: $red;
+					color: white;
+					height: 24px;
+					border-radius: 4px 0 0 4px;
+					justify-content: center;
+				}
 			}
 			.txt {
 				width: calc(100% - 48px);
@@ -3312,6 +3344,10 @@ Sidebar
 				@include flex(center, flex-start);
 				padding-left: 16px;
 				position: relative;
+				@include less_tab {
+					width: auto;
+					padding: 0 12px;
+				}
 				&::before {
 					display: block;
 					content: "";
@@ -3345,14 +3381,68 @@ Sidebar
 	}
 }
 .history_inner {
-	padding: 40px 0 40px 64px;
+	padding: 40px 0 64px 64px;
 	background-color: $bgPink;
+	@include less_tab {
+		padding: 32px 0 32px 32px;
+	}
 }
 .history_img {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
 	width: 100%;
-	height: 340px;
-	background-color: #ccc;
 	margin: 40px 0;
+	@include over_sp {
+		aspect-ratio: 10 / 4;
+	}
+	@include sp {
+		height: 240px;
+	}
+  &::before {
+    background: $red;
+    bottom: 0;
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  &::after {
+    background: $bgPink;
+    bottom: 0;
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
+  &.moved {
+    animation: img-opacity 1s cubic-bezier(.4, 0, .2, 1);
+    &::before {
+      animation: img-animation .5s cubic-bezier(.4, 0, .2, 1) .5s forwards;
+    }
+    &::after {
+      animation: img-animation .5s cubic-bezier(.4, 0, .2, 1) forwards;
+    }
+  }
+	img {
+		@include centerItem;
+	}
+}
+@keyframes img-opacity {
+  0% {
+    opacity: 0;
+  }
+}
+@keyframes img-animation {
+  100% {
+    transform: translateX(100%);
+  }
 }
 .history_tit {
 	.eng {
@@ -3361,6 +3451,27 @@ Sidebar
 	.jp {
 		font-size: 3.2rem;
 		font-weight: bold;
+		@include sp {
+			font-size: 2rem;
+		}
+	}
+}
+.history_text {
+	padding-right: 8vw;
+	opacity: 0;
+	&.moved {
+		animation: fadeIn .4s $easeInOutSine forwards;
+	}
+	h4 {
+		font-size: 2.4rem;
+		line-height: 1.6;
+		margin-bottom: 20px;
+		@include sp {
+			font-size: 1.8rem;
+		}
+		&:not(:first-child) {
+			margin-top: 40px;
+		}
 	}
 }
 

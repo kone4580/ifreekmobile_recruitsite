@@ -1664,8 +1664,8 @@ Common Parts
 
 /* Others */
 .anchor {
-  padding-top: 100px;
-  margin-top: -100px; }
+  padding-top: 70px;
+  margin-top: -70px; }
   @media (max-width: 820.9px) {
     .anchor {
       padding-top: 80px;
@@ -2624,7 +2624,7 @@ Under PageTitle
             font-size: 3rem; } }
         @media (max-width: 559.9px) {
           .pageTitle .title_inner .text-area .jp {
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 700; } }
       .pageTitle .title_inner .text-area .eng {
         color: white;
@@ -2637,6 +2637,10 @@ Under PageTitle
         @media (max-width: 820.9px) {
           .pageTitle .title_inner .text-area .eng {
             font-size: 2rem; } }
+        @media (max-width: 559.9px) {
+          .pageTitle .title_inner .text-area .eng {
+            font-size: 4vw;
+            margin-bottom: 8px; } }
 
 .title_image {
   position: absolute;
@@ -2836,19 +2840,22 @@ Under PageTitle
 **************/
 .history_container {
   width: 100%;
-  padding-left: 6vw; }
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between; }
   @media (min-width: 821px) {
     .history_container {
-      display: flex;
-      flex-direction: row-reverse;
-      flex-wrap: wrap;
-      justify-content: space-between; } }
+      padding-left: 6vw; } }
+  @media (max-width: 820.9px) {
+    .history_container {
+      flex-direction: column-reverse; } }
   @media (min-width: 821px) {
     .history_container .leftColumn {
       width: 240px; } }
   @media (max-width: 820.9px) {
     .history_container .leftColumn {
-      margin-top: 32px; } }
+      margin-bottom: 40px; } }
   @media (min-width: 821px) {
     .history_container .rightColumn {
       width: calc(100% - 300px); } }
@@ -2863,12 +2870,20 @@ Sidebar
     top: 100px; }
     .admin-bar .sidebar-sticky {
       top: 132px; } }
-@media (max-width: 820.9px) {
-  .sidebar-sticky {
-    display: none; } }
 
-.side_links li:not(:last-child) {
-  margin-bottom: 10px; }
+@media (max-width: 820.9px) {
+  .side_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%; } }
+@media (min-width: 821px) {
+  .side_links li:not(:last-child) {
+    margin-bottom: 10px; } }
+@media (max-width: 820.9px) {
+  .side_links li:not(:last-child) {
+    margin-right: 5px; } }
 .side_links li a {
   display: flex;
   align-items: center;
@@ -2879,6 +2894,17 @@ Sidebar
   color: #999;
   font-size: 1.4rem;
   line-height: 1.5; }
+  @media (max-width: 820.9px) {
+    .side_links li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+      width: auto;
+      padding: 0;
+      font-size: 1.1rem;
+      border: 1px #E5004F solid;
+      border-radius: 4px; } }
   .side_links li a .num {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: 2rem;
@@ -2889,6 +2915,15 @@ Sidebar
     display: flex;
     align-items: center;
     justify-content: flex-start; }
+    @media (max-width: 820.9px) {
+      .side_links li a .num {
+        font-size: 1.1rem;
+        width: 24px;
+        background-color: #E5004F;
+        color: white;
+        height: 24px;
+        border-radius: 4px 0 0 4px;
+        justify-content: center; } }
   .side_links li a .txt {
     width: calc(100% - 48px);
     height: 100%;
@@ -2897,6 +2932,10 @@ Sidebar
     justify-content: flex-start;
     padding-left: 16px;
     position: relative; }
+    @media (max-width: 820.9px) {
+      .side_links li a .txt {
+        width: auto;
+        padding: 0 12px; } }
     .side_links li a .txt::before {
       display: block;
       content: "";
@@ -2918,15 +2957,67 @@ Sidebar
       margin-bottom: 40px; } }
 
 .history_inner {
-  padding: 40px 0 40px 64px;
+  padding: 40px 0 64px 64px;
   background-color: #FFF1F1; }
+  @media (max-width: 820.9px) {
+    .history_inner {
+      padding: 32px 0 32px 32px; } }
 
 .history_img {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
   width: 100%;
-  height: 340px;
-  background-color: #ccc;
   margin: 40px 0; }
+  @media (min-width: 560px) {
+    .history_img {
+      aspect-ratio: 10 / 4; } }
+  @media (max-width: 559.9px) {
+    .history_img {
+      height: 240px; } }
+  .history_img::before {
+    background: #E5004F;
+    bottom: 0;
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1; }
+  .history_img::after {
+    background: #FFF1F1;
+    bottom: 0;
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2; }
+  .history_img.moved {
+    animation: img-opacity 1s cubic-bezier(0.4, 0, 0.2, 1); }
+    .history_img.moved::before {
+      animation: img-animation 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards; }
+    .history_img.moved::after {
+      animation: img-animation 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+  .history_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; }
 
+@keyframes img-opacity {
+  0% {
+    opacity: 0; } }
+@keyframes img-animation {
+  100% {
+    transform: translateX(100%); } }
 .history_tit .eng {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
@@ -2936,6 +3027,24 @@ Sidebar
 .history_tit .jp {
   font-size: 3.2rem;
   font-weight: bold; }
+  @media (max-width: 559.9px) {
+    .history_tit .jp {
+      font-size: 2rem; } }
+
+.history_text {
+  padding-right: 8vw;
+  opacity: 0; }
+  .history_text.moved {
+    animation: fadeIn 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards; }
+  .history_text h4 {
+    font-size: 2.4rem;
+    line-height: 1.6;
+    margin-bottom: 20px; }
+    @media (max-width: 559.9px) {
+      .history_text h4 {
+        font-size: 1.8rem; } }
+    .history_text h4:not(:first-child) {
+      margin-top: 40px; }
 
 /**************
 仕事内容
