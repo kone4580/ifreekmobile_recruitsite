@@ -116,7 +116,7 @@
 										<div class="hissu_cell">お名前<span class="hissu">必須</span></div>
 									</th>
 									<td>
-										<input type="text" name="namae" class="c-input w60p" placeholder="例）山田 太郎" value="<?php echo htmlspecialchars($_POST['namae'], ENT_QUOTES, 'UTF-8'); ?>">
+										<input type="text" name="namae" class="c-input w60p" placeholder="例）山田 太郎" value="">
 										<?php if ($error['namae'] == 'blank') : ?>
 											<span class="help-block">お名前を入力してください。</span>
 										<?php endif; ?>
@@ -352,8 +352,8 @@
 		<div class="link_box">
 			<img src="../assets/images/common/environment_bg.jpg" alt="お問い合わせ">
 			<div class="inner">
-				<p class="eng">WELFARE / TRAINING</p>
-				<p class="jp">福利厚生・研修制度</p>
+				<p class="eng">Employee Benefits</p>
+				<p class="jp">働く環境・福利厚生・研修制度</p>
 				<span class="arrow"><i class="fas fa-angle-right"></i></span>
 			</div>
 			<a href="../welfare/" class="float_link"></a>
