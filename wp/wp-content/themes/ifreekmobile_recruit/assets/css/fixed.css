@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ma5{margin:5px;}
+.ma10{margin:10px;}
+.ma15{margin:15px;}
+.ma20{margin:20px;}
+.ma25{margin:25px;}
+.ma30{margin:30px;}
+
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt25{margin-top:25px;}
+.mt30{margin-top:30px;}
+.mt40{margin-top:40px;}
+.mt50{margin-top:50px;}
+.mt70{margin-top:70px;}
+.mt80{margin-top:80px;}
+.mt100{margin-top:100px;}
+.mt200{margin-top:200px;}
+
+.mr0{margin-right:0;}
+.mr5{margin-right:5px;}
+.mr10{margin-right:10px;}
+.mr12{margin-right:12px;}
+.mr15{margin-right:15px;}
+.mr18{margin-right:18px;}
+.mr20{margin-right:20px;}
+.mr25{margin-right:25px;}
+.mr30{margin-right:30px;}
+.mr35{margin-right:35px;}
+.mr40{margin-right:40px;}
+.mr45{margin-right:45px;}
+.mr50{margin-right:50px;}
+
+.mb0{margin-bottom:0;}
+.mb4{margin-bottom:4px;}
+.mb5{margin-bottom:5px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+.mb20{margin-bottom:20px;}
+.mb25{margin-bottom:25px;}
+.mb30{margin-bottom:30px;}
+.mb35{margin-bottom:35px;}
+.mb40{margin-bottom:40px;}
+.mb50{margin-bottom:50px;}
+.mb80{margin-bottom:80px;}
+
+.ml5{margin-left:5px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+.ml20{margin-left:20px;}
+.ml25{margin-left:25px;}
+.ml30{margin-left:30px;}
+.ml40{margin-left:40px;}
+.ml50{margin-left:50px;}
+
+.ht80{height:80px;}
+.ht90{height:90px;}
+.ht100{height:100px;}
+.ht110{height:110px;}
+.ht120{height:120px;}
+.ht150{height:150px;}
+.ht200{height:200px;}
+.ht250{height:250px;}
+.ht270{height:270px;}
+.ht270{height:280px;}
+.ht300{height:300px;}
+.ht380{height:380px;}
+.ht390{height:390px;}
+.ht400{height:400px;}
+.ht410{height:410px;}
+.ht420{height:420px;}
+.ht430{height:430px;}
+.ht440{height:440px;}
+.ht450{height:450px;}
+
+.pd20{padding:20px;}
+.pt0{padding-top:0;}
+.pt10{padding-top:10px;}
+.pt20{padding-top:20px;}
+.pt30{padding-top:30px;}
+.pt40{padding-top:40px;}
+.pb0{padding-bottom:0;}
+.pb10{padding-bottom:10px;}
+.pb20{padding-bottom:20px;}
+.pb30{padding-bottom:30px;}
+
+.fs20{font-size: 2rem;}
+.fs24{font-size: 2.4rem;}
+.fs32{font-size: 3.2rem;}
+
+@media (max-width: 768px) {
+	.ma5{margin:3px;}
+	.ma10{margin:5px;}
+	.ma15{margin:8px;}
+	.ma20{margin:10px;}
+	.ma25{margin:13px;}
+	.ma30{margin:15px;}
+
+	.mt5{margin-top:3px;}
+	.mt10{margin-top:10px;}
+	.mt15{margin-top:13px;}
+	.mt20{margin-top:18px;}
+	.mt25{margin-top:22px;}
+	.mt30{margin-top:24px;}
+	.mt40{margin-top:32px;}
+	.mt50{margin-top:36px;}
+	.mt70{margin-top:40px;}
+	.mt80{margin-top:40px;}
+	.mt100{margin-top:50px;}
+	.mt200{margin-top:100px;}
+
+	.mr0{margin-right:0;}
+	.mr5{margin-right:3px;}
+	.mr10{margin-right:5px;}
+	.mr12{margin-right:6px;}
+	.mr15{margin-right:8px;}
+	.mr20{margin-right:10px;}
+	.mr25{margin-right:13px;}
+	.mr30{margin-right:15px;}
+	.mr35{margin-right:18px;}
+	.mr40{margin-right:20px;}
+	.mr45{margin-right:23px;}
+	.mr50{margin-right:25px;}
+
+	.mb0{margin-bottom:0;}
+	.mb4{margin-bottom:2px;}
+	.mb5{margin-bottom:3px;}
+	.mb10{margin-bottom:5px;}
+	.mb15{margin-bottom:8px;}
+	.mb20{margin-bottom:10px;}
+	.mb25{margin-bottom:13px;}
+	.mb30{margin-bottom:15px;}
+	.mb35{margin-bottom:18px;}
+	.mb40{margin-bottom:20px;}
+	.mb50{margin-bottom:25px;}
+	.mb80{margin-bottom:40px;}
+
+	.ml5{margin-left:3px;}
+	.ml10{margin-left:5px;}
+	.ml15{margin-left:8px;}
+	.ml20{margin-left:10px;}
+	.ml25{margin-left:13px;}
+	.ml30{margin-left:15px;}
+	.ml40{margin-left:20px;}
+	.ml50{margin-left:25px;}
+
+	.pt40{padding-top:20px;}
+
+	.fs20{font-size: 1.6rem;}
+	.fs24{font-size: 1.8rem;}
+	.fs32{font-size: 2rem;}
+}
+
+.fl{float:left;}
+.fr{float:right;}
+
+.lh16 { line-height: 1.6; }
+.lh17 { line-height: 1.7; }
+
+.fs14{font-size:14px;}
+.ac{text-align:center;}
+.bd{font-weight:bold;}
+.text-center{text-align: center;}
+.text-right{text-align: right;}
+.img-block {max-width: 100%;}
+.mauto {margin-left: auto; margin-right: auto;}
+
+
+/* font pattern
+---------------------------------------------------------------------------*/
+
+.text1 {
+	font-size: 16px;
+	color: #da4553;
+	font-weight: bold;
+}
+
+.text2 {
+	font-weight: bold;
+	color: #0049ab;
+	font-size: 1.8rem;
+	letter-spacing: 0.05em;
+	line-height: 1.55;
+}
+
+.text3 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #DC009E;
+}
+
+.text4 {
+	font-size: 15px;
+	color: #004879;
+}
+
+.font-s {
+	color: #777;
+	font-size: 80%;
+}
+.font-l {
+	font-size: 136%;
+}

@@ -115,7 +115,9 @@
 							<h3 class="jp">コンテンツクリエーターサービス事業部</h3>
 							<p class="eng"><span>CCS</span>事業部</p>
 						</div>
-						<p class="inText">CCS事業部は、インフラ技術を中心としたITの技術力を提供しています。<br>私たちの日常生活で触れる機会が多いスマホアプリやWEBシステム、ソーシャルゲームなど、これらを動かすためにインフラエンジニアは絶対必要なんです！</p>
+						<p class="inText">
+							CCS事業部は、インフラ技術を中心としたITの技術力を提供しています。<br>私たちの日常生活で触れる機会が多いスマホアプリやWEBシステム、ソーシャルゲームなど、これらを動かすためにインフラエンジニアは絶対必要なんです！
+						</p>
 						<span class="arrow-gray"><i class="fas fa-angle-right"></i></span>
 					</div>
 					<a href="./ccs.html" class="float_link"></a>
@@ -438,6 +440,31 @@
 	$(window).on('load',function(){
 		$("#js-loader").fadeOut();
 	});
+	</script>
+	
+	<script type="text/javascript">
+		const text = document.querySelector(".job_list .eng");
+		const texts = text.textContent;
+		console.log(texts);
+		const alph = /^[a-zA-Z]*$/;
+
+		function matchTexts(e){
+			let textsArray = [];
+			text.textContent = "";
+			for (let i = 0; i < texts.split("").length; i++) {
+				const textT = texts.split("")[i];
+				if (textT.match(e)) {
+					textsArray.push('<span>' + textT + "</span>");
+				} else {
+					textsArray.push(textT);
+				}
+			}
+			const result = textsArray.join("");
+			text.innerHTML = result;
+		}
+
+		matchTexts(alph);
+		
 	</script>
 
 
