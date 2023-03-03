@@ -65,7 +65,7 @@
                             <dl class="jobItem">
                                 <dt>
                                     <?php
-                                    $terms = get_the_terms($post->ID, 'interview_division');
+                                    $terms = get_the_terms($post->ID, 'recruitment_division');
                                     if ($terms) :
                                         foreach ($terms as $term) {
                                             echo '<span>' . $term->name . '</span>';
