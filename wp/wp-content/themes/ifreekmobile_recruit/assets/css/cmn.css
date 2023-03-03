@@ -4672,6 +4672,52 @@ Sidebar
   transform: scale(1.08);
 }
 
+.job_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.job_links .btn-white {
+  width: 30%;
+  margin: 0 1%;
+  height: 56px;
+  border: 1px #E5004F solid;
+  background-color: white;
+  color: #E5004F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+@media (max-width: 559.9px) {
+  .job_links .btn-white {
+    padding: 10px 24px 10px 10px;
+    height: 48px;
+  }
+}
+.job_links .btn-white:hover {
+  background-color: #FFF1F1;
+  color: #E5004F;
+}
+.job_links .btn-white i {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -8px;
+}
+@media (max-width: 820.9px) {
+  .job_links .btn-white i {
+    margin-top: -7px;
+  }
+}
+@media (max-width: 559.9px) {
+  .job_links .btn-white i {
+    right: 8px;
+    margin-top: -5px;
+  }
+}
+
 .ws_bottoms {
   display: flex;
   align-items: center;

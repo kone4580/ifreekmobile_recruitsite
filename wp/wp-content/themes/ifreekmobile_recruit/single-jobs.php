@@ -196,10 +196,42 @@
 				</div>
 			<?php endif; wp_reset_postdata(); ?>
 
-			<div class="ws_bottoms">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>recruitment/" class="btn-red">募集要項<i class="fas fa-angle-right"></i></a>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/" class="btn-red">一覧に戻る<i class="fas fa-angle-right"></i></a>
-			</div>
+
+			<h3 class="title_with_line">この事業部で募集中の職種</h3>
+			<?php
+                $slug = $post->post_name;
+                $query = new WP_Query(array(
+                    'post_type' => 'recruitment',
+                    'taxonomy' => 'recruitment_division',
+                    'term' => $slug,
+                    'post_status' => 'publish',
+                    'posts_per_page' => 6,
+                    'orderby' => 'rand',
+                ));
+                if ($query->have_posts()):
+            ?>
+				<div class="job_links">
+					<?php while ($query->have_posts()) : $query->the_post(); ?>
+						<a href="<?php the_permalink(); ?>" class="btn-white">
+							<?php
+								$terms = get_the_terms($post->ID, 'recruitment_job');
+								if ($terms) :
+									foreach ($terms as $term) {
+										echo $term->name;
+									}
+								endif;
+							?>
+							<i class="fas fa-angle-right"></i>
+						</a>
+					<?php endwhile; ?>
+				</div>
+			<?php else : ?>
+				<div class="underconst">
+					<p>現在この事業部で募集中の職種はありません</p>
+				</div>
+			<?php endif; wp_reset_postdata(); ?>
+
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/" class="btn-red mauto mt50">一覧に戻る<i class="fas fa-angle-right"></i></a>
 		</div>
 	</div>
 

@@ -4672,6 +4672,23 @@ Sidebar
   transform: scale(1.08);
 }
 
+.job_links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.job_links .btn-white {
+  width: 30%;
+  margin: 0 1%;
+  height: 56px;
+  border: 1px #E5004F solid;
+  background-color: white;
+  color: #E5004F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ws_bottoms {
   display: flex;
   align-items: center;

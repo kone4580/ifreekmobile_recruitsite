@@ -218,6 +218,19 @@ function create_post_type()
         )
     );
 
+    register_taxonomy(
+        'recruitment_division',
+        'recruitment',
+        array(
+            'hierarchical' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'label' => '事業部',
+            'sigular_label' => '事業部',
+            'public' => true,
+            'show_ui' => true,
+        )
+    );
+
     // 事業部紹介
     register_post_type(
         'jobs',
@@ -283,6 +296,7 @@ function interview_category_meta_box_remove() {
     remove_meta_box( $id, $post_type, $position );
 }
 add_action( 'admin_menu', 'interview_category_meta_box_remove');
+
 function recruitment_category_meta_box_remove() {
     $id = 'recruitment_jobdiv';
     $post_type = 'recruitment';
@@ -290,4 +304,13 @@ function recruitment_category_meta_box_remove() {
     remove_meta_box( $id, $post_type, $position );
 }
 add_action( 'admin_menu', 'recruitment_category_meta_box_remove');
+
+function recruitment_divisin_meta_box_remove() {
+    $id = 'recruitment_divisiondiv';
+    $post_type = 'recruitment';
+    $position = 'side';
+    remove_meta_box( $id, $post_type, $position );
+}
+add_action( 'admin_menu', 'recruitment_divisin_meta_box_remove');
+
 

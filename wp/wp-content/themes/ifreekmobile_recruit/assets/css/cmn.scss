@@ -4057,6 +4057,41 @@ Sidebar
 		}
 	}
 }
+.job_links {
+	@include flex(center, center);
+	margin-top: 40px;
+	.btn-white {
+		width: 30%;
+		margin: 0 1%;
+		height: 56px;
+		border: 1px $red solid;
+		background-color: white;
+		color: $red;
+		@include flex(center, center);
+		position: relative;
+		@include sp {
+			padding: 10px 24px 10px 10px;
+			height: 48px;
+		}
+		&:hover {
+			background-color: $bgPink;
+			color: $red;
+		}
+		i {
+			position: absolute;
+			right: 16px;
+			top: 50%;
+			margin-top: -8px;
+			@include less_tab {
+				margin-top: -7px;
+			}
+			@include sp {
+				right: 8px;
+				margin-top: -5px;
+			}
+		}
+	}
+}
 .ws_bottoms {
 	@include flex;
 	margin: 80px auto 0;

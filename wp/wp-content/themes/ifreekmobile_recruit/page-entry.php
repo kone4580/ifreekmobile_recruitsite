@@ -1,4 +1,42 @@
-<?php get_header(); ?>
+<?php 
+session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_POST)) {
+        if ($_POST['namae'] == '') {
+            $error = [
+                'namae' => 'blank'
+            ];
+        }
+        if ($_POST['kana'] == '') {
+            $error['kana'] = 'blank';
+        }
+        if ($_POST['tel'] == '') {
+            $error['tel'] = 'blank';
+        }
+        if ($_POST['email'] == '') {
+            $error['email'] = 'blank';
+        }
+        if (!empty($_POST['email'])) {
+            if (!preg_match('|^[0-9a-z_./?-]+@([0-9a-z-]+\.)+[0-9a-z-]+$|', $_POST['email'])) {
+                $error['email'] = 'error';
+            }
+        }
+        if ($_POST['confirm_email'] == '') {
+            $error['confirm_email'] = 'blank';
+        }
+        if ($_POST['email'] != $_POST['confirm_email']) {
+            $error['confirm_email'] = 'diff';
+        }
+
+        if (empty($error)) {
+            $_SESSION['entry'] = $_POST;
+            header('Location: /entry/confirm/');
+            exit();
+        }
+    }
+}
+
+get_header(); ?>
 
 <div class="pageTitle">
     <div class="title_inner">
@@ -32,15 +70,227 @@
 
 
 <main id="main_wrap" role="main">
-
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="page_section">
-            <div class="wrap">
-                <?php the_content(); ?>
+    <div class="page_section page_section__pink">
+        <div class="wrap">
+            <div class="big-title center">
+                <h2 class="jp">エントリフォーム</h2>
+                <p class="eng">ENTRY FORM</p>
             </div>
+
+            <div class="bg-white">
+                <p class="mb20 text-center">必要事項をご記入の上、下記確認ボタンを押して下さい。</p>
+
+                <form action="" method="post" enctype="multipart/form-data">
+                    <table class="contact_table">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <div class="hissu_cell">お名前<span class="hissu">必須</span></div>
+                                </th>
+                                <td>
+                                    <input type="text" name="namae" class="c-input w60p" placeholder="例）山田 太郎" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['namae'], ENT_QUOTES, 'UTF-8'); } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                        if ($error['namae'] == 'blank') {
+                                            echo '<p class="help-block">お名前を入力してください。</p>';
+                                        }
+                                    } ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <div class="hissu_cell">ふりがな<span class="hissu">必須</span></div>
+                                </th>
+                                <td>
+                                    <input type="text" id="kana" name="kana" class="c-input" placeholder="例）やまだ たろう" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['kana'], ENT_QUOTES, 'UTF-8'); } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                        if ($error['kana'] == 'blank') {
+                                            echo '<p class="help-block">ふりがなを入力してください。</p>';
+                                        }
+                                    } ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <div class="hissu_cell">メールアドレス<span class="hissu">必須</span></div>
+                                </th>
+                                <td>
+                                    <input type="email" data-type="email" name="email" class="c-input" placeholder="例）taro@domain.jp" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8'); } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                        if ($error['email'] == 'blank') {
+                                            echo '<p class="help-block">メールアドレスを入力してください。</p>';
+                                        }
+                                    } ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <div class="hissu_cell">メールアドレス（確認用）<span class="hissu">必須</span></div>
+                                </th>
+                                <td>
+                                    <input type="email" data-type="email" name="confirm_email" class="c-input" placeholder="例）taro@domain.jp" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['confirm_email'], ENT_QUOTES, 'UTF-8'); } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                        if ($error['confirm_email'] == 'blank') {
+                                            echo '<p class="help-block">メールアドレス（確認用）を入力してください。</p>';
+                                        } elseif ($error['confirm_email'] == 'diff') {
+                                            echo '<p class="help-block">メールアドレスが一致しません。</p>';
+                                        }
+                                    } ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <div class="hissu_cell">電話番号<span class="hissu">必須</span></div>
+                                </th>
+                                <td>
+                                    <input type="tel" name="tel" class="c-input w60p" placeholder="例）012-345-6789" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['tel'], ENT_QUOTES, 'UTF-8'); } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                        if ($error['tel'] == 'blank') {
+                                            echo '<p class="help-block">電話番号を入力してください。</p>';
+                                        }
+                                    } ?>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>希望職種<br>※複数選択可</th>
+                                <td>
+                                    <div class="c-radio-list">
+                                        <?php
+                                        $terms = get_terms('recruitment_job');
+                                        foreach ($terms as $term) {
+                                            $job = $term->name;
+                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['job'])) { 
+                                                if(in_array($job, $_POST['job'])){
+                                                    echo '<div class="c-radio-list__item">
+                                                        <label>
+                                                            <input type="checkbox" name="job[]" class="c-checkbox" value="' . $job . '" checked>
+                                                            ' . $job . '
+                                                        </label>
+                                                    </div>';
+                                                } else {
+                                                    echo '<div class="c-radio-list__item">
+                                                        <label>
+                                                            <input type="checkbox" name="job[]" class="c-checkbox" value="' . $job . '">
+                                                            ' . $job . '
+                                                        </label>
+                                                    </div>';
+                                                }
+                                            } else {
+                                                echo '<div class="c-radio-list__item">
+                                                    <label>
+                                                        <input type="checkbox" name="job[]" class="c-checkbox" value="' . $job . '">
+                                                        ' . $job . '
+                                                    </label>
+                                                </div>';
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>希望事業部<br>※複数選択可</th>
+                                <td>
+                                    <div class="c-radio-list">
+                                        <?php
+                                        $terms = get_terms('recruitment_division');
+                                        foreach ($terms as $term) {
+                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['division'])) { 
+                                                if(in_array($term->name, $_POST['division'])){
+                                                    echo '<div class="c-radio-list__item">
+                                                        <label>
+                                                            <input type="checkbox" name="division[]" class="c-checkbox" value="' . $term->name . '" checked>
+                                                            ' . $term->name . '
+                                                        </label>
+                                                    </div>';
+                                                } else {
+                                                    echo '<div class="c-radio-list__item">
+                                                        <label>
+                                                            <input type="checkbox" name="division[]" class="c-checkbox" value="' . $term->name . '">
+                                                            ' . $term->name . '
+                                                        </label>
+                                                    </div>';
+                                                }
+                                            } else {
+                                                echo '<div class="c-radio-list__item">
+                                                    <label>
+                                                        <input type="checkbox" name="division[]" class="c-checkbox" value="' . $term->name . '">
+                                                        ' . $term->name . '
+                                                    </label>
+                                                </div>';
+                                            }
+                                        }
+                                        ?>
+                                        <div class="c-radio-list__item">
+                                            <label>
+                                                <input type="checkbox" name="division[]" class="c-checkbox" value="後で考える" <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['division'])) { if(in_array('後で考える', $_POST['division'])){ echo 'checked'; } } ?>>
+                                                後で考える
+                                            </label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>メッセージ</th>
+                                <td>
+                                    <textarea class="c-textarea" id="message" rows="5" name="message"><?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8'); } ?></textarea>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class="privacyCheck">
+                        <h5>個人情報のお取り扱いについて</h5>
+                        <p>本入力フォームおよびメールでご連絡頂きました、お客様の個人情報につきましては、厳重に管理を行っております。<br>
+                        法令等に基づき正規の手続きによって司法捜査機関による開示要求が行われた場合を除き、第三者に開示もしくは提供することはございません。</p>
+                        <div class="accept"><label><input type="checkbox" name="accept" id="accept" value="同意する" class="c-checkbox" <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accept'])) { echo 'checked'; } ?>><span>個人情報のお取り扱いに同意する</span></label></div>
+
+                        <?php 
+                            if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['accept'])) {
+                                echo '<p class="help-block">個人情報のお取り扱いへの同意は必須です。</p>';
+                            }
+                        ?>
+                    </div>
+                    
+
+                    <div class="form-group form-btn">
+                        <div class="input-zone">
+                            <input id="btn_confirm" type="submit" value="送信" class="btn-confirm">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
         </div>
-    <?php endwhile; endif; ?>
+    </div>
 
 </main>
+
+
+<script>
+    $(window).on('load', function() {
+        _confirmCheck();
+    });
+    $("#accept").change(function(){
+        _confirmCheck();
+    });
+    function _confirmCheck(){
+        if($("#accept").prop('checked')){
+            $("#btn_confirm").prop("disabled", false);
+            $("#btn_confirm").addClass("hoverOn");
+        } else {
+            $("#btn_confirm").prop("disabled", true);
+            $("#btn_confirm").removeClass("hoverOn");
+        }
+    }
+</script>
 
 <?php get_footer(); ?>
