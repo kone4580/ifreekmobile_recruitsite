@@ -2290,7 +2290,7 @@ HOME
 }
 @media (max-width: 820.9px) {
   #mainVisual {
-    height: 64vh;
+    height: 72vh;
     margin-top: 64px;
   }
 }
@@ -2376,7 +2376,39 @@ HOME
   -webkit-animation: main_bg 20s ease;
           animation: main_bg 20s ease;
 }
-.main_movie video {
+.main_movie .main_video_box {
+  width: 100%;
+  height: 100%;
+}
+.main_movie .main_video_box .video_pc {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 560px) {
+  .main_movie .main_video_box .video_pc {
+    display: block;
+  }
+}
+@media (max-width: 559.9px) {
+  .main_movie .main_video_box .video_pc {
+    display: none;
+  }
+}
+.main_movie .main_video_box .video_sp {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 560px) {
+  .main_movie .main_video_box .video_sp {
+    display: none;
+  }
+}
+@media (max-width: 559.9px) {
+  .main_movie .main_video_box .video_sp {
+    display: block;
+  }
+}
+.main_movie .main_video_box video {
   background-size: cover;
   height: auto;
   min-height: 100%;
@@ -2430,6 +2462,11 @@ HOME
   .bnr_recruit {
     width: 160px;
     bottom: 32px;
+  }
+}
+@media (max-width: 559.9px) {
+  .bnr_recruit {
+    bottom: 10px;
   }
 }
 
@@ -4262,13 +4299,13 @@ Sidebar
 }
 @media (max-width: 559.9px) {
   .faq-list .question__txt {
-    padding: 20px;
+    padding: 18px;
   }
 }
 .faq-list .question .icon {
   display: flex;
   align-self: center;
-  flex-basis: 90px;
+  flex-basis: 64px;
   flex-grow: 0;
   flex-shrink: 0;
   justify-content: center;
@@ -4282,6 +4319,12 @@ Sidebar
   border-radius: 8px;
   margin-right: 16px;
 }
+@media (max-width: 559.9px) {
+  .faq-list .question .icon {
+    flex-basis: 64px;
+    font-size: 3.2rem;
+  }
+}
 .faq-list .question .txt {
   font-size: 1.6rem;
   font-weight: bold;
@@ -4289,6 +4332,12 @@ Sidebar
   flex-basis: auto;
   flex-grow: 0;
   flex-shrink: 1;
+}
+@media (max-width: 559.9px) {
+  .faq-list .question .txt {
+    font-size: 1.4rem;
+    padding-right: 8px;
+  }
 }
 .faq-list .question .indicator {
   display: block;
@@ -4301,11 +4350,22 @@ Sidebar
   flex-grow: 0;
   flex-shrink: 0;
 }
+@media (max-width: 559.9px) {
+  .faq-list .question .indicator {
+    width: 26px;
+    height: 26px;
+  }
+}
 .faq-list .question .indicator::before {
   top: 16px;
   left: 0;
   width: 100%;
   height: 2px;
+}
+@media (max-width: 559.9px) {
+  .faq-list .question .indicator::before {
+    top: 12px;
+  }
 }
 .faq-list .question .indicator::after {
   top: 0;
@@ -4316,6 +4376,11 @@ Sidebar
   transition-duration: 0.3s;
   transition-property: transform;
 }
+@media (max-width: 559.9px) {
+  .faq-list .question .indicator::after {
+    left: 12px;
+  }
+}
 .faq-list .answer .answer__txt {
   display: flex;
   width: 100%;
@@ -4324,6 +4389,11 @@ Sidebar
   text-align: left;
   align-items: center;
   box-sizing: border-box;
+}
+@media (max-width: 559.9px) {
+  .faq-list .answer .answer__txt {
+    padding: 18px;
+  }
 }
 .faq-list .answer .icon {
   display: block;
@@ -4338,6 +4408,11 @@ Sidebar
   letter-spacing: 0.1em;
   color: #fff;
 }
+@media (max-width: 559.9px) {
+  .faq-list .answer .icon {
+    font-size: 4rem;
+  }
+}
 .faq-list .answer .txt {
   display: block;
   color: #fff;
@@ -4346,6 +4421,12 @@ Sidebar
   flex-basis: auto;
   flex-grow: 0;
   flex-shrink: 1;
+}
+@media (max-width: 559.9px) {
+  .faq-list .answer .txt {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
 }
 
 .faq-list .faq-list__item.active .question .indicator::after {
@@ -4401,9 +4482,9 @@ Sidebar
 }
 @media (max-width: 559.9px) {
   .work_links ul li a {
-    font-size: 1vw;
-    padding: 0 12px;
-    height: 24px;
+    font-size: 1.2rem;
+    padding: 2px 8px;
+    height: auto;
   }
 }
 .work_links ul li.active a {
@@ -4469,6 +4550,7 @@ Sidebar
 @media (max-width: 559.9px) {
   .job_work_bg {
     margin-bottom: 64px;
+    padding: 32px 0 0;
   }
 }
 .job_work_bg .charac_02 {
@@ -4489,7 +4571,8 @@ Sidebar
   .job_work_bg .charac_02 {
     width: 154px;
     right: -64px;
-    bottom: -16px;
+    bottom: auto;
+    top: 30px;
   }
 }
 .job_work_bg.moved .charac_02 {
@@ -4560,7 +4643,7 @@ Sidebar
 }
 @media (max-width: 820.9px) {
   .job_work .inner {
-    padding: 20px 24px;
+    padding: 20px 16px;
   }
 }
 
@@ -4575,7 +4658,7 @@ Sidebar
 }
 @media (max-width: 820.9px) {
   .center_tit_mini {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
 .center_tit_mini::after {
@@ -4588,6 +4671,12 @@ Sidebar
   left: 50%;
   bottom: 0;
   margin-left: -20px;
+}
+@media (max-width: 559.9px) {
+  .center_tit_mini::after {
+    width: 100px;
+    margin-left: -50px;
+  }
 }
 
 .radiused {

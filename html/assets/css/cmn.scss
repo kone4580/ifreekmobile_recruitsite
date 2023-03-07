@@ -2039,7 +2039,7 @@ HOME
 		margin-top: 96px;
 	}
 	@include less_tab {
-		height: 64vh;
+		height: 72vh;
 		margin-top: 64px;
 	}
 	.main_inner {
@@ -2099,13 +2099,37 @@ HOME
 		@include centerItem;
 		animation: main_bg 20s ease;
 	}
-	video {
-		background-size: cover;
-		height: auto;
-		min-height: 100%;
-		min-width: 100%;
-		width: auto;
-		@include centerItem;
+	.main_video_box {
+		width: 100%;
+		height: 100%;
+		.video_pc {
+			width: 100%;
+			height: 100%;
+			@include over_sp {
+				display: block;
+			}
+			@include sp {
+				display: none;
+			}
+		}
+		.video_sp {
+			width: 100%;
+			height: 100%;
+			@include over_sp {
+				display: none;
+			}
+			@include sp {
+				display: block;
+			}
+		}
+		video {
+			background-size: cover;
+			height: auto;
+			min-height: 100%;
+			min-width: 100%;
+			width: auto;
+			@include centerItem;
+		}
 	}
 }
 @keyframes main_bg {
@@ -2132,6 +2156,9 @@ HOME
 	@include less_tab {
 		width: 160px;
 		bottom: 32px;
+	}
+	@include sp {
+		bottom: 10px;
 	}
 }
 @keyframes slideIn {
@@ -3673,21 +3700,14 @@ Sidebar
 			-ms-flex-align: center;
 			align-items: center;
 			@include sp {
-				padding: 20px;
+				padding: 18px;
 			}
 		}
 		.icon {
 			display: flex;
 			align-self: center;
-			-webkit-flex-basis: 90px;
-			-ms-flex-preferred-size: 90px;
-			flex-basis: 90px;
-			-webkit-box-flex: 0;
-			-webkit-flex-grow: 0;
-			-ms-flex-positive: 0;
+			flex-basis: 64px;
 			flex-grow: 0;
-			-webkit-flex-shrink: 0;
-			-ms-flex-negative: 0;
 			flex-shrink: 0;
 			justify-content: center;
 			@include eng(5rem);
@@ -3695,6 +3715,10 @@ Sidebar
 			background-color: $red;
 			border-radius: 8px;
 			margin-right: 16px;
+			@include sp {
+				flex-basis: 64px;
+				font-size: 3.2rem;
+			}
 		}
 		.txt {
 			font-size: 1.6rem;
@@ -3710,6 +3734,10 @@ Sidebar
 			-webkit-flex-shrink: 1;
 			-ms-flex-negative: 1;
 			flex-shrink: 1;
+			@include sp {
+				font-size: 1.4rem;
+				padding-right: 8px;
+			}
 		}
 		.indicator {
 			display: block;
@@ -3731,11 +3759,18 @@ Sidebar
 			-webkit-flex-shrink: 0;
 			-ms-flex-negative: 0;
 			flex-shrink: 0;
+			@include sp {
+				width: 26px;
+				height: 26px;
+			}
 			&::before {
 				top: 16px;
 				left: 0;
 				width: 100%;
 				height: 2px;
+				@include sp {
+					top: 12px;
+				}
 			}
 			&::after {
 				top: 0;
@@ -3750,6 +3785,9 @@ Sidebar
 				transition-property: -webkit-transform;
 				transition-property: transform;
 				transition-property: transform, -webkit-transform;
+				@include sp {
+					left: 12px;
+				}
 			}
 		}
 	}
@@ -3768,6 +3806,9 @@ Sidebar
 			-ms-flex-align: center;
 			align-items: center;
 			box-sizing: border-box;
+			@include sp {
+				padding: 18px;
+			}
 		}
 		.icon {
 			display: block;
@@ -3784,6 +3825,9 @@ Sidebar
 			flex-shrink: 0;
 			@include eng(5rem);
 			color: #fff;
+			@include sp {
+				font-size: 4rem;
+			}
 		}
 		.txt {
 			display: block;
@@ -3800,6 +3844,10 @@ Sidebar
 			-webkit-flex-shrink: 1;
 			-ms-flex-negative: 1;
 			flex-shrink: 1;
+			@include sp {
+				font-size: 1.4rem;
+				font-weight: bold;
+			}
 		}
 	}
 }
@@ -3841,9 +3889,9 @@ Sidebar
 				height: 32px;
 				color: $black;
 				@include sp {
-					font-size: 1vw;
-					padding: 0 12px;
-					height: 24px;
+					font-size: 1.2rem;
+					padding: 2px 8px;
+					height: auto;
 				}
 			}
 			&.active {
@@ -3900,6 +3948,7 @@ Sidebar
 	overflow: hidden;
 	@include sp {
 		margin-bottom: 64px;
+		padding: 32px 0 0;
 	}
 	.charac_02 {
 		display: block;
@@ -3915,7 +3964,8 @@ Sidebar
 		@include sp {
 			width: 154px;
 			right: -64px;
-			bottom: -16px;
+			bottom: auto;
+			top: 30px;
 		}
 	}
 	&.moved {
@@ -3970,7 +4020,7 @@ Sidebar
 			width: 64%;
 		}
 		@include less_tab {
-			padding: 20px 24px;
+			padding: 20px 16px;
 		}
 	}
 }
@@ -3983,7 +4033,7 @@ Sidebar
 	margin-bottom: 24px;
 	letter-spacing: .1em;
 	@include less_tab {
-		font-size: 1.6rem;
+		font-size: 2rem;
 	}
 	&::after {
 		content: "";
@@ -3995,6 +4045,10 @@ Sidebar
 		left: 50%;
 		bottom: 0;
 		margin-left: -20px;
+		@include sp {
+			width: 100px;
+			margin-left: -50px;
+		}
 	}
 }
 .radiused {
