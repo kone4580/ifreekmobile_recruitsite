@@ -7,7 +7,7 @@
             <p class="eng">JOB</p>
         </div>
         <div class="sq_carat">
-            <?xml version="1.0" encoding="UTF-8"?>
+            <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
             <svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
                 <g id="title_sq">
                     <rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -65,8 +65,8 @@
                                             echo '<span>' . $term->name . '</span>';
                                         }
                                     endif;
-                                    ?> / 
-                                    <?php the_field('job_type'); ?> / 
+                                    ?> /
+                                    <?php the_field('job_type'); ?> /
                                     入社<?php the_field('year'); ?>年目
                                 </p>
                                 <i class="fas fa-arrow-right"></i>
@@ -78,7 +78,7 @@
             <?php endif; wp_reset_postdata(); ?>
         </div>
     </div>
-    
+
 </main>
 
 

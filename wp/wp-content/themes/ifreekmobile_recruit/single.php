@@ -7,7 +7,7 @@
             <p class="eng">NEWS</p>
         </div>
         <div class="sq_carat">
-            <?xml version="1.0" encoding="UTF-8"?>
+            <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
             <svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
                 <g id="title_sq">
                     <rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -50,24 +50,24 @@
                         ?>
                     </div>
                 </div>
-          
+
                 <div class="single_content">
                     <?php the_content(); ?>
                 </div>
-          
+
                 <?php if ( has_post_thumbnail()): ?>
                     <div class="single_icatch">
                         <?php the_post_thumbnail('large'); ?>
                     </div>
                 <?php endif; ?>
-                
+
                 <div class="single_page_navi">
                     <?php
                     $previous_post = get_previous_post();
                     if (!empty( $previous_post )): ?>
                         <a href="<?php echo get_permalink( $previous_post->ID ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/angle_prev.png" alt="前の記事"></a>
                     <?php endif; ?>
-            
+
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>news/">一覧へ戻る</a>
                     <?php
                     $next_post = get_next_post();
@@ -75,11 +75,11 @@
                         <a href="<?php echo get_permalink( $next_post->ID ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/angle_next.png" alt="次の記事"></a>
                     <?php endif; ?>
                 </div>
-        
+
                 <?php endwhile; else: ?>
                     <p><?php echo "お探しの記事、ページは見つかりませんでした。"; ?></p>
                 <?php endif; ?>
-                
+
                 <?php if(has_category() ) {
                     $catlist = get_the_category();
                     $category = array();
@@ -95,12 +95,12 @@
                     );
                     $related_query = new WP_Query( $args );
                 ?>
-                
+
                 <?php if ( $related_query->have_posts() ) : ?>
                     <div class="big_title2">
                         <h2 class="jp">その他の活動報告</h2>
                     </div>
-                    
+
                     <div class="page_reports">
                         <?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
                             <div class="item animation">

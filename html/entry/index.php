@@ -75,7 +75,7 @@
 				<p class="eng">ENTRY</p>
 			</div>
 			<div class="sq_carat">
-				<?xml version="1.0" encoding="UTF-8"?>
+				<?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
 				<svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
 				  <g id="title_sq">
 						<rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -359,10 +359,7 @@
 			<a href="../welfare/" class="float_link"></a>
 		</div>
 
-		<div class="bottom_cta_mid_tit">
-			<p class="jp">採用情報</p>
-			<p class="eng">RECRUITMENT</p>
-		</div>
+
 		<div class="bottom_cta_links">
 			<div class="item">
 				<p class="eng">DATA</p>
@@ -391,7 +388,7 @@
 			<div class="footer_right">
 				<ul class="foot_nav">
 					<li><a href="../message/">MESSAGE</a></li>
-					<li><a href="../work/">WORK</a></li>
+					<li><a href="../jobs/">WORK</a></li>
 					<li><a href="../data/">DATA&CULTURE</a></li>
 					<li><a href="../interview/">PERSON</a></li>
 					<li><a href="../welfare/">WELFARE</a></li>

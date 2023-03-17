@@ -137,17 +137,17 @@ $easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
 Basic Setting
 **************/
 html {
-  font-size: 62.5%;
-  * {
+	font-size: 62.5%;
+	* {
 		box-sizing: border-box;
-    word-wrap: break-word;
+		word-wrap: break-word;
 	}
 }
 
 body {
-  font-size: 1.5em;
-  font-family: -apple-system-body, BlinkMacSystemFont, "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  -moz-osx-font-smoothing: grayscale;
+	font-size: 1.5em;
+	font-family: -apple-system-body, BlinkMacSystemFont, "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	-moz-osx-font-smoothing: grayscale;
 	line-height: 1.8;
 	padding: 0;
 	margin: 0;
@@ -180,50 +180,50 @@ pre, code, kbd, samp, tt {
 }
 
 img {
-  max-width: 100%;
+	max-width: 100%;
 }
 #pagetop {
-  background: url(../images/common/pagetop2.png);
-  background-size: contain;
-  position: fixed;
-  right: 8px;
-  text-indent: -9999px;
-  outline: none;
-  opacity: 0.7;
-  z-index: 3;
-  @include over_tab {
-    width: 60px;
-    height: 60px;
-    bottom: -60px;
-  }
-  @include less_tab {
-    width: 40px;
-    height: 40px;
-    bottom: -50px;
-  }
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-indent: -9999px;
-  }
+	background: url(../images/common/pagetop2.png);
+	background-size: contain;
+	position: fixed;
+	right: 8px;
+	text-indent: -9999px;
+	outline: none;
+	opacity: 0.7;
+	z-index: 3;
+	@include over_tab {
+		width: 60px;
+		height: 60px;
+		bottom: -60px;
+	}
+	@include less_tab {
+		width: 40px;
+		height: 40px;
+		bottom: -50px;
+	}
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-indent: -9999px;
+	}
 }
 
 a {
-  text-decoration: none;
-  color: #1d56c6;
-  outline: none;
-  font-weight: bold;
-  &:hover {
-  	color: #5f79ad;
-  }
+	text-decoration: none;
+	color: #1d56c6;
+	outline: none;
+	font-weight: bold;
+	&:hover {
+		color: #5f79ad;
+	}
 }
 .clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 
@@ -231,7 +231,7 @@ a {
 Layout Set
 **************/
 .wrap {
-  width: 92%;
+	width: 92%;
 	margin-left: auto;
 	margin-right: auto;
 	@include over_pc {
@@ -243,40 +243,40 @@ Layout Set
 }
 .middlewrap {
 	width: 92%;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
 	@include sp {
 		width: 88%;
 	}
 }
 .shortwrap {
 	width: 92%;
-  max-width: 856px;
-  margin-left: auto;
-  margin-right: auto;
+	max-width: 856px;
+	margin-left: auto;
+	margin-right: auto;
 	@include sp {
 		width: 88%;
 	}
 }
 .page_section {
-  padding: 80px 0;
-  @include less_tab {
-    padding: 40px 0 40px;
-  }
+	padding: 80px 0;
+	@include less_tab {
+		padding: 40px 0 40px;
+	}
 	&__white {
-    background-color: #fff;
-  }
-  &__gray {
-    background-color: #f3f3f3;
-  }
+		background-color: #fff;
+	}
+	&__gray {
+		background-color: #f3f3f3;
+	}
 	&__red {
-    background-color: $red;
-  }
+		background-color: $red;
+	}
 	&__pink {
 		background-color: $bgPink;
-    background-size: cover;
-  }
+		background-size: cover;
+	}
 	&__grad {
 		@include bgGrad;
 	}
@@ -404,7 +404,7 @@ Header
 	}
 	@include less_tab {
 		width: 100vw;
-		top: 100vh;
+		top: 120vh;
 		height: 100vh;
 		padding-top: 96px;
 	}
@@ -442,7 +442,7 @@ Header
 		-webkit-overflow-scrolling: touch;
 	}
 	@include less_tab {
-    	padding-bottom: 10px;
+		padding-bottom: 10px;
 	}
 	> li {
 		@include over_pc {
@@ -660,7 +660,7 @@ Header
 	&.menu-open {
 		animation: menuClose 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 		right: 16px;
-    	top: 16px;
+		top: 16px;
 		width: 56px;
 		height: 56px;
 		border-radius: 32px;
@@ -833,6 +833,7 @@ Footer
 	display: flex;
 	border-top: 1px white solid;
 	border-bottom: 1px white solid;
+	margin-top: 48px;
 	.item {
 		width: 50%;
 		position: relative;
@@ -3973,6 +3974,10 @@ Sidebar
 			animation: charac_slideIn .5s $easeInOutSine forwards;
 		}
 	}
+	a {
+		color: white;
+		text-decoration: underline;
+	}
 }
 .job_work {
 	max-width: 100%;
@@ -4121,6 +4126,7 @@ Sidebar
 }
 .job_links {
 	@include flex(center, center);
+	flex-wrap: wrap;
 	margin-top: 40px;
 	.btn-white {
 		width: 30%;
@@ -4132,8 +4138,14 @@ Sidebar
 		@include flex(center, center);
 		position: relative;
 		@include sp {
-			padding: 10px 24px 10px 10px;
+			padding: 0 24px 0 10px;
 			height: 48px;
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			&:not(:first-child) {
+				margin-top: 8px;
+			}
 		}
 		&:hover {
 			background-color: $bgPink;
@@ -4149,7 +4161,6 @@ Sidebar
 			}
 			@include sp {
 				right: 8px;
-				margin-top: -5px;
 			}
 		}
 	}
@@ -4465,6 +4476,13 @@ Sidebar
 		text-align: center;
 	}
 	li {
+		position: relative;
+		@include sp {
+			padding: 16px;
+			background-color: white;
+			box-shadow: 0 0 10px rgba(0,0,0,.1);
+			margin-bottom: 24px;
+		}
 		&:not(:last-child) {
 			&::after {
 				content: '\f063';
@@ -4476,6 +4494,12 @@ Sidebar
 				line-height: 1;
 				@include over_tab {
 					text-align: center;
+				}
+				@include sp {
+					position: absolute;
+					left: 50%;
+					bottom: -23px;
+					margin-left: -10px;
 				}
 			}
 		}
@@ -6573,7 +6597,7 @@ input, button, textarea {
 		cursor: pointer;
 	}
 }
-.btns {
+.form-btns {
 	.btn {
 		color: white;
 		font-size: 22px;
@@ -6655,7 +6679,7 @@ input, button, textarea {
 		border-bottom: 3px solid #999;
 	}
 }
-.btns .btn-primary {
+.form-btns .btn-primary {
 	background-color: #81c320;
 	border-color: #a2d400;
 	border-bottom: 3px solid #679b1b;

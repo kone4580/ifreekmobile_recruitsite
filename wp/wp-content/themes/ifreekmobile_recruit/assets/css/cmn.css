@@ -183,6 +183,11 @@ Layout Set
   background-color: white;
   padding: 56px 64px;
 }
+@media (max-width: 820.9px) {
+  .bg-white {
+    padding: 8vw;
+  }
+}
 
 /**************
 Header
@@ -320,7 +325,7 @@ Header
 @media (max-width: 820.9px) {
   .global_navi {
     width: 100vw;
-    top: 100vh;
+    top: 120vh;
     height: 100vh;
     padding-top: 96px;
   }
@@ -810,6 +815,7 @@ Footer
   display: flex;
   border-top: 1px white solid;
   border-bottom: 1px white solid;
+  margin-top: 48px;
 }
 .bottom_cta_links .item {
   width: 50%;
@@ -1486,7 +1492,8 @@ Common Parts
   .horizontal_tit .jp {
     display: block;
     padding-top: 4px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.6;
   }
 }
 .horizontal_tit .eng {
@@ -1505,6 +1512,12 @@ Common Parts
 @media (max-width: 820.9px) {
   .horizontal_tit .eng {
     font-size: 1rem;
+  }
+}
+@media (max-width: 559.9px) {
+  .horizontal_tit .eng {
+    margin-left: 0;
+    margin-top: 0px;
   }
 }
 
@@ -2093,6 +2106,7 @@ Common Parts
 @media (max-width: 820.9px) {
   .page_top_text {
     text-align: left;
+    line-height: 1.8;
   }
 }
 
@@ -2277,7 +2291,7 @@ HOME
 }
 @media (max-width: 820.9px) {
   #mainVisual {
-    height: 64vh;
+    height: 72vh;
     margin-top: 64px;
   }
 }
@@ -2363,7 +2377,39 @@ HOME
   -webkit-animation: main_bg 20s ease;
           animation: main_bg 20s ease;
 }
-.main_movie video {
+.main_movie .main_video_box {
+  width: 100%;
+  height: 100%;
+}
+.main_movie .main_video_box .video_pc {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 560px) {
+  .main_movie .main_video_box .video_pc {
+    display: block;
+  }
+}
+@media (max-width: 559.9px) {
+  .main_movie .main_video_box .video_pc {
+    display: none;
+  }
+}
+.main_movie .main_video_box .video_sp {
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 560px) {
+  .main_movie .main_video_box .video_sp {
+    display: none;
+  }
+}
+@media (max-width: 559.9px) {
+  .main_movie .main_video_box .video_sp {
+    display: block;
+  }
+}
+.main_movie .main_video_box video {
   background-size: cover;
   height: auto;
   min-height: 100%;
@@ -2417,6 +2463,11 @@ HOME
   .bnr_recruit {
     width: 160px;
     bottom: 32px;
+  }
+}
+@media (max-width: 559.9px) {
+  .bnr_recruit {
+    bottom: 10px;
   }
 }
 
@@ -3287,7 +3338,6 @@ HOME
 }
 .top_interview_slider .swiper-slide .tis_message {
   background-color: white;
-  padding: 10px;
   margin-top: 4px;
 }
 @media (max-width: 559.9px) {
@@ -4236,7 +4286,6 @@ Sidebar
   margin-bottom: 20px;
 }
 .faq-list .question__txt {
-  -webkit-appearance: button;
   border-style: none;
   background-color: transparent;
   color: inherit;
@@ -4250,13 +4299,13 @@ Sidebar
 }
 @media (max-width: 559.9px) {
   .faq-list .question__txt {
-    padding: 20px;
+    padding: 18px;
   }
 }
 .faq-list .question .icon {
   display: flex;
   align-self: center;
-  flex-basis: 90px;
+  flex-basis: 64px;
   flex-grow: 0;
   flex-shrink: 0;
   justify-content: center;
@@ -4270,6 +4319,12 @@ Sidebar
   border-radius: 8px;
   margin-right: 16px;
 }
+@media (max-width: 559.9px) {
+  .faq-list .question .icon {
+    flex-basis: 64px;
+    font-size: 3.2rem;
+  }
+}
 .faq-list .question .txt {
   font-size: 1.6rem;
   font-weight: bold;
@@ -4277,6 +4332,12 @@ Sidebar
   flex-basis: auto;
   flex-grow: 0;
   flex-shrink: 1;
+}
+@media (max-width: 559.9px) {
+  .faq-list .question .txt {
+    font-size: 1.4rem;
+    padding-right: 8px;
+  }
 }
 .faq-list .question .indicator {
   display: block;
@@ -4289,11 +4350,22 @@ Sidebar
   flex-grow: 0;
   flex-shrink: 0;
 }
+@media (max-width: 559.9px) {
+  .faq-list .question .indicator {
+    width: 26px;
+    height: 26px;
+  }
+}
 .faq-list .question .indicator::before {
   top: 16px;
   left: 0;
   width: 100%;
   height: 2px;
+}
+@media (max-width: 559.9px) {
+  .faq-list .question .indicator::before {
+    top: 12px;
+  }
 }
 .faq-list .question .indicator::after {
   top: 0;
@@ -4304,6 +4376,11 @@ Sidebar
   transition-duration: 0.3s;
   transition-property: transform;
 }
+@media (max-width: 559.9px) {
+  .faq-list .question .indicator::after {
+    left: 12px;
+  }
+}
 .faq-list .answer .answer__txt {
   display: flex;
   width: 100%;
@@ -4312,6 +4389,11 @@ Sidebar
   text-align: left;
   align-items: center;
   box-sizing: border-box;
+}
+@media (max-width: 559.9px) {
+  .faq-list .answer .answer__txt {
+    padding: 18px;
+  }
 }
 .faq-list .answer .icon {
   display: block;
@@ -4326,6 +4408,11 @@ Sidebar
   letter-spacing: 0.1em;
   color: #fff;
 }
+@media (max-width: 559.9px) {
+  .faq-list .answer .icon {
+    font-size: 4rem;
+  }
+}
 .faq-list .answer .txt {
   display: block;
   color: #fff;
@@ -4334,6 +4421,12 @@ Sidebar
   flex-basis: auto;
   flex-grow: 0;
   flex-shrink: 1;
+}
+@media (max-width: 559.9px) {
+  .faq-list .answer .txt {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
 }
 
 .faq-list .faq-list__item.active .question .indicator::after {
@@ -4389,9 +4482,9 @@ Sidebar
 }
 @media (max-width: 559.9px) {
   .work_links ul li a {
-    font-size: 1vw;
-    padding: 0 12px;
-    height: 24px;
+    font-size: 1.2rem;
+    padding: 2px 8px;
+    height: auto;
   }
 }
 .work_links ul li.active a {
@@ -4457,6 +4550,7 @@ Sidebar
 @media (max-width: 559.9px) {
   .job_work_bg {
     margin-bottom: 64px;
+    padding: 32px 0 0;
   }
 }
 .job_work_bg .charac_02 {
@@ -4477,12 +4571,17 @@ Sidebar
   .job_work_bg .charac_02 {
     width: 154px;
     right: -64px;
-    bottom: -16px;
+    bottom: auto;
+    top: 30px;
   }
 }
 .job_work_bg.moved .charac_02 {
   -webkit-animation: charac_slideIn 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
           animation: charac_slideIn 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+}
+.job_work_bg a {
+  color: white;
+  text-decoration: underline;
 }
 
 .job_work {
@@ -4548,7 +4647,7 @@ Sidebar
 }
 @media (max-width: 820.9px) {
   .job_work .inner {
-    padding: 20px 24px;
+    padding: 20px 16px;
   }
 }
 
@@ -4563,7 +4662,7 @@ Sidebar
 }
 @media (max-width: 820.9px) {
   .center_tit_mini {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
 .center_tit_mini::after {
@@ -4576,6 +4675,12 @@ Sidebar
   left: 50%;
   bottom: 0;
   margin-left: -20px;
+}
+@media (max-width: 559.9px) {
+  .center_tit_mini::after {
+    width: 100px;
+    margin-left: -50px;
+  }
 }
 
 .radiused {
@@ -4676,6 +4781,7 @@ Sidebar
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
 .job_links .btn-white {
@@ -4692,8 +4798,14 @@ Sidebar
 }
 @media (max-width: 559.9px) {
   .job_links .btn-white {
-    padding: 10px 24px 10px 10px;
+    padding: 0 24px 0 10px;
     height: 48px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .job_links .btn-white:not(:first-child) {
+    margin-top: 8px;
   }
 }
 .job_links .btn-white:hover {
@@ -4714,7 +4826,6 @@ Sidebar
 @media (max-width: 559.9px) {
   .job_links .btn-white i {
     right: 8px;
-    margin-top: -5px;
   }
 }
 
@@ -4844,6 +4955,16 @@ Sidebar
   right: 0;
   bottom: 0;
   margin: auto;
+}
+
+.not_recruiting {
+  background-color: #f3f3f3;
+  text-align: center;
+  margin: 50px auto;
+  padding: 40px 0;
+  border: 1px #ddd solid;
+  border-radius: 5px;
+  color: #979797;
 }
 
 /**************
@@ -5142,6 +5263,17 @@ Sidebar
     text-align: center;
   }
 }
+.myWork li {
+  position: relative;
+}
+@media (max-width: 559.9px) {
+  .myWork li {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+  }
+}
 .myWork li:not(:last-child)::after {
   content: "\f063";
   font-family: "Font Awesome 5 Free";
@@ -5154,6 +5286,14 @@ Sidebar
 @media (min-width: 821px) {
   .myWork li:not(:last-child)::after {
     text-align: center;
+  }
+}
+@media (max-width: 559.9px) {
+  .myWork li:not(:last-child)::after {
+    position: absolute;
+    left: 50%;
+    bottom: -23px;
+    margin-left: -10px;
   }
 }
 
@@ -6338,16 +6478,31 @@ Sidebar
   margin-bottom: 40px;
   text-align: center;
 }
+@media (max-width: 559.9px) {
+  .recruitment_title {
+    margin-bottom: 24px;
+  }
+}
 .recruitment_title .division {
   font-size: 1.7rem;
   font-weight: bold;
   letter-spacing: 0.1em;
   line-height: 1.4;
 }
+@media (max-width: 559.9px) {
+  .recruitment_title .division {
+    font-size: 1.5rem;
+  }
+}
 .recruitment_title .job_type {
   color: #E5004F;
   font-size: 2.4rem;
   font-weight: bold;
+}
+@media (max-width: 559.9px) {
+  .recruitment_title .job_type {
+    font-size: 2.3rem;
+  }
 }
 
 .wanted_wrap {
@@ -6367,6 +6522,14 @@ Sidebar
   border-radius: 10px;
   padding: 30px;
 }
+@media (max-width: 559.9px) {
+  .wanted_wrap .con_text {
+    width: 100%;
+  }
+  .wanted_wrap .con_text:first-child {
+    margin-bottom: 24px;
+  }
+}
 .wanted_wrap .con_text h3 {
   font-size: 1.8rem;
   font-weight: 500;
@@ -6375,6 +6538,17 @@ Sidebar
   padding-bottom: 25px;
   border-bottom: solid 1px #d6d6d6;
   margin-bottom: 25px;
+}
+@media (max-width: 559.9px) {
+  .wanted_wrap .con_text h3 {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+  }
+}
+@media (max-width: 559.9px) {
+  .wanted_wrap .con_text .list-disc li:not(:last-child) {
+    margin-bottom: 4px;
+  }
 }
 
 .flow_wrap {
@@ -6393,6 +6567,12 @@ Sidebar
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 30px;
+}
+@media (max-width: 559.9px) {
+  .flow_wrap .con_flow {
+    width: 100%;
+    margin-bottom: 24px;
+  }
 }
 .flow_wrap .con_flow .tit_wrap {
   font-size: 1.8rem;
@@ -7463,7 +7643,7 @@ input, button, textarea {
   cursor: pointer;
 }
 
-.btns .btn {
+.form-btns .btn {
   color: white;
   font-size: 22px;
   font-weight: 600;
@@ -7478,7 +7658,7 @@ input, button, textarea {
   margin: 0 5px 20px;
 }
 @media (max-width: 1159.9px) {
-  .btns .btn {
+  .form-btns .btn {
     font-size: 18px;
     width: 90%;
     margin: 0 auto 20px;
@@ -7550,12 +7730,12 @@ input, button, textarea {
   border-bottom: 3px solid #999;
 }
 
-.btns .btn-primary {
+.form-btns .btn-primary {
   background-color: #81c320;
   border-color: #a2d400;
   border-bottom: 3px solid #679b1b;
 }
-.btns .btn-primary:hover {
+.form-btns .btn-primary:hover {
   background-color: #a2d400;
   border-color: #a2d400;
 }

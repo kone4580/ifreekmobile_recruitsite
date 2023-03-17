@@ -15,10 +15,6 @@
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>welfare/" class="float_link"></a>
     </div>
 
-    <div class="bottom_cta_mid_tit">
-        <p class="jp">採用情報</p>
-        <p class="eng">RECRUITMENT</p>
-    </div>
     <div class="bottom_cta_links">
         <div class="item">
             <p class="eng">DATA</p>
@@ -47,7 +43,7 @@
         <div class="footer_right">
             <ul class="foot_nav">
                 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>message/">MESSAGE</a></li>
-                <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>work/">WORK</a></li>
+                <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/">WORK</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>data/">DATA&CULTURE</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>interview/">PERSON</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>welfare/">WELFARE</a></li>
@@ -61,7 +57,7 @@
         <div class="wrap">
             <ul class="footer_bottom_link">
                 <li><a href="https://www.i-freek.co.jp/" target="_blank">コーポレートサイト</a></li>
-                <li><a href="https://www.i-freek.co.jp/" target="_blank">個人情報保護方針</a></li>
+                <li><a href="https://www.i-freek.co.jp/privacy/" target="_blank">個人情報保護方針</a></li>
             </ul>
             <p class="copyright">COPYRIGHT &copy; I-FREEK MOBILE INC. ALL RIGHTS RESERVED.</p>
         </div>

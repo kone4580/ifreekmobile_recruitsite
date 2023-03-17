@@ -7,7 +7,7 @@
             <p class="eng">JOB</p>
         </div>
         <div class="sq_carat">
-            <?xml version="1.0" encoding="UTF-8"?>
+            <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
             <svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
                 <g id="title_sq">
                     <rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -351,7 +351,7 @@
                     <a href="<?php the_permalink(); ?>" class="float_link"></a>
                 </div>
             <?php endwhile; endif; wp_reset_postdata(); ?>
-        
+
         </div>
 
     </div>
@@ -416,7 +416,7 @@
             </div>
         </div>
     </div>
-    
+
 </main>
 
 

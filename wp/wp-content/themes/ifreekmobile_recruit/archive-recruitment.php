@@ -7,7 +7,7 @@
             <p class="eng">RECRUITMENT</p>
         </div>
         <div class="sq_carat">
-            <?xml version="1.0" encoding="UTF-8"?>
+            <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
             <svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
                 <g id="title_sq">
                     <rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -81,9 +81,193 @@
                     </div>
                 </div>
             <?php endforeach; ?>
+
+
+            <h2 class="title_with_line mt100">
+                <span>あなたに合う事業部を探そう</span>
+            </h2>
+
+            <div class="match_divisions">
+                <div class="item">
+                    <div class="red_tile">
+                        <p>ITのスキルアップがしたい</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/ccs/">CCS事業部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/ces/">CES事業部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>プログラミングが好き</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/ccs/">CCS事業部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/ces/">CES事業部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/cra/">CRA事業部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>アプリ制作に携わりたい</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/acs/">ACS事業部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/app/">アプリ部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/challet/">チャレット部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>人と接する仕事が好き</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/ces/">CES事業部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>かわいいキャラクターが好き</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/cra/">CRA事業部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/app/">アプリ部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>アニメが好き</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/cra/">CRA事業部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/gc/">GC事業部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>在宅勤務が多いほうがいい</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/cra/">FTC事業部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/app/">アプリ部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>ブロックチェーンなどの最新テクノロジーに興味がある</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/cra/">FTC事業部</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/ds/">DS部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>ゲームが好き</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/gc/">GC事業部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>eスポーツの経験がある</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/gc/">GC事業部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>データ分析が得意</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/ds/">DS事業部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>チームワークを大切にしたい</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/challet/">チャレット部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>子どもが好き</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/app/">アプリ部</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="red_tile">
+                        <p>おもて舞台に立つのは苦手</p>
+                    </div>
+                    <div class="white_tile">
+                        <p class="foryou">そんなあなたは</p>
+                        <ul>
+                            <li><a href="/jobs/management/">管理部</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
+
 </main>
 
 

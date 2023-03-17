@@ -7,7 +7,7 @@
             <p class="eng">WORK STYLE</p>
         </div>
         <div class="sq_carat">
-            <?xml version="1.0" encoding="UTF-8"?>
+			<?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
             <svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
                 <g id="title_sq">
                     <rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -44,10 +44,10 @@
                         ));
                     ?>
                     <?php if ($query_jobs->have_posts()) : while ($query_jobs->have_posts()) : $query_jobs->the_post(); ?>
-						<?php 
+						<?php
 						$http = is_ssl() ? 'https' : 'http' . '://';
 						$url = $http . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
-						$link_page = get_permalink(); 
+						$link_page = get_permalink();
 						if($url == $link_page) {
 						?>
 							<li class="active">
@@ -86,7 +86,7 @@
 			</div>
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/charac_02.png" class="charac_02" alt="キャラクター２">
 		</div>
-		
+
 		<div class="middlewrap">
 			<div class="flex_content mt80">
 				<div class="item item_4">
@@ -95,7 +95,7 @@
                         <?php the_field('feature'); ?>
                     </div>
 				</div>
-				
+
 				<div class="item item_4">
                  <?php $feature_img = get_field('feature_img');
                     if( !empty($feature_img) ): ?>
@@ -166,7 +166,7 @@
 					<p class="eng">STAFF INTERVIEW</p>
 				</div>
 
-				<div class="belong_staffs">
+				<div class="belong_staffs mb80">
 					<?php while ($query->have_posts()) : $query->the_post(); ?>
 						<div class="item">
 							<div class="img">
@@ -185,7 +185,7 @@
 											echo '<span>' . $term->name . '</span>';
 										}
 									endif;
-									?> / 
+									?> /
 									<?php the_field('job_type'); ?>
 								</p>
 								<p>入社<?php the_field('year'); ?>年目（取材当時）</p>
@@ -226,7 +226,7 @@
 					<?php endwhile; ?>
 				</div>
 			<?php else : ?>
-				<div class="underconst">
+				<div class="not_recruiting">
 					<p>現在この事業部で募集中の職種はありません</p>
 				</div>
 			<?php endif; wp_reset_postdata(); ?>

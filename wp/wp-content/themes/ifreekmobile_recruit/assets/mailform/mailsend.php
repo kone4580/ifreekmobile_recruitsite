@@ -7,28 +7,29 @@ if (!isset($_SESSION['entry'])) {
     exit();
 }
 
-$division = $_SESSION['entry']['division'];
 $job = $_SESSION['entry']['job'];
+$division = $_SESSION['entry']['division'];
 
 $mailto = "recruit@i-freek.co.jp";
-$mailfrom = "From:" . mb_encode_mimeheader("株式会社アイフリークモバイル") . "<recruit@i-freek.co.jp>";
+$mailfrom = "From:" .mb_encode_mimeheader("株式会社アイフリークモバイル"). "<recruit@i-freek.co.jp>";
 
-$content = "本メールは株式会社アイフリークモバイルのサイトのエントリーフォームよりご連絡いただいた方へ自動送信しております。
+$content = "本メールは株式会社アイフリークモバイルの採用サイトのエントリーフォームよりご連絡いただいた方へ自動送信しております。
 
 この度はエントリーいただき誠にありがとうございました。以下の内容が送信されました。
 
 ----------------------------------------------------------------------
+
 【お名前】
-" . $_SESSION['entry']['namae_sei'] . " " . $_SESSION['entry']['namae_mei'] . "
+".$_SESSION['entry']['namae']."
 
 【ふりがな】
-" . $_SESSION['entry']['kana_sei'] . " " . $_SESSION['entry']['kana_mei'] . "
+".$_SESSION['entry']['kana']."
 
 【メールアドレス】
-" . $_SESSION['entry']['email'] . "
+".$_SESSION['entry']['email']."
 
 【電話番号】
-" . $_SESSION['entry']['tel'] . "
+".$_SESSION['entry']['tel']."
 
 【希望職種】\n";
 
@@ -44,13 +45,13 @@ foreach ($division as $index => $value) {
     $content .= "\n";
 }
 $content .= "\n";
-$content .= "【その他希望条件】
-" . $_SESSION['entry']['message'] . "
+$content .= "【メッセージ】
+".$_SESSION['entry']['message']."
 
 
 ----------------------------------------------------------------------
 
-内容を確認の上、ご返信先メールアドレスへ回答いたしますので、
+内容を確認の上、ご返信先メールアドレスまたは電話へご連絡いたしますので、
 しばらくお待ちくださいますようお願いいたします。
 
 
@@ -64,14 +65,14 @@ $content .= "【その他希望条件】
 ※本メールに心当たりのない場合は大変お手数ですが下記までご連絡ください。
 
 ■□■――――――――――――――――――
-株式会社アイフリークモバイル 採用担当
-東京都新宿区新宿二丁目1番11号 御苑スカイビル10階
-URL: https://i-freek.co.jp/
-Email: recruit@i-freek.co.jp
+株式会社アイフリークモバイル
+採用担当
+東京都新宿区新宿二丁目1番11号
+御苑スカイビル10階
+Email：recruit@i-freek.co.jp
 ――――――――――――――――――■□■";
 
-function funcManagerAddress($mailto, $mailfrom, $content)
-{
+function funcManagerAddress($mailto, $mailfrom, $content){
     mb_language("Japanese");
     mb_internal_encoding("UTF-8");
 
@@ -82,7 +83,7 @@ function funcManagerAddress($mailto, $mailfrom, $content)
     $content = $content;
 
 
-    if (mb_send_mail($mailto, $subject, $content, $mailfrom)) {
+    if(mb_send_mail($mailto, $subject, $content, $mailfrom)){
         $managerFlag = "○";
     } else {
         $managerFlag = "×";
@@ -91,32 +92,31 @@ function funcManagerAddress($mailto, $mailfrom, $content)
 };
 
 
-function funcContactAddress($mailfrom, $content)
-{
+function funcContactAddress($mailfrom, $content){
     mb_language("Japanese");
     mb_internal_encoding("UTF-8");
 
     $mailto2 = $_SESSION['entry']['email'];
     $mailfrom = $mailfrom;
 
-    $subject2 = "【株式会社アイフリークモバイル】エントリーありがとうございました";
+    $subject2="【株式会社アイフリークモバイル】エントリーありがとうございました";
     $content = $content;
 
 
 
-    if (mb_send_mail($mailto2, $subject2, $content, $mailfrom)) {
-        $contactFlag = "○";
-    } else {
-        $contactFlag = "×";
-    }
+if(mb_send_mail($mailto2, $subject2, $content, $mailfrom)){
+    $contactFlag = "○";
+} else {
+    $contactFlag = "×";
+}
     return $contactFlag;
 };
 
 
 $managerAddress = funcManagerAddress($mailto, $mailfrom, $content);
 $contactAddress = funcContactAddress($mailfrom, $content);
-if ($managerAddress === "○" && $contactAddress === "○") {
-    header("Location: thanks.php");
+if($managerAddress === "○" && $contactAddress === "○" ){
+    header('Location: ' . $home_url . 'entry/thanks/');
 } else {
-    header("Location: error.php");
+    header('Location: ' . $home_url . 'entry/error/');
 }

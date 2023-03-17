@@ -325,7 +325,7 @@ Header
 @media (max-width: 820.9px) {
   .global_navi {
     width: 100vw;
-    top: 100vh;
+    top: 120vh;
     height: 100vh;
     padding-top: 96px;
   }
@@ -815,6 +815,7 @@ Footer
   display: flex;
   border-top: 1px white solid;
   border-bottom: 1px white solid;
+  margin-top: 48px;
 }
 .bottom_cta_links .item {
   width: 50%;
@@ -4579,6 +4580,10 @@ Sidebar
   -webkit-animation: charac_slideIn 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
           animation: charac_slideIn 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
 }
+.job_work_bg a {
+  color: white;
+  text-decoration: underline;
+}
 
 .job_work {
   max-width: 100%;
@@ -4777,6 +4782,7 @@ Sidebar
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 40px;
 }
 .job_links .btn-white {
@@ -4793,8 +4799,14 @@ Sidebar
 }
 @media (max-width: 559.9px) {
   .job_links .btn-white {
-    padding: 10px 24px 10px 10px;
+    padding: 0 24px 0 10px;
     height: 48px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .job_links .btn-white:not(:first-child) {
+    margin-top: 8px;
   }
 }
 .job_links .btn-white:hover {
@@ -4815,7 +4827,6 @@ Sidebar
 @media (max-width: 559.9px) {
   .job_links .btn-white i {
     right: 8px;
-    margin-top: -5px;
   }
 }
 
@@ -5243,6 +5254,17 @@ Sidebar
     text-align: center;
   }
 }
+.myWork li {
+  position: relative;
+}
+@media (max-width: 559.9px) {
+  .myWork li {
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+  }
+}
 .myWork li:not(:last-child)::after {
   content: "\f063";
   font-family: "Font Awesome 5 Free";
@@ -5255,6 +5277,14 @@ Sidebar
 @media (min-width: 821px) {
   .myWork li:not(:last-child)::after {
     text-align: center;
+  }
+}
+@media (max-width: 559.9px) {
+  .myWork li:not(:last-child)::after {
+    position: absolute;
+    left: 50%;
+    bottom: -23px;
+    margin-left: -10px;
   }
 }
 
@@ -7604,7 +7634,7 @@ input, button, textarea {
   cursor: pointer;
 }
 
-.btns .btn {
+.form-btns .btn {
   color: white;
   font-size: 22px;
   font-weight: 600;
@@ -7619,7 +7649,7 @@ input, button, textarea {
   margin: 0 5px 20px;
 }
 @media (max-width: 1159.9px) {
-  .btns .btn {
+  .form-btns .btn {
     font-size: 18px;
     width: 90%;
     margin: 0 auto 20px;
@@ -7691,12 +7721,12 @@ input, button, textarea {
   border-bottom: 3px solid #999;
 }
 
-.btns .btn-primary {
+.form-btns .btn-primary {
   background-color: #81c320;
   border-color: #a2d400;
   border-bottom: 3px solid #679b1b;
 }
-.btns .btn-primary:hover {
+.form-btns .btn-primary:hover {
   background-color: #a2d400;
   border-color: #a2d400;
 }

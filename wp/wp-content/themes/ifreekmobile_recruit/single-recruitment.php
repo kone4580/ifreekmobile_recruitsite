@@ -7,7 +7,7 @@
 			<p class="eng">RECRUITMENT</p>
         </div>
         <div class="sq_carat">
-            <?xml version="1.0" encoding="UTF-8"?>
+			<?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
             <svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
                 <g id="title_sq">
                     <rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -236,7 +236,7 @@
 
 			<div class="ws_bottoms">
 				<?php
-                $terms = get_the_terms($post->ID, 'interview_division');
+                $terms = get_the_terms($post->ID, 'recruitment_division');
                 if ($terms) :
                     foreach ($terms as $term) {
                         echo '<a href="' . esc_url( home_url( '/' ) ) . 'jobs/' . $term->slug .'/" class="btn-red">事業部の仕事内容<i class="fas fa-angle-right"></i></a>';

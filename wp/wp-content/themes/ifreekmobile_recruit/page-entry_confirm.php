@@ -1,4 +1,9 @@
-<?php 
+<?php
+/*
+Template Name: エントリー入力内容確認ページ
+*/
+?>
+<?php
 session_start();
 
 if (!isset($_SESSION['entry'])) {
@@ -7,8 +12,12 @@ if (!isset($_SESSION['entry'])) {
     exit();
 }
 
-$division = $_SESSION['entry']['division'];
-$job = $_SESSION['entry']['job'];
+if (isset($_SESSION['entry']['division'])) {
+    $division = $_SESSION['entry']['division'];
+}
+if (isset($_SESSION['entry']['job'])) {
+    $job = $_SESSION['entry']['job'];
+}
 
 function send() {
     $uri = get_template_directory_uri();
@@ -28,7 +37,7 @@ get_header(); ?>
             <p class="eng">ENTRY</p>
         </div>
         <div class="sq_carat">
-            <?xml version="1.0" encoding="UTF-8"?>
+            <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
             <svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
                 <g id="title_sq">
                     <rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -113,13 +122,18 @@ get_header(); ?>
                         <tr>
                             <th>希望職種<br>※複数選択可</th>
                             <td>
-                                <?php foreach ($job as $index => $value) {
-                                    if ($index != array_key_last($job)) {
-                                        echo $value;
-                                        echo "、";
-                                    } else {
-                                        echo $value;
+                                <?php
+                                if (isset($_SESSION['entry']['job'])) {
+                                    foreach ($job as $index => $value) {
+                                        if ($index != array_key_last($job)) {
+                                            echo $value;
+                                            echo "、";
+                                        } else {
+                                            echo $value;
+                                        }
                                     }
+                                } else {
+                                    echo "特になし";
                                 } ?>
                             </td>
                         </tr>
@@ -127,13 +141,18 @@ get_header(); ?>
                         <tr>
                             <th>希望事業部<br>※複数選択可</th>
                             <td>
-                                <?php foreach ($division as $index => $value) {
-                                    if ($index != array_key_last($division)) {
-                                        echo $value;
-                                        echo "、";
-                                    } else {
-                                        echo $value;
+                                <?php
+                                if (isset($_SESSION['entry']['division'])) {
+                                    foreach ($division as $index => $value) {
+                                        if ($index != array_key_last($division)) {
+                                            echo $value;
+                                            echo "、";
+                                        } else {
+                                            echo $value;
+                                        }
                                     }
+                                } else {
+                                    echo "特になし";
                                 } ?>
                             </td>
                         </tr>
@@ -141,7 +160,12 @@ get_header(); ?>
                         <tr>
                             <th>メッセージ</th>
                             <td>
-                                <?php echo htmlspecialchars($_SESSION['entry']['message'], ENT_QUOTES, 'UTF-8'); ?>
+                                <?php
+                                if (isset($_SESSION['entry']['message'])) {
+                                    echo htmlspecialchars($_SESSION['entry']['message'], ENT_QUOTES, 'UTF-8');
+                                } else {
+                                    echo "特になし";
+                                } ?>
                             </td>
                         </tr>
 

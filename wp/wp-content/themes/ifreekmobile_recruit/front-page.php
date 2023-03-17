@@ -13,13 +13,21 @@
 
 		<div class="main_movie">
 			<div class="main_video_box">
-		<video id="main_video_file" autoplay loop muted playsinline>
-			<source src="<?php echo get_template_directory_uri(); ?>/assets/movies/ifm_opening_movie.mp4" type='video/mp4'>
-		</video>
-		</div>
+				<div class="video_pc">
+					<video id="main_video_file" autoplay loop muted playsinline>
+						<source src="<?php echo get_template_directory_uri(); ?>/assets/movies/ifm_opening_movie.mp4" type='video/mp4'>
+					</video>
+				</div>
+
+				<div class="video_sp">
+					<video id="main_video_file_sp" autoplay loop muted playsinline>
+						<source src="<?php echo get_template_directory_uri(); ?>/assets/movies/ifm_opening_movie_sp.mp4" type='video/mp4'>
+					</video>
+				</div>
+			</div>
 		</div>
 
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="bnr_recruit"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/main_bnr.png" alt="採用情報" /></a>
+		<a href="https://www.i-freek.co.jp/business/mobile/" target="_blank" class="bnr_recruit"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/main_bnr.png" alt="採用情報" /></a>
 	</div>
 
 
@@ -133,7 +141,6 @@
 			'post_type' => 'interview',
 			'post_status' => 'publish',
 			'posts_per_page' => '10',
-			'order' => 'DESC',
 		));
 	?>
 	<?php if ($query_interview->have_posts()) : ?>
@@ -143,11 +150,11 @@
 					<h2 class="jp">社員インタビュー</h2>
 					<p class="eng">INTERVIEW</p>
 				</div>
-				
+
 				<div class="swiper-container top_interview_slider animation">
 					<div class="swiper-wrapper">
 						<?php while ($query_interview->have_posts()) : $query_interview->the_post(); ?>
-						
+
 							<div class="swiper-slide">
 								<div class="top_interview_slider-image">
 									<div class="top_interview_slider-image-inner">
@@ -158,7 +165,10 @@
 									</div>
 								</div>
 								<div class="tis_message">
-									<?php the_field('top_caption'); ?>
+									<?php $caption = get_field('top_caption');
+									if( !empty($caption) ): ?>
+										<img src="<?php echo esc_attr($caption['url']); ?>" alt="コメント">
+									<?php endif; ?>
 								</div>
 								<p class="tis_position"><?php the_field('top_job_eng'); ?></p>
 								<div class="tis_detail">

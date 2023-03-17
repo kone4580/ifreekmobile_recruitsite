@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST)) {
@@ -30,9 +30,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (empty($error)) {
             $_SESSION['entry'] = $_POST;
-            header('Location: /entry/confirm/');
+            header('Location: ' . $home_url . 'entry/confirm/');
             exit();
         }
+    }
+}
+
+if (isset($_REQUEST['action'])) {
+    if ($_REQUEST['action'] == 'rewrite') {
+        $_POST = $_SESSION['entry'];
     }
 }
 
@@ -45,7 +51,7 @@ get_header(); ?>
             <p class="eng">ENTRY</p>
         </div>
         <div class="sq_carat">
-            <?xml version="1.0" encoding="UTF-8"?>
+            <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
             <svg id="layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 559 280">
                 <g id="title_sq">
                     <rect id="_長方形_4" class="title_sq_1" x="519" y="0" width="40" height="40"/>
@@ -88,8 +94,12 @@ get_header(); ?>
                                     <div class="hissu_cell">お名前<span class="hissu">必須</span></div>
                                 </th>
                                 <td>
-                                    <input type="text" name="namae" class="c-input w60p" placeholder="例）山田 太郎" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['namae'], ENT_QUOTES, 'UTF-8'); } ?>">
-                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                    <input type="text" name="namae" class="c-input w60p" placeholder="例）山田 太郎" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['namae'], ENT_QUOTES, 'UTF-8'); } elseif (isset($_REQUEST['action'])) {
+                                        if($_REQUEST['action'] == 'rewrite') {
+                                            echo htmlspecialchars($_SESSION['entry']['namae'], ENT_QUOTES, 'UTF-8');
+                                        }
+                                    } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         if ($error['namae'] == 'blank') {
                                             echo '<p class="help-block">お名前を入力してください。</p>';
                                         }
@@ -102,8 +112,12 @@ get_header(); ?>
                                     <div class="hissu_cell">ふりがな<span class="hissu">必須</span></div>
                                 </th>
                                 <td>
-                                    <input type="text" id="kana" name="kana" class="c-input" placeholder="例）やまだ たろう" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['kana'], ENT_QUOTES, 'UTF-8'); } ?>">
-                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                    <input type="text" id="kana" name="kana" class="c-input" placeholder="例）やまだ たろう" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['kana'], ENT_QUOTES, 'UTF-8'); } elseif (isset($_REQUEST['action'])) {
+                                        if($_REQUEST['action'] == 'rewrite') {
+                                            echo htmlspecialchars($_SESSION['entry']['kana'], ENT_QUOTES, 'UTF-8');
+                                        }
+                                    } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         if ($error['kana'] == 'blank') {
                                             echo '<p class="help-block">ふりがなを入力してください。</p>';
                                         }
@@ -116,8 +130,12 @@ get_header(); ?>
                                     <div class="hissu_cell">メールアドレス<span class="hissu">必須</span></div>
                                 </th>
                                 <td>
-                                    <input type="email" data-type="email" name="email" class="c-input" placeholder="例）taro@domain.jp" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8'); } ?>">
-                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                    <input type="email" data-type="email" name="email" class="c-input" placeholder="例）taro@domain.jp" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8'); } elseif (isset($_REQUEST['action'])) {
+                                        if($_REQUEST['action'] == 'rewrite') {
+                                            echo htmlspecialchars($_SESSION['entry']['email'], ENT_QUOTES, 'UTF-8');
+                                        }
+                                    } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         if ($error['email'] == 'blank') {
                                             echo '<p class="help-block">メールアドレスを入力してください。</p>';
                                         }
@@ -130,8 +148,12 @@ get_header(); ?>
                                     <div class="hissu_cell">メールアドレス（確認用）<span class="hissu">必須</span></div>
                                 </th>
                                 <td>
-                                    <input type="email" data-type="email" name="confirm_email" class="c-input" placeholder="例）taro@domain.jp" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['confirm_email'], ENT_QUOTES, 'UTF-8'); } ?>">
-                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                    <input type="email" data-type="email" name="confirm_email" class="c-input" placeholder="例）taro@domain.jp" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['confirm_email'], ENT_QUOTES, 'UTF-8'); } elseif (isset($_REQUEST['action'])) {
+                                        if($_REQUEST['action'] == 'rewrite') {
+                                            echo htmlspecialchars($_SESSION['entry']['confirm_email'], ENT_QUOTES, 'UTF-8');
+                                        }
+                                    } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         if ($error['confirm_email'] == 'blank') {
                                             echo '<p class="help-block">メールアドレス（確認用）を入力してください。</p>';
                                         } elseif ($error['confirm_email'] == 'diff') {
@@ -146,8 +168,12 @@ get_header(); ?>
                                     <div class="hissu_cell">電話番号<span class="hissu">必須</span></div>
                                 </th>
                                 <td>
-                                    <input type="tel" name="tel" class="c-input w60p" placeholder="例）012-345-6789" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['tel'], ENT_QUOTES, 'UTF-8'); } ?>">
-                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                                    <input type="tel" name="tel" class="c-input w60p" placeholder="例）012-345-6789" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['tel'], ENT_QUOTES, 'UTF-8'); } elseif (isset($_REQUEST['action'])) {
+                                        if($_REQUEST['action'] == 'rewrite') {
+                                            echo htmlspecialchars($_SESSION['entry']['tel'], ENT_QUOTES, 'UTF-8');
+                                        }
+                                    } ?>">
+                                    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         if ($error['tel'] == 'blank') {
                                             echo '<p class="help-block">電話番号を入力してください。</p>';
                                         }
@@ -163,30 +189,23 @@ get_header(); ?>
                                         $terms = get_terms('recruitment_job');
                                         foreach ($terms as $term) {
                                             $job = $term->name;
-                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['job'])) { 
-                                                if(in_array($job, $_POST['job'])){
-                                                    echo '<div class="c-radio-list__item">
-                                                        <label>
-                                                            <input type="checkbox" name="job[]" class="c-checkbox" value="' . $job . '" checked>
-                                                            ' . $job . '
-                                                        </label>
-                                                    </div>';
-                                                } else {
-                                                    echo '<div class="c-radio-list__item">
-                                                        <label>
-                                                            <input type="checkbox" name="job[]" class="c-checkbox" value="' . $job . '">
-                                                            ' . $job . '
-                                                        </label>
-                                                    </div>';
+                                            $job_item = '<div class="c-radio-list__item"><label>
+                                                <input type="checkbox" name="job[]" class="c-checkbox" value="' . $job . '"';
+                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['job'])) {
+                                                if(in_array($term->name, $_POST['job'])){
+                                                    $job_item .= 'checked';
                                                 }
-                                            } else {
-                                                echo '<div class="c-radio-list__item">
-                                                    <label>
-                                                        <input type="checkbox" name="job[]" class="c-checkbox" value="' . $job . '">
-                                                        ' . $job . '
-                                                    </label>
-                                                </div>';
+                                            } elseif (isset($_REQUEST['action'])) {
+                                                if($_REQUEST['action'] == 'rewrite' && isset($_SESSION['entry']['job'])) {
+                                                    if(in_array($job, $_SESSION['entry']['job'])){
+                                                        $job_item .= 'checked';
+                                                    }
+                                                }
                                             }
+                                            $job_item .= '>';
+                                            $job_item .= $job;
+                                            $job_item .= '</label></div>';
+                                            echo $job_item;
                                         }
                                         ?>
                                     </div>
@@ -200,36 +219,40 @@ get_header(); ?>
                                         <?php
                                         $terms = get_terms('recruitment_division');
                                         foreach ($terms as $term) {
-                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['division'])) { 
-                                                if(in_array($term->name, $_POST['division'])){
-                                                    echo '<div class="c-radio-list__item">
-                                                        <label>
-                                                            <input type="checkbox" name="division[]" class="c-checkbox" value="' . $term->name . '" checked>
-                                                            ' . $term->name . '
-                                                        </label>
-                                                    </div>';
-                                                } else {
-                                                    echo '<div class="c-radio-list__item">
-                                                        <label>
-                                                            <input type="checkbox" name="division[]" class="c-checkbox" value="' . $term->name . '">
-                                                            ' . $term->name . '
-                                                        </label>
-                                                    </div>';
+                                            $division = $term->name;
+                                            $division_item = '<div class="c-radio-list__item"><label>
+                                                <input type="checkbox" name="division[]" class="c-checkbox" value="' . $division . '"';
+                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['division'])) {
+                                                if(in_array($division, $_POST['division'])){
+                                                    $division_item .= 'checked';
                                                 }
-                                            } else {
-                                                echo '<div class="c-radio-list__item">
-                                                    <label>
-                                                        <input type="checkbox" name="division[]" class="c-checkbox" value="' . $term->name . '">
-                                                        ' . $term->name . '
-                                                    </label>
-                                                </div>';
+                                            } elseif (isset($_REQUEST['action'])) {
+                                                if($_REQUEST['action'] == 'rewrite' && isset($_SESSION['entry']['division'])) {
+                                                    if(in_array($division, $_SESSION['entry']['division'])){
+                                                        $division_item .= 'checked';
+                                                    }
+                                                }
                                             }
+                                            $division_item .= '>';
+                                            $division_item .= $division;
+                                            $division_item .= '</label></div>';
+                                            echo $division_item;
                                         }
                                         ?>
                                         <div class="c-radio-list__item">
                                             <label>
-                                                <input type="checkbox" name="division[]" class="c-checkbox" value="後で考える" <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['division'])) { if(in_array('後で考える', $_POST['division'])){ echo 'checked'; } } ?>>
-                                                後で考える
+                                                <input type="checkbox" name="division[]" class="c-checkbox" value="後で考える" <?php
+                                                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['division'])) {
+                                                    if(in_array('後で考える', $_POST['division'])){
+                                                        echo 'checked';
+                                                    }
+                                                } elseif (isset($_REQUEST['action'])) {
+                                                    if($_REQUEST['action'] == 'rewrite' && isset($_SESSION['entry']['division'])) {
+                                                        if(in_array('後で考える', ($_SESSION['entry']['division']))){
+                                                            echo 'checked';
+                                                        }
+                                                    }
+                                                } ?>>後で考える
                                             </label>
                                         </div>
                                     </div>
@@ -239,7 +262,15 @@ get_header(); ?>
                             <tr>
                                 <th>メッセージ</th>
                                 <td>
-                                    <textarea class="c-textarea" id="message" rows="5" name="message"><?php if ($_SERVER["REQUEST_METHOD"] == "POST") { echo htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8'); } ?></textarea>
+                                    <textarea class="c-textarea" id="message" rows="5" name="message"><?php
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                        echo htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
+                                    } elseif (isset($_REQUEST['action'])) {
+                                        if($_REQUEST['action'] == 'rewrite') {
+                                            echo htmlspecialchars($_SESSION['entry']['message'], ENT_QUOTES, 'UTF-8');
+                                        }
+                                    }
+                                    ?></textarea>
                                 </td>
                             </tr>
 
@@ -250,19 +281,19 @@ get_header(); ?>
                         <h5>個人情報のお取り扱いについて</h5>
                         <p>本入力フォームおよびメールでご連絡頂きました、お客様の個人情報につきましては、厳重に管理を行っております。<br>
                         法令等に基づき正規の手続きによって司法捜査機関による開示要求が行われた場合を除き、第三者に開示もしくは提供することはございません。</p>
-                        <div class="accept"><label><input type="checkbox" name="accept" id="accept" value="同意する" class="c-checkbox" <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accept'])) { echo 'checked'; } ?>><span>個人情報のお取り扱いに同意する</span></label></div>
+                        <div class="accept"><label><input type="checkbox" name="accept" id="accept" value="同意する" class="c-checkbox" <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['accept'])) { echo 'checked'; } elseif (isset($_REQUEST['action'])) { if ($_REQUEST['action'] == 'rewrite' && isset($_SESSION['entry']['accept'])) { echo 'checked'; } } ?>><span>個人情報のお取り扱いに同意する</span></label></div>
 
-                        <?php 
+                        <?php
                             if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_POST['accept'])) {
                                 echo '<p class="help-block">個人情報のお取り扱いへの同意は必須です。</p>';
                             }
                         ?>
                     </div>
-                    
+
 
                     <div class="form-group form-btn">
                         <div class="input-zone">
-                            <input id="btn_confirm" type="submit" value="送信" class="btn-confirm">
+                            <input id="btn_confirm" type="submit" value="確認画面へ" class="btn-confirm">
                         </div>
                     </div>
                 </form>
