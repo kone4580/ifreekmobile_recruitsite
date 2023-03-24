@@ -34,7 +34,7 @@
 	<div class="top_main_under animation">
 		<div class="top_title center">
 			<h2 class="jp">アイフリークモバイルの理念</h2>
-			<p class="eng">PHILOSPHY</p>
+			<p class="eng">PHILOSOPHY</p>
 		</div>
 
 

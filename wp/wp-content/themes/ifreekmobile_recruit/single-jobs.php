@@ -45,10 +45,9 @@
                     ?>
                     <?php if ($query_jobs->have_posts()) : while ($query_jobs->have_posts()) : $query_jobs->the_post(); ?>
 						<?php
-						$http = is_ssl() ? 'https' : 'http' . '://';
-						$url = $http . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+						$current_url =  get_pagenum_link(get_query_var('paged'));
 						$link_page = get_permalink();
-						if($url == $link_page) {
+						if($current_url == $link_page) {
 						?>
 							<li class="active">
 						<?php } else { ?>

@@ -3848,6 +3848,10 @@ Sidebar
 				font-size: 1.4rem;
 				font-weight: bold;
 			}
+			a {
+				color: white;
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -5488,6 +5492,72 @@ Sidebar
 /**************
 募集要項
 **************/
+.tab_navi {
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	@include over_sp {
+		border-bottom: 4px $red solid;
+		@include flex(flex-end, center);
+	}
+	@include sp {
+		margin-bottom: 10px;
+		@include inline-flex;
+	}
+	li {
+		height: 56px;
+		@include flex(center, center);
+		padding: 0 16px;
+		background-color: #ffefef;
+		color: $red;
+		font-weight: bold;
+		transition: all .4s ease;
+		margin: 0 4px;
+		border-radius: 8px 8px 0 0;
+		@include over_sp {
+			width: 240px;
+			font-size: 1.8rem;
+		}
+		@include sp {
+			background-color: white;
+			font-size: 1.2rem;
+			height: 32px;
+			padding: 8px;
+			border: 2px $red solid;
+			border-radius: 4px;
+			margin: 0 3px 3px 0;
+		}
+		&:not(.current) {
+			cursor: pointer;
+			&:hover {
+				background-color: #ddd;
+			}
+		}
+		&.current {
+			background-color: $red;
+			color: white;
+		}
+	}
+}
+.tab-target {
+	transition: all .4s ease;
+	display: none;
+	transition: all .4s ease;
+	opacity: 0;
+	visibility: hidden;
+	&.current {
+		display: block;
+		opacity: 1;
+		visibility: visible;
+	}
+	.inner {
+		background-color: white;
+		padding: 40px;
+		@include sp {
+			padding: 20px 16px;
+		}
+	}
+}
 .recruitment_archs {
 	width: 100%;
 	border-top: 1px solid #ccc;

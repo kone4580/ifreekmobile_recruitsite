@@ -37,7 +37,7 @@
 				<div class="recruitment_title">
 					<p class="division">
 						<?php
-						$terms = get_the_terms($post->ID, 'interview_division');
+						$terms = get_the_terms($post->ID, 'recruitment_division');
 						if ($terms) :
 							foreach ($terms as $term) {
 								echo '<span>' . $term->name . '</span>';
@@ -213,7 +213,7 @@
 						<p class="tit">2.書類選考</p>
 					</div>
 					<div class="text_wrap">
-						<p class="text">応募された職種の弊社担当・採用担当が職務経歴書の内容を確認し、こちらからご連絡面接の日程をご連絡させていただきます。</p>
+						<p class="text">応募された職種の弊社担当・採用担当が職務経歴書の内容を確認し、こちらから面接の日程をご連絡させていただきます。</p>
 					</div>
 				</div>
 				<div class="con_flow">

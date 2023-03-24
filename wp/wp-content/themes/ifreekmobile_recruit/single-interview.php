@@ -205,7 +205,7 @@
                     }
                 endif;
                 ?>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>interview/" class="btn-red">一覧に戻る<i class="fas fa-angle-right"></i></a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>interview/" class="btn-red">STAFF INTERVIEW 一覧に戻る<i class="fas fa-angle-right"></i></a>
             </div>
 
 

@@ -33,57 +33,73 @@
 <main id="main_wrap" role="main">
     <div class="page_section">
         <div class="wrap">
-            <p class="page_top_text">アイフリークモバイルグループの採用は、「能力やスキルを活かして、自分も周りもワクワクしてHAPPYになる」という価値観の共有を大切にしています。<br>採用面接、配属前面談等で本人の希望や適性等を考慮した上で、グループ内の各事業部に配属予定です。<br>配属後の処遇は、基本給・業務手当・福利厚生など基幹部分は一律ですが、ご自身の取得する資格や就業先での評価実績を考慮して決定されます。</p>
+            <p class="page_top_text">アイフリークグループの採用は、「能力やスキルを活かして、自分も周りもワクワクしてHAPPYになる」という価値観の共有を大切にしています。<br>採用面接、配属前面談等で本人の希望や適性等を考慮した上で、グループ内の各事業部に配属予定です。<br>配属後の処遇は、基本給・業務手当・福利厚生など基幹部分は一律ですが、ご自身の取得する資格や就業先での評価実績を考慮して決定されます。</p>
 
-            <div class="big-title center mt80">
-                <h2 class="jp">募集職種一覧</h2>
-                <p class="eng">RECRUITMENT TYPE</p>
+            <ul class="tab_navi">
+                <li class="current">新卒採用</li>
+                <li>中途採用</li>
+            </ul>
+
+            <div class="tab-target current">
+                <div class="big-title center">
+                    <h2 class="jp">新卒採用 募集職種一覧</h2>
+                    <p class="eng">RECRUITMENT TYPE</p>
+                </div>
             </div>
 
-            <?php $terms = get_terms('recruitment_job'); ?>
-            <?php foreach($terms as $term): ?>
-                <div class="recruitment_archs">
-                    <p class="head"><?= $term->name; ?></p>
-                    <div class="ra_list">
-                        <?php
-                        $query = new WP_Query(array(
-                            'post_type' => 'recruitment',
-                            'texonomy' => 'recruitment_job',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'recruitment_job',
-                                    'field' => 'slug',
-                                    'terms' => $term->slug,
-                                ),
-                            ),
-                            'post_status' => 'publish',
-                            'posts_per_page' => '100',
-                            'order' => 'ASC',
-                        ));
-                        ?>
-                        <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-                            <dl class="jobItem">
-                                <dt>
-                                    <?php
-                                    $terms = get_the_terms($post->ID, 'recruitment_division');
-                                    if ($terms) :
-                                        foreach ($terms as $term) {
-                                            echo '<span>' . $term->name . '</span>';
-                                        }
-                                    endif;
-                                    ?>
-                                </dt>
-                                <dd><?php the_field('explain'); ?></dd>
-                                <a href="<?php the_permalink(); ?>" class="float_link"></a>
-                                <span class="red_angle"><i class="fas fa-angle-right"></i></span>
-                            </dl>
-                        <?php endwhile; endif; wp_reset_postdata(); ?>
-                    </div>
+            <div class="tab-target">
+                <div class="big-title center">
+                    <h2 class="jp">中途採用 募集職種一覧</h2>
+                    <p class="eng">RECRUITMENT TYPE</p>
                 </div>
-            <?php endforeach; ?>
+
+                <?php $terms = get_terms('recruitment_job'); ?>
+                <?php foreach($terms as $term): ?>
+                    <div class="recruitment_archs">
+                        <p class="head"><?= $term->name; ?></p>
+                        <div class="ra_list">
+                            <?php
+                            $query = new WP_Query(array(
+                                'post_type' => 'recruitment',
+                                'texonomy' => 'recruitment_job',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'recruitment_job',
+                                        'field' => 'slug',
+                                        'terms' => $term->slug,
+                                    ),
+                                ),
+                                'post_status' => 'publish',
+                                'posts_per_page' => '100',
+                                'order' => 'ASC',
+                            ));
+                            ?>
+                            <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+                                <dl class="jobItem">
+                                    <dt>
+                                        <?php
+                                        $terms = get_the_terms($post->ID, 'recruitment_division');
+                                        if ($terms) :
+                                            foreach ($terms as $term) {
+                                                echo '<span>' . $term->name . '</span>';
+                                            }
+                                        endif;
+                                        ?>
+                                    </dt>
+                                    <dd><?php the_field('explain'); ?></dd>
+                                    <a href="<?php the_permalink(); ?>" class="float_link"></a>
+                                    <span class="red_angle"><i class="fas fa-angle-right"></i></span>
+                                </dl>
+                            <?php endwhile; endif; wp_reset_postdata(); ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
 
 
-            <h2 class="title_with_line mt100">
+
+
+            <!-- <h2 class="title_with_line mt100">
                 <span>あなたに合う事業部を探そう</span>
             </h2>
 
@@ -264,7 +280,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

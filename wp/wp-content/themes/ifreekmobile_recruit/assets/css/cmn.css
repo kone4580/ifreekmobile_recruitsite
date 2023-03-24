@@ -4428,6 +4428,10 @@ Sidebar
     font-weight: bold;
   }
 }
+.faq-list .answer .txt a {
+  color: white;
+  text-decoration: underline;
+}
 
 .faq-list .faq-list__item.active .question .indicator::after {
   transform: rotate3d(0, 0, 1, 90deg);
@@ -6355,6 +6359,91 @@ Sidebar
 /**************
 募集要項
 **************/
+.tab_navi {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+@media (min-width: 560px) {
+  .tab_navi {
+    border-bottom: 4px #E5004F solid;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}
+@media (max-width: 559.9px) {
+  .tab_navi {
+    margin-bottom: 10px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+}
+.tab_navi li {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  background-color: #ffefef;
+  color: #E5004F;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  margin: 0 4px;
+  border-radius: 8px 8px 0 0;
+}
+@media (min-width: 560px) {
+  .tab_navi li {
+    width: 240px;
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 559.9px) {
+  .tab_navi li {
+    background-color: white;
+    font-size: 1.2rem;
+    height: 32px;
+    padding: 8px;
+    border: 2px #E5004F solid;
+    border-radius: 4px;
+    margin: 0 3px 3px 0;
+  }
+}
+.tab_navi li:not(.current) {
+  cursor: pointer;
+}
+.tab_navi li:not(.current):hover {
+  background-color: #ddd;
+}
+.tab_navi li.current {
+  background-color: #E5004F;
+  color: white;
+}
+
+.tab-target {
+  transition: all 0.4s ease;
+  display: none;
+  transition: all 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.tab-target.current {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.tab-target .inner {
+  background-color: white;
+  padding: 40px;
+}
+@media (max-width: 559.9px) {
+  .tab-target .inner {
+    padding: 20px 16px;
+  }
+}
+
 .recruitment_archs {
   width: 100%;
   border-top: 1px solid #ccc;

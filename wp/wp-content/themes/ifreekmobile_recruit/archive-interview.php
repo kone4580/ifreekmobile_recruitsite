@@ -3,8 +3,8 @@
 <div class="pageTitle">
     <div class="title_inner">
         <div class="text-area">
-            <h1 class="jp">仕事内容</h1>
-            <p class="eng">JOB</p>
+            <h1 class="jp">人を知る</h1>
+            <p class="eng">STAFF INTERVIEW</p>
         </div>
         <div class="sq_carat">
             <?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>

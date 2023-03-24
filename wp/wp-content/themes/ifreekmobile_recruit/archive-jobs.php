@@ -357,65 +357,45 @@
     </div>
 
 
+    <?php
+        $query_faq = new WP_Query(array(
+            'post_type' => 'faq',
+            'post_status' => 'publish',
+            'posts_per_page' => '30',
+        ));
+        if ($query_faq->have_posts()) :
+    ?>
     <div class="page_section page_section__red">
         <div class="wrap">
             <div class="faq-list">
-                <section class="faq-list__item js-accordion">
-                    <h3 class="question">
-                        <button class="question__txt js-accordion__trigger" type="button">
-                            <span class="icon">Q</span>
-                            <span class="txt">エントリー方法を教えてください。</span>
-                            <span class="indicator"></span>
-                        </button>
-                    </h3>
-                    <div class="js-accordion__collapse">
-                        <div class="answer js-accordion__collapse-inner">
-                            <div class="answer__txt">
-                                <span class="icon">A</span>
-                                <span class="txt">お問合せページからお問合せいただくか、弊社へ直接お電話にてお問合せください。エントリーお待ちしております！</span>
+                <?php while ($query_faq->have_posts()) : $query_faq->the_post(); ?>
+                    <section class="faq-list__item js-accordion">
+                        <h3 class="question">
+                            <button class="question__txt js-accordion__trigger" type="button">
+                                <span class="icon">Q</span>
+                                <div class="txt">
+                                    <?php the_field('question'); ?>
+                                </div>
+                                <span class="indicator"></span>
+                            </button>
+                        </h3>
+                        <div class="js-accordion__collapse">
+                            <div class="answer js-accordion__collapse-inner">
+                                <div class="answer__txt">
+                                    <span class="icon">A</span>
+                                    <div class="txt">
+                                        <?php the_field('answer'); ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-
-                <section class="faq-list__item js-accordion">
-                    <h3 class="question">
-                        <button class="question__txt js-accordion__trigger" type="button">
-                            <span class="icon">Q</span>
-                            <span class="txt">エントリー時に事業部の希望を考慮していただけますか？</span>
-                            <span class="indicator"></span>
-                        </button>
-                    </h3>
-                    <div class="js-accordion__collapse">
-                        <div class="answer js-accordion__collapse-inner">
-                            <div class="answer__txt">
-                                <span class="icon">A</span>
-                                <span class="txt">ご希望の事業部を選択していただければスキルや希望を考慮した配属をする予定です。</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="faq-list__item js-accordion">
-                    <h3 class="question">
-                        <button class="question__txt js-accordion__trigger" type="button">
-                            <span class="icon">Q</span>
-                            <span class="txt">事業部の異動はできますか？</span>
-                            <span class="indicator"></span>
-                        </button>
-                    </h3>
-                    <div class="js-accordion__collapse">
-                        <div class="answer js-accordion__collapse-inner">
-                            <div class="answer__txt">
-                                <span class="icon">A</span>
-                                <span class="txt">できます。</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                <?php endwhile; ?>
             </div>
         </div>
     </div>
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
 
 </main>
 

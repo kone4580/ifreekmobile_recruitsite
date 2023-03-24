@@ -83,3 +83,23 @@ function faqClick() {
 		$(this).parents('.js-accordion').toggleClass('active');
 	});
 }
+
+
+/* タブ切り替え */
+$(function(){
+	$('.tab-target').eq(0).addClass('current');
+
+	$('.tab_navi li').click(function(){
+		var index = $('.tab_navi li').index(this);
+
+		if($(this).hasClass('current')){
+
+		} else {
+			$('.tab_navi li').removeClass('current');
+			$(this).addClass('current');
+
+			$('.tab-target').removeClass('current');
+			$('.tab-target').eq(index).addClass('current');
+		}
+	});
+});

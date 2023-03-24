@@ -7,27 +7,6 @@ add_editor_style('assets/css/cmn.css');
 add_editor_style('editor-style.css'); //エディタ専用
 
 
-//ロゴ変更
-function my_login_style()
-{
-    wp_enqueue_style('custom-login', get_template_directory_uri() . '/assets/css/login.css');
-}
-add_action('login_enqueue_scripts', 'my_login_style');
-
-// ロゴのリンク先を指定
-function my_login_logo_url()
-{
-    return get_bloginfo('url');
-}
-add_filter('login_headerurl', 'my_login_logo_url');
-// ロゴのtitleテキストを指定
-function my_login_logo_tit()
-{
-    return get_option('blogname');
-}
-add_filter('login_headertitle', 'my_login_logo_tit');
-
-
 
 /* the_archive_title 余計な文字を削除 */
 add_filter( 'get_the_archive_title', function ($title) {
@@ -67,7 +46,7 @@ function wpautop_filter($content)
     if (in_array($post_type, $arr_types)) {
         $remove_filter = true;
     }
-    
+
     if ($remove_filter) {
         remove_filter('the_content', 'wpautop');
         remove_filter('the_excerpt', 'wpautop');
@@ -285,6 +264,41 @@ function create_post_type()
             'show_ui' => true,
         )
     );
+
+
+    // よくある質問
+    register_post_type(
+        'faq',
+        array(
+        'label' => 'よくある質問',
+        'labels' => array(
+            'name' => __('よくある質問'),
+            'singular_name' => __('よくある質問'),
+            'all_items' => __('よくある質問一覧')
+        ),
+        'public' => true,
+        'menu_position' => 4,
+        'supports' => array(
+            'title','editor','thumbnail',
+            'custom-fields','excerpt','author','trackbacks',
+            'comments','revisions','page-attributes'
+        ),
+        'has_archive' => true
+        )
+    );
+
+    register_taxonomy(
+        'faq_cat',
+        'faq',
+        array(
+            'hierarchical' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'label' => 'カテゴリー',
+            'sigular_label' => 'カテゴリー',
+            'public' => true,
+            'show_ui' => true,
+        )
+    );
 }
 
 
@@ -312,5 +326,3 @@ function recruitment_divisin_meta_box_remove() {
     remove_meta_box( $id, $post_type, $position );
 }
 add_action( 'admin_menu', 'recruitment_divisin_meta_box_remove');
-
-
