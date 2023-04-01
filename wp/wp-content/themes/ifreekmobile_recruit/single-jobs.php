@@ -155,8 +155,7 @@
                     'taxonomy' => 'interview_division',
                     'term' => $slug,
                     'post_status' => 'publish',
-                    'posts_per_page' => 6,
-                    'orderby' => 'rand',
+                    'posts_per_page' => 10,
                 ));
                 if ($query->have_posts()):
             ?>
@@ -204,8 +203,7 @@
                     'taxonomy' => 'recruitment_division',
                     'term' => $slug,
                     'post_status' => 'publish',
-                    'posts_per_page' => 6,
-                    'orderby' => 'rand',
+                    'posts_per_page' => 10,
                 ));
                 if ($query->have_posts()):
             ?>

@@ -46,7 +46,7 @@
 				<nav class="global_navi">
 					<p class="sp_title">MENU</p>
 					<ul class="navi_ul">
-						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/" class="header-nav-item less_tab">HOME</a></li>
+						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-nav-item less_tab">HOME</a></li>
 						<li class="toggle">
 							<p class="header-nav-item">会社を知る</p>
 							<div class="megamenu">
