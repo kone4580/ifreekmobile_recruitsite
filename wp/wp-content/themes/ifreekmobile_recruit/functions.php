@@ -210,6 +210,54 @@ function create_post_type()
         )
     );
 
+
+    // 募集要項（新卒）
+    register_post_type(
+        'recruitment_graduate',
+        array(
+        'label' => '募集要項（新卒）',
+        'labels' => array(
+            'name' => __('募集要項（新卒）'),
+            'singular_name' => __('募集要項（新卒）'),
+            'all_items' => __('募集要項（新卒）一覧')
+        ),
+        'public' => true,
+        'menu_position' => 4,
+        'supports' => array(
+            'title','editor','thumbnail',
+            'custom-fields','excerpt','author','trackbacks',
+            'comments','revisions','page-attributes'
+        ),
+        'has_archive' => true
+        )
+    );
+
+    register_taxonomy(
+        'recruitment_graduate_job',
+        'recruitment_graduate',
+        array(
+            'hierarchical' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'label' => '職種',
+            'sigular_label' => '職種',
+            'public' => true,
+            'show_ui' => true,
+        )
+    );
+
+    register_taxonomy(
+        'recruitment_graduate_division',
+        'recruitment_graduate',
+        array(
+            'hierarchical' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'label' => '事業部',
+            'sigular_label' => '事業部',
+            'public' => true,
+            'show_ui' => true,
+        )
+    );
+
     // 事業部紹介
     register_post_type(
         'jobs',

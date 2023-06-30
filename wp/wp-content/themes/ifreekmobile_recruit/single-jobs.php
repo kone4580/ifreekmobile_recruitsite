@@ -130,7 +130,7 @@
 			<div class="inner">
 				<div class="img_side">
 					<div class="ms_hm">
-                        <?php $image = get_field('img');
+                        <?php $image = get_field('manager');
                         if( !empty($image) ): ?>
                             <img src="<?php echo esc_attr($image['url']); ?>" alt="<?php the_title(); ?>">
                         <?php else : ?>

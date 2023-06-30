@@ -45,7 +45,67 @@
                     <h2 class="jp">新卒採用 募集職種一覧</h2>
                     <p class="eng">RECRUITMENT TYPE</p>
                 </div>
+
+                <p class="text-center mb40">2024年新卒の方向けの募集要項は各サイトにて記載しております。<br>ボタンをクリックして詳細をご確認ください。</p>
+
+                <?php
+                $query = new WP_Query(array(
+                    'post_type' => 'recruitment_graduate',
+                    'post_status' => 'publish',
+                    'posts_per_page' => '100',
+                    'order' => 'ASC',
+                ));
+                ?>
+                <?php if ($query->have_posts()) : ?>
+                    <div class="graduate_archs">
+                        <?php while ($query->have_posts()) : $query->the_post(); ?>
+                            <div class="graduate_item">
+                                <div class="thumb">
+                                    <?php if ( has_post_thumbnail()): ?>
+                                        <?php the_post_thumbnail('full'); ?>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="gi_inner">
+                                    <div class="explain">
+                                        <?php the_field('explain'); ?>
+                                    </div>
+                                    <div class="gi_inner_info">
+                                        <dl>
+                                            <dt>募集職種</dt>
+                                            <dd><?php
+                                            $terms = get_the_terms($post->ID, 'recruitment_graduate_job');
+                                            if ($terms) :
+                                                foreach ($terms as $term) {
+                                                    echo '<span>' . $term->name . '</span>';
+                                                }
+                                            endif;
+                                            ?></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>事業部</dt>
+                                            <dd><?php
+                                            $terms = get_the_terms($post->ID, 'recruitment_graduate_division');
+                                            if ($terms) :
+                                                foreach ($terms as $term) {
+                                                    echo '<span>' . $term->name . '</span>';
+                                                }
+                                            endif;
+                                            ?></dd>
+                                        </dl>
+                                    </div>
+                                    <span class="gray_angle"><i class="fas fa-external-link-alt"></i></span>
+                                </div>
+                                <a href="<?php the_field('link_url'); ?>" target="_blank" class="float_link"></a>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                <?php else : ?>
+                    <div class="underconst">
+                        <p>現在募集中の職種はありません</p>
+                    </div>
+                <?php endif; ?>
             </div>
+
 
             <div class="tab-target">
                 <div class="big-title center">

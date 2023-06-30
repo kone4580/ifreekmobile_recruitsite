@@ -14,3 +14,12 @@ DB_PASSWORD 1if15exE5ki
 
 ## PhpMyAdmin
 https://secure.sakura.ad.jp/rs/db/mysql5/?server=mysql646.db.sakura.ne.jp
+
+
+## 開発DB
+DB_NAME _ifm_recruit
+DB_USER _ifm_recruit
+DB_PASSWORD 8ujhsrith4
+
+## PhpMyAdmin
+https://admin.heteml.jp/pma4/index.php?server=1104
