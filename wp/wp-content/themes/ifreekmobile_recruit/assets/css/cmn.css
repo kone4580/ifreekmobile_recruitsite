@@ -4117,12 +4117,12 @@ Sidebar
   }
 }
 @media (min-width: 821px) {
-  .job_list .item:first-child, .job_list .item:nth-child(2), .job_list .item:nth-child(4), .job_list .item:nth-child(5), .job_list .item:nth-child(7), .job_list .item:nth-child(9), .job_list .item:nth-child(10) {
+  .job_list .item:first-child, .job_list .item:nth-child(2), .job_list .item:nth-child(4), .job_list .item:nth-child(5), .job_list .item:nth-child(7), .job_list .item:nth-child(8), .job_list .item:nth-child(10) {
     border-right: 1px #ddd solid;
   }
 }
 @media (min-width: 821px) {
-  .job_list .item:nth-child(n+9) {
+  .job_list .item:nth-child(n+7) {
     border-bottom: 1px #ddd solid;
   }
 }
@@ -4716,6 +4716,9 @@ Sidebar
   .belong_staffs .item {
     width: 47%;
     margin: 0 1.5%;
+  }
+  .belong_staffs .item:nth-child(n+3) {
+    margin-top: 20px;
   }
 }
 @media (max-width: 559.9px) {

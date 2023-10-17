@@ -3544,12 +3544,12 @@ Sidebar
 				width: 50%;
 			}
 		}
-		&:first-child, &:nth-child(2), &:nth-child(4), &:nth-child(5), &:nth-child(7), &:nth-child(9), &:nth-child(10) {
+		&:first-child, &:nth-child(2), &:nth-child(4), &:nth-child(5), &:nth-child(7), &:nth-child(8), &:nth-child(10) {
 			@include over_tab {
 				border-right: 1px #ddd solid;
 			}
 		}
-		&:nth-child(n+9) {
+		&:nth-child(n+7) {
 			@include over_tab {
 				border-bottom: 1px #ddd solid;
 			}
@@ -4079,6 +4079,9 @@ Sidebar
 		@include over_sp {
 			width: 47%;
 			margin: 0 1.5%;
+			&:nth-child(n+3) {
+				margin-top: 20px;
+			}
 		}
 		@include sp {
 			width: 100%;

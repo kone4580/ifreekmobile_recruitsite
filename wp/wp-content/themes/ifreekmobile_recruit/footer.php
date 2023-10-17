@@ -139,8 +139,8 @@
             var windowHeight1 = $(window).height();
             if (scroll1 > position1 - windowHeight1 + windowHeight1/4){
                 if(animationFlag1) {
-                    $('#count1').animateNumber({ number: 35}, 900);
-                    $('#count2').animateNumber({ number: 65}, 1100);
+                    $('#count1').animateNumber({ number: 34}, 900);
+                    $('#count2').animateNumber({ number: 66}, 1100);
                     animationFlag1 = false;
                 }
             }
@@ -149,7 +149,7 @@
             var windowHeight2 = $(window).height();
             if (scroll2 > position2 - windowHeight2 + windowHeight2/4){
                 if(animationFlag3) {
-                    $('#count3').animateNumber({ number: 562}, 1500);
+                    $('#count3').animateNumber({ number: 575}, 1500);
                     animationFlag3 = false;
                 }
             }
@@ -158,7 +158,7 @@
             var windowHeight3 = $(window).height();
             if (scroll3 > position3 - windowHeight3 + windowHeight3/4){
                 if(animationFlag4) {
-                    $('#count4').animateNumber({ number: 29.1}, 900);
+                    $('#count4').animateNumber({ number: 30}, 900);
                     $('#count5').animateNumber({ number: 60}, 900);
                     $('#count6').animateNumber({ number: 33}, 900);
                     $('#count7').animateNumber({ number: 4}, 900);
@@ -182,9 +182,9 @@
             var windowHeight5 = $(window).height();
             if (scroll5 > position5 - windowHeight5 + windowHeight5/4){
                 if(animationFlag12) {
-                    $('#count12').animateNumber({ number: 89}, 1500);
+                    $('#count12').animateNumber({ number: 90}, 1500);
                     $('#count13').animateNumber({ number: 3}, 900);
-                    $('#count14').animateNumber({ number: 6}, 900);
+                    $('#count14').animateNumber({ number: 5}, 900);
                     $('#count15').animateNumber({ number: 2}, 900);
                     animationFlag12 = false;
                 }
@@ -203,7 +203,7 @@
             var windowHeight7 = $(window).height();
             if (scroll7 > position7 - windowHeight7 + windowHeight7/4){
                 if(animationFlag17) {
-                    $('#count17').animateNumber({ number: 77.8}, 900);
+                    $('#count17').animateNumber({ number: 78}, 900);
                     animationFlag17 = false;
                 }
             }

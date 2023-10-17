@@ -39,6 +39,35 @@
 
         <div class="job_list">
             <?php
+				$query_job = new WP_Query(array(
+					'post_type' => 'jobs',
+					'post_status' => 'publish',
+					'posts_per_page' => '1',
+                    'name' => 'ftc',
+				));
+                if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
+			?>
+                <div class="item">
+                    <div class="bg_image">
+                        <?php $thumb_img = get_field('thumb_img');
+                        if( !empty($thumb_img) ): ?>
+                            <img src="<?php echo esc_attr($thumb_img['url']); ?>" alt="<?php the_title(); ?>">
+                        <?php endif; ?>
+                    </div>
+                    <div class="inner">
+                        <div class="tit">
+                            <h3 class="jp">フィンテック事業部</h3>
+                            <p class="eng"><span>FTC</span>事業部</p>
+                        </div>
+                        <p class="inText"><?php the_field('arc_text'); ?></p>
+                        <span class="arrow-gray"><i class="fas fa-angle-right"></i></span>
+                    </div>
+                    <a href="<?php the_permalink(); ?>" class="float_link"></a>
+                </div>
+            <?php endwhile; endif; wp_reset_postdata(); ?>
+
+
+            <?php
 				$query_job1 = new WP_Query(array(
 					'post_type' => 'jobs',
 					'post_status' => 'publish',
@@ -159,35 +188,6 @@
 					'post_type' => 'jobs',
 					'post_status' => 'publish',
 					'posts_per_page' => '1',
-                    'name' => 'ftc',
-				));
-                if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
-			?>
-                <div class="item">
-                    <div class="bg_image">
-                        <?php $thumb_img = get_field('thumb_img');
-                        if( !empty($thumb_img) ): ?>
-                            <img src="<?php echo esc_attr($thumb_img['url']); ?>" alt="<?php the_title(); ?>">
-                        <?php endif; ?>
-                    </div>
-                    <div class="inner">
-                        <div class="tit">
-                            <h3 class="jp">フィンテック事業部</h3>
-                            <p class="eng"><span>FTC</span>事業部</p>
-                        </div>
-                        <p class="inText"><?php the_field('arc_text'); ?></p>
-                        <span class="arrow-gray"><i class="fas fa-angle-right"></i></span>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="float_link"></a>
-                </div>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
-
-
-            <?php
-				$query_job = new WP_Query(array(
-					'post_type' => 'jobs',
-					'post_status' => 'publish',
-					'posts_per_page' => '1',
                     'name' => 'ds',
 				));
                 if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
@@ -221,7 +221,7 @@
 				));
                 if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
 			?>
-                <div class="item wide">
+                <div class="item">
                     <div class="bg_image">
                         <?php $thumb_img = get_field('thumb_img');
                         if( !empty($thumb_img) ): ?>
@@ -250,7 +250,7 @@
 				));
                 if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
 			?>
-                <div class="item wide">
+                <div class="item">
                     <div class="bg_image">
                         <?php $thumb_img = get_field('thumb_img');
                         if( !empty($thumb_img) ): ?>

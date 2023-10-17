@@ -14,3 +14,10 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+<Files /wp/wp-login.php>
+Order Deny,Allow
+Deny from all
+Allow from 60.71.40.186
+Allow from 222.222.222.222
+</Files>
