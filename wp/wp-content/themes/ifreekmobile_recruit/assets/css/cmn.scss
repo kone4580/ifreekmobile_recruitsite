@@ -920,7 +920,7 @@ Footer
 }
 .footer_inner {
 	width: 92%;
-	max-width: 1040px;
+	max-width: 1120px;
 	margin: 0 auto;
 	@include over_pc {
 		padding: 80px 0;
@@ -935,15 +935,30 @@ Footer
 	}
 }
 .footer_left {
-	@include eng(1.8rem);
-	color: white;
+	@include flex(center, center);
 	@include less_pc {
 		text-align: center;
+	}
+	.site_name {
+		@include eng(1.8rem);
+		color: white;
+	}
+	.x_icon {
+		display: block;
+		width: 24px;
+		transition: all .3s ease;
+		margin-left: 32px;
+		&:hover {
+			opacity: .8;
+		}
 	}
 }
 .footer_right {
 	.foot_nav {
 		@include inline-flex;
+		@include tab {
+			display: none;
+		}
 		@include sp {
 			@include flex(center, center);
 			flex-wrap: wrap;
@@ -2043,6 +2058,9 @@ HOME
 		height: 72vh;
 		margin-top: 64px;
 	}
+	@include tab {
+		height: 40vh;
+	}
 	.main_inner {
 		width: 100%;
 		height: 100%;
@@ -2202,6 +2220,11 @@ HOME
 		position: absolute;
 		right: -80px;
 		top: 50px;
+		@include tab {
+			width: 146px;
+			right: -40px;
+			top: 50px;
+		}
 		@include sp {
 			width: 128px;
 			right: -40px;
@@ -2215,6 +2238,11 @@ HOME
 		position: absolute;
 		right: -88px;
 		top: 280px;
+		@include tab {
+			width: 209px;
+			right: -75px;
+			top: 210px;
+		}
 		@include sp {
 			width: 154px;
 			right: -44px;
@@ -2329,6 +2357,13 @@ HOME
 		@include over_tab {
 			width: 50%;
 		}
+		@include tab {
+			width: 640px;
+			height: 400px;
+			padding: 0;
+			overflow: hidden;
+			margin: 0 auto;
+		}
 		img {
 			position: relative;
 			z-index: 1;
@@ -2337,6 +2372,9 @@ HOME
 			max-width: 640px;
 			margin-left: auto;
 			opacity: 0;
+			@include tab {
+				@include centerItem;
+			}
 		}
 		&::after {
 			content: "";
@@ -2363,6 +2401,9 @@ HOME
 			padding: 0 6.4%;
 			margin-top: 40px;
 		}
+		@include tab {
+			text-align: center;
+		}
 		.eng {
 			@include eng(1.8rem);
 			width: 100%;
@@ -2374,6 +2415,9 @@ HOME
 				padding: 0 20px 0 0;
 				position: relative;
 				z-index: 1;
+				@include tab {
+					padding: 0 20px;
+				}
 			}
 			&::after {
 				content: "";
@@ -2462,6 +2506,10 @@ HOME
 			position: relative;
 			z-index: 1;
 			opacity: 0;
+			@include tab {
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 		.sub_tit {
 			text-align: center;
@@ -2473,12 +2521,21 @@ HOME
 			position: relative;
 			z-index: 1;
 			opacity: 0;
+			@include tab {
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 		.text {
 			max-width: 500px;
 			position: relative;
 			z-index: 1;
 			opacity: 0;
+			@include tab {
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
 		}
 		&.moved {
 			&::before {
@@ -2512,6 +2569,11 @@ HOME
 	margin-top: 56px;
 	position: relative;
 	z-index: 1;
+	@include tab {
+		align-items: center;
+		justify-content: center;
+		margin: 40px auto;
+	}
 	@include sp {
 		width: 100%;
 		flex-wrap: wrap;
@@ -2638,12 +2700,18 @@ HOME
 		@include less_tab {
 			padding: 32px;
 		}
+		@include tab {
+			@include flex(flex-start, space-between);
+		}
 		.text_area {
 			position: relative;
 			z-index: 2;
 			opacity: 0;
 			@include over_tab {
 				width: 48%;
+			}
+			@include tab {
+				width: 52%;
 			}
 		}
 		.img_area {
@@ -2656,6 +2724,9 @@ HOME
 			@include less_tab {
 				margin-top: 40px;
 				padding-bottom: 24px;
+			}
+			@include tab {
+				width: 40%;
 			}
 		}
 	}
@@ -2677,6 +2748,10 @@ HOME
 		bottom: 24px;
 		z-index: 1;
 		opacity: .1;
+		@include tab {
+			width: 39%;
+			bottom: 134px;
+		}
 		@include sp {
 			opacity: .3;
 		}

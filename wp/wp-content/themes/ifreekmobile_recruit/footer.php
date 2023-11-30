@@ -37,7 +37,8 @@
 
     <div class="footer_inner">
         <div class="footer_left">
-            I*FREEKMOBILE<br>RECRUIT SITE
+            <p class="site_name">I*FREEKMOBILE<br>RECRUIT SITE</p>
+            <a href="https://twitter.com/ifreek_HR" target="_blank" class="x_icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/icon-x.svg" alt="Xアイコン"></a>
         </div>
 
         <div class="footer_right">
@@ -85,9 +86,9 @@
             prevEl: ".swiper-button-prev"
         },
         breakpoints: {
-            768: {
+            820: {
                 spaceBetween: 20,
-                slidesPerView: 1.5
+                slidesPerView: 3.5
             },
             1e3: {
                 spaceBetween: 24,

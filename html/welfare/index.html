@@ -242,6 +242,25 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="welf_box mt30">
+					<div class="flex_content">
+						<div class="item item_2">
+							<div class="welfare_il">
+								<img src="../assets/images/page/welf_il_07.png" alt="確定拠出年金" class="welf_il">
+							</div>
+						</div>
+						<div class="item item_6">
+							<h3 class="welf_tit">「ナマケモノでも積立できる」企業型確定拠出年金制度（選択制DC）を導入</h3>
+							<p>従業員の長期的な生活安定と資産形成を支援するため、「企業型確定拠出年金制度（選択制DC）」の導入を決定しました。この制度は、従業員が自身の将来に向けた投資を自己判断で行うことを可能にし、また運用で生じた利益は非課税という制度です。</p>
+							<ul class="list-disc mt15">
+								<li>掛け金の運用益が非課税の確定拠出年金制度を導入</li>
+								<li>個人の面倒な加入手続きを会社が代行</li>
+								<li>加入は個人の意志で選択自由</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -334,52 +353,6 @@
 	</div>
 
 	<div id="js-loader" class="loader"></div>
-
-
-	<script type="text/javascript">
-		//news slider
-		var slider1 = new Swiper ('.top_interview_slider', {
-			slidesPerView: 2,
-			spaceBetween: 16,
-			watchSlidesVisibility: !0,
-			loop: false,
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev"
-			},
-			breakpoints: {
-				768: {
-					spaceBetween: 20,
-					slidesPerView: 1.5
-				},
-				1e3: {
-					spaceBetween: 24,
-					slidesPerView: 4.2
-				}
-			},
-		});
-	</script>
-
-
-	<script type="text/javascript">
-		$(function() {
-			var animationFlag = true;
-			$(window).scroll(function(){
-				$(".count_num").each(function(){
-					var position = $(this).offset().top;
-					var scroll = $(window).scrollTop();
-					var windowHeight = $(window).height();
-					if (scroll > position - windowHeight + windowHeight/4){
-					if(animationFlag) {
-							animationFlag = false;
-							$('#count1').animateNumber({ number: 20}, 900);
-							$('#count2').animateNumber({ number: 700}, 900);
-						}
-					}
-				});
-			});
-		});
-	</script>
 
 
 	<script type="text/javascript">
