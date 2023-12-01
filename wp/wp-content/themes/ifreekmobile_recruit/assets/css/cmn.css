@@ -4242,7 +4242,7 @@ Sidebar
   }
 }
 @media (min-width: 821px) {
-  .job_list .item:nth-child(n+7) {
+  .job_list .item:nth-child(n+5) {
     border-bottom: 1px #ddd solid;
   }
 }

@@ -34,7 +34,7 @@
     <div class="page_section">
         <div class="job_top">
             <h2 class="center-title">事業部紹介</h2>
-            <p>当社グループの11部門では、それぞれの特色や役割に合わせて、様々なスタッフが個性を活かして活躍しています。<br>自身が持つ能力や才能を最大限発揮できるよう、適材適所の人事考課に努めており、機会ごとに設けられる面談で、<br>将来的に進みたい方向性ややってみたい仕事などをヒアリングしています。<br>今現在、将来の希望が決まっていなくても、勤めていく中で進みたい方向性が変わっても心配は無用です。<br>ご自身の成長ベクトルに合わせて、キャリアプランのイメージが自由に描けるのが当社の魅力です。</p>
+            <p>当社グループの7部門では、それぞれの特色や役割に合わせて、様々なスタッフが個性を活かして活躍しています。<br>自身が持つ能力や才能を最大限発揮できるよう、適材適所の人事考課に努めており、機会ごとに設けられる面談で、<br>将来的に進みたい方向性ややってみたい仕事などをヒアリングしています。<br>今現在、将来の希望が決まっていなくても、勤めていく中で進みたい方向性が変わっても心配は無用です。<br>ご自身の成長ベクトルに合わせて、キャリアプランのイメージが自由に描けるのが当社の魅力です。</p>
         </div>
 
         <div class="job_list">
@@ -188,35 +188,6 @@
 					'post_type' => 'jobs',
 					'post_status' => 'publish',
 					'posts_per_page' => '1',
-                    'name' => 'ds',
-				));
-                if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
-			?>
-                <div class="item">
-                    <div class="bg_image">
-                        <?php $thumb_img = get_field('thumb_img');
-                        if( !empty($thumb_img) ): ?>
-                            <img src="<?php echo esc_attr($thumb_img['url']); ?>" alt="<?php the_title(); ?>">
-                        <?php endif; ?>
-                    </div>
-                    <div class="inner">
-                        <div class="tit">
-                            <h3 class="jp">データサイエンス事業部</h3>
-                            <p class="eng"><span>DS</span>事業部</p>
-                        </div>
-                        <p class="inText"><?php the_field('arc_text'); ?></p>
-                        <span class="arrow-gray"><i class="fas fa-angle-right"></i></span>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="float_link"></a>
-                </div>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
-
-
-            <?php
-				$query_job = new WP_Query(array(
-					'post_type' => 'jobs',
-					'post_status' => 'publish',
-					'posts_per_page' => '1',
                     'name' => 'acs',
 				));
                 if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
@@ -274,34 +245,6 @@
 					'post_type' => 'jobs',
 					'post_status' => 'publish',
 					'posts_per_page' => '1',
-                    'name' => 'challet',
-				));
-                if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
-			?>
-                <div class="item">
-                    <div class="bg_image">
-                        <?php $thumb_img = get_field('thumb_img');
-                        if( !empty($thumb_img) ): ?>
-                            <img src="<?php echo esc_attr($thumb_img['url']); ?>" alt="<?php the_title(); ?>">
-                        <?php endif; ?>
-                    </div>
-                    <div class="inner">
-                        <div class="tit">
-                            <h3 class="eng">チャレット部</h3>
-                        </div>
-                        <p class="inText"><?php the_field('arc_text'); ?></p>
-                        <span class="arrow-gray"><i class="fas fa-angle-right"></i></span>
-                    </div>
-                    <a href="<?php the_permalink(); ?>" class="float_link"></a>
-                </div>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
-
-
-            <?php
-				$query_job = new WP_Query(array(
-					'post_type' => 'jobs',
-					'post_status' => 'publish',
-					'posts_per_page' => '1',
                     'name' => 'app',
 				));
                 if ($query_job->have_posts()) : while ($query_job->have_posts()) : $query_job->the_post();
@@ -315,7 +258,7 @@
                     </div>
                     <div class="inner">
                         <div class="tit">
-                            <h3 class="eng">アプリ部</h3>
+                            <h3 class="eng">コンテンツ事業部</h3>
                         </div>
                         <p class="inText"><?php the_field('arc_text'); ?></p>
                         <span class="arrow-gray"><i class="fas fa-angle-right"></i></span>
