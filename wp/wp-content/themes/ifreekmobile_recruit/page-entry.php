@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (empty($error)) {
+            $token = bin2hex(random_bytes(32));
+            $_POST["token"] = $token;
             $_SESSION['entry'] = $_POST;
             header('Location: ' . $home_url . 'entry/confirm/');
             exit();

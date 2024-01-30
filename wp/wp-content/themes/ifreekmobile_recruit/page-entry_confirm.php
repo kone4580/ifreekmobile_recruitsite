@@ -21,6 +21,7 @@ if (isset($_SESSION['entry']['job'])) {
 
 function send() {
     $uri = get_template_directory_uri();
+    $_SESSION['entry']['token2'] = $_SESSION['entry']['token'];
     header('Location: ' . $uri . '/assets/mailform/mailsend.php');
     exit();
  }
@@ -126,10 +127,10 @@ get_header(); ?>
                                 if (isset($_SESSION['entry']['job'])) {
                                     foreach ($job as $index => $value) {
                                         if ($index != array_key_last($job)) {
-                                            echo $value;
+                                            echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
                                             echo "、";
                                         } else {
-                                            echo $value;
+                                            echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
                                         }
                                     }
                                 } else {
@@ -145,10 +146,10 @@ get_header(); ?>
                                 if (isset($_SESSION['entry']['division'])) {
                                     foreach ($division as $index => $value) {
                                         if ($index != array_key_last($division)) {
-                                            echo $value;
+                                            echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
                                             echo "、";
                                         } else {
-                                            echo $value;
+                                            echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
                                         }
                                     }
                                 } else {

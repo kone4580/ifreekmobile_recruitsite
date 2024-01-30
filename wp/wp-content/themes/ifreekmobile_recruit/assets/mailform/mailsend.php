@@ -7,6 +7,11 @@ if (!isset($_SESSION['entry'])) {
     exit();
 }
 
+if( $_SESSION["entry"]["token"] != $_SESSION["entry"]["token2"] ){
+    $_SESSION = array();
+    header('Location: ' . $home_url . 'entry/error/');
+}
+
 $job = $_SESSION['entry']['job'];
 $division = $_SESSION['entry']['division'];
 
@@ -116,7 +121,9 @@ if(mb_send_mail($mailto2, $subject2, $content, $mailfrom)){
 $managerAddress = funcManagerAddress($mailto, $mailfrom, $content);
 $contactAddress = funcContactAddress($mailfrom, $content);
 if($managerAddress === "○" && $contactAddress === "○" ){
+    $_SESSION = array();
     header('Location: ' . $home_url . 'entry/thanks/');
 } else {
+    $_SESSION = array();
     header('Location: ' . $home_url . 'entry/error/');
 }
