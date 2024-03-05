@@ -61,66 +61,66 @@
 					<div class="con_text">
 						<h3>求める人物像</h3>
 						<ul class="list-disc">
-							<li><?php the_field('motomeru_1'); ?></li>
+							<li><?php echo wp_kses_post( get_field('motomeru_1') ); ?></li>
 							<?php if (get_field('motomeru_2')) : ?>
-								<li><?php the_field('motomeru_2'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_2') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('motomeru_3')) : ?>
-								<li><?php the_field('motomeru_3'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_3') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('motomeru_4')) : ?>
-								<li><?php the_field('motomeru_4'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_4') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('motomeru_5')) : ?>
-								<li><?php the_field('motomeru_5'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_5') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('motomeru_6')) : ?>
-								<li><?php the_field('motomeru_6'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_6') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('motomeru_7')) : ?>
-								<li><?php the_field('motomeru_7'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_7') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('motomeru_8')) : ?>
-								<li><?php the_field('motomeru_8'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_8') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('motomeru_9')) : ?>
-								<li><?php the_field('motomeru_9'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_9') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('motomeru_10')) : ?>
-								<li><?php the_field('motomeru_10'); ?></li>
+								<li><?php echo wp_kses_post( get_field('motomeru_10') ); ?></li>
 							<?php endif; ?>
 						</ul>
 					</div>
 					<div class="con_text">
 						<h3>歓迎スキル</h3>
 						<ul class="list-disc">
-							<li><?php the_field('skill_1'); ?></li>
+							<li><?php echo wp_kses_post( get_field('skill_1') ); ?></li>
 							<?php if (get_field('skill_2')) : ?>
-								<li><?php the_field('skill_2'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_2') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('skill_3')) : ?>
-								<li><?php the_field('skill_3'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_3') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('skill_4')) : ?>
-								<li><?php the_field('skill_4'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_4') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('skill_5')) : ?>
-								<li><?php the_field('skill_5'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_5') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('skill_6')) : ?>
-								<li><?php the_field('skill_6'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_6') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('skill_7')) : ?>
-								<li><?php the_field('skill_7'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_7') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('skill_8')) : ?>
-								<li><?php the_field('skill_8'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_8') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('skill_9')) : ?>
-								<li><?php the_field('skill_9'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_9') ); ?></li>
 							<?php endif; ?>
 							<?php if (get_field('skill_10')) : ?>
-								<li><?php the_field('skill_10'); ?></li>
+								<li><?php echo wp_kses_post( get_field('skill_10') ); ?></li>
 							<?php endif; ?>
 						</ul>
 					</div>
@@ -135,55 +135,59 @@
 					<tbody>
 						<tr>
 							<th>雇用形態</th>
-							<td><?php the_field('status'); ?></td>
+							<td><?php echo wp_kses_post( get_field('status') ); ?></td>
 						</tr>
 						<tr>
 							<th>雇用期間</th>
-							<td><?php the_field('period'); ?></td>
+							<td><?php echo wp_kses_post( get_field('period') ); ?></td>
 						</tr>
 						<tr>
 							<th>業務内容</th>
-							<td><?php the_field('work'); ?></td>
+							<td><?php echo wp_kses_post( get_field('work') ); ?></td>
 						</tr>
 						<tr>
 							<th>募集背景</th>
-							<td><?php the_field('back'); ?></td>
+							<td><?php echo wp_kses_post( get_field('back') ); ?></td>
 						</tr>
 						<tr>
 							<th>勤務地</th>
-							<td><?php the_field('place'); ?></td>
+							<td><?php echo wp_kses_post( get_field('place') ); ?></td>
 						</tr>
-						<tr>
-							<th>年齢</th>
-							<td><?php the_field('age'); ?></td>
-						</tr>
-						<tr>
-							<th>語学力</th>
-							<td><?php the_field('language'); ?></td>
-						</tr>
+						<?php if(get_field('age')) : ?>
+							<tr>
+								<th>年齢</th>
+								<td><?php echo wp_kses_post( get_field('age') ); ?></td>
+							</tr>
+						<?php endif; ?>
+						<?php if(get_field('age')) : ?>
+							<tr>
+								<th>語学力</th>
+								<td><?php echo wp_kses_post( get_field('language') ); ?></td>
+							</tr>
+						<?php endif; ?>
 						<tr>
 							<th>就業時間</th>
-							<td><?php the_field('working_time'); ?></td>
+							<td><?php echo wp_kses_post( get_field('working_time') ); ?></td>
 						</tr>
 						<tr>
 							<th>休日・休暇</th>
-							<td><?php the_field('holiday'); ?></td>
+							<td><?php echo wp_kses_post( get_field('holiday') ); ?></td>
 						</tr>
 						<tr>
 							<th>時間外労働</th>
-							<td><?php the_field('overtime_work'); ?></td>
+							<td><?php echo wp_kses_post( get_field('overtime_work') ); ?></td>
 						</tr>
 						<tr>
 							<th>給与</th>
-							<td><?php the_field('salary'); ?></td>
+							<td><?php echo wp_kses_post( get_field('salary') ); ?></td>
 						</tr>
 						<tr>
 							<th>社会保険</th>
-							<td><?php the_field('insurance'); ?></td>
+							<td><?php echo wp_kses_post( get_field('insurance') ); ?></td>
 						</tr>
 						<tr>
 							<th>その他・福利厚生</th>
-							<td><?php the_field('welfare'); ?></td>
+							<td><?php echo wp_kses_post( get_field('welfare') ); ?></td>
 						</tr>
 					</tbody>
 				</table>

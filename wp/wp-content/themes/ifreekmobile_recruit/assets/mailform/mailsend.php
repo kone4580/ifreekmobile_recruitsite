@@ -43,13 +43,6 @@ foreach ($job as $index => $value) {
     $content .= "\n";
 }
 $content .= "\n";
-$content .= "【希望事業部】\n";
-
-foreach ($division as $index => $value) {
-    $content .= $value;
-    $content .= "\n";
-}
-$content .= "\n";
 $content .= "【メッセージ】
 ".$_SESSION['entry']['message']."
 
@@ -121,9 +114,7 @@ if(mb_send_mail($mailto2, $subject2, $content, $mailfrom)){
 $managerAddress = funcManagerAddress($mailto, $mailfrom, $content);
 $contactAddress = funcContactAddress($mailfrom, $content);
 if($managerAddress === "○" && $contactAddress === "○" ){
-    $_SESSION = array();
     header('Location: ' . $home_url . 'entry/thanks/');
 } else {
-    $_SESSION = array();
     header('Location: ' . $home_url . 'entry/error/');
 }

@@ -1,5 +1,10 @@
 # ifreekmobile_recruitsite
 
+## 開発Basic認証
+ID : ifm
+パスワード : 8Jpz5rD5
+
+
 ## WordPress
 User ifm_admin
 Pass 91q(&!fxnpzGm2b08t

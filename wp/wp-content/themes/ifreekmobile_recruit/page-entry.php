@@ -215,53 +215,6 @@ get_header(); ?>
                             </tr>
 
                             <tr>
-                                <th>希望事業部<br>※複数選択可</th>
-                                <td>
-                                    <div class="c-radio-list">
-                                        <?php
-                                        $terms = get_terms('recruitment_division');
-                                        foreach ($terms as $term) {
-                                            $division = $term->name;
-                                            $division_item = '<div class="c-radio-list__item"><label>
-                                                <input type="checkbox" name="division[]" class="c-checkbox" value="' . $division . '"';
-                                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['division'])) {
-                                                if(in_array($division, $_POST['division'])){
-                                                    $division_item .= 'checked';
-                                                }
-                                            } elseif (isset($_REQUEST['action'])) {
-                                                if($_REQUEST['action'] == 'rewrite' && isset($_SESSION['entry']['division'])) {
-                                                    if(in_array($division, $_SESSION['entry']['division'])){
-                                                        $division_item .= 'checked';
-                                                    }
-                                                }
-                                            }
-                                            $division_item .= '>';
-                                            $division_item .= $division;
-                                            $division_item .= '</label></div>';
-                                            echo $division_item;
-                                        }
-                                        ?>
-                                        <div class="c-radio-list__item">
-                                            <label>
-                                                <input type="checkbox" name="division[]" class="c-checkbox" value="後で考える" <?php
-                                                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['division'])) {
-                                                    if(in_array('後で考える', $_POST['division'])){
-                                                        echo 'checked';
-                                                    }
-                                                } elseif (isset($_REQUEST['action'])) {
-                                                    if($_REQUEST['action'] == 'rewrite' && isset($_SESSION['entry']['division'])) {
-                                                        if(in_array('後で考える', ($_SESSION['entry']['division']))){
-                                                            echo 'checked';
-                                                        }
-                                                    }
-                                                } ?>>後で考える
-                                            </label>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr>
                                 <th>メッセージ</th>
                                 <td>
                                     <textarea class="c-textarea" id="message" rows="5" name="message"><?php

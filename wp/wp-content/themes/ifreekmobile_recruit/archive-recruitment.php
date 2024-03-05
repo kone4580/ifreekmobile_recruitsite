@@ -46,13 +46,13 @@
                     <p class="eng">RECRUITMENT TYPE</p>
                 </div>
 
-                <p class="text-center mb40">2024年新卒の方向けの募集要項は各サイトにて記載しております。<br>ボタンをクリックして詳細をご確認ください。</p>
+                <p class="text-center mb40">2025年新卒の方向けの募集要項は各サイトにて記載しております。<br>ボタンをクリックして詳細をご確認ください。</p>
 
                 <?php
                 $query = new WP_Query(array(
                     'post_type' => 'recruitment_graduate',
                     'post_status' => 'publish',
-                    'posts_per_page' => '100',
+                    'posts_per_page' => '-1',
                     'order' => 'ASC',
                 ));
                 ?>
@@ -130,7 +130,7 @@
                                     ),
                                 ),
                                 'post_status' => 'publish',
-                                'posts_per_page' => '100',
+                                'posts_per_page' => '-1',
                                 'order' => 'ASC',
                             ));
                             ?>

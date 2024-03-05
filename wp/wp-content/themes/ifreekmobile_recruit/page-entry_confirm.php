@@ -140,25 +140,6 @@ get_header(); ?>
                         </tr>
 
                         <tr>
-                            <th>希望事業部<br>※複数選択可</th>
-                            <td>
-                                <?php
-                                if (isset($_SESSION['entry']['division'])) {
-                                    foreach ($division as $index => $value) {
-                                        if ($index != array_key_last($division)) {
-                                            echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-                                            echo "、";
-                                        } else {
-                                            echo htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
-                                        }
-                                    }
-                                } else {
-                                    echo "特になし";
-                                } ?>
-                            </td>
-                        </tr>
-
-                        <tr>
                             <th>メッセージ</th>
                             <td>
                                 <?php
