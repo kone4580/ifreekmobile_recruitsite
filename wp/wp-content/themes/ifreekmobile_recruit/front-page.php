@@ -9,6 +9,8 @@
 				<p class="main_catch">Technology makes<br>the world happy</p>
 				<p class="main_catch_jp">君の“わくわく”を、“HAPPY”に</p>
 			</div>
+
+			<a href="https://www.i-freek.co.jp/business/mobile/" target="_blank" class="bnr_recruit"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/main_bnr.png" alt="採用情報" /></a>
 		</div>
 
 		<div class="main_movie">
@@ -27,7 +29,39 @@
 			</div>
 		</div>
 
-		<a href="https://www.i-freek.co.jp/business/mobile/" target="_blank" class="bnr_recruit"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/main_bnr.png" alt="採用情報" /></a>
+		<div class="main_topics">
+			<div class="title">
+                WHAT’S NEW
+            </div>
+			<?php
+			$query_post = new WP_Query(array(
+				'post_type' => 'post',
+				'post_status' => 'publish',
+				'posts_per_page' => '5',
+				'orderby' => 'post_date',
+				'order' => 'DESC',
+			));
+			?>
+			<?php if ($query_post->have_posts()) : ?>
+				<div class="whiteArea">
+					<div class="newsArea">
+						<div class="ticker" rel="roll">
+							<ul>
+								<?php while ($query_post->have_posts()) : $query_post->the_post(); ?>
+									<li>
+										<a href="<?php the_permalink(); ?>" class="top_news_item">
+											<p class="date"><?php the_time(get_option('date_format')); ?></p>
+											<p class="top_news_title"><?php the_title(); ?></p>
+										</a>
+									</li>
+								<?php endwhile; ?>
+							</ul>
+						</div>
+					</div>
+					<a href="<?php echo esc_url(home_url('/')); ?>news/" class="main_inner_news_link">VIEW ALL</a>
+				</div>
+			<?php endif; ?>
+		</div>
 	</div>
 
 
@@ -76,7 +110,7 @@
 					<p class="eng">BUSINESS</p>
 				</div>
 				<p class="sub_tit">“わくわく” コンテンツで社会課題を解決</p>
-				<p class="text">コンテンツクリエイターサービス事業では、アプリ開発・ゲーム・VR・セキュリティなど、最先端のIT技術のITエキスパートを企業へ派遣することで、経済成長及び産業と技術革新の基盤づくりに貢献しています。</p>
+				<p class="text">DX事業では、アプリ開発・ゲーム・VR・セキュリティなど、最先端のIT技術のITエキスパートを企業へ派遣することで、経済成長及び産業と技術革新の基盤づくりに貢献しています。</p>
 				<div class="top_biz_blocks">
 					<div class="block">
 						<div class="icon_area">

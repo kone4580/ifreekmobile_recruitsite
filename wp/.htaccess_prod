@@ -20,5 +20,7 @@ RewriteRule . /wp/index.php [L]
 Order Deny,Allow
 Deny from all
 Allow from 60.71.40.186
+Allow from 113.36.191.146
+Allow from 222.151.197.65
 Allow from 222.222.222.222
 </Files>

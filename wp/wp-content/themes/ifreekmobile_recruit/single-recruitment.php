@@ -59,7 +59,13 @@
 
 				<div class="wanted_wrap">
 					<div class="con_text">
-						<h3>求める人物像</h3>
+						<h3>
+							<?php if(is_single('management_system')) { ?>
+								必須スキル
+							<?php } else { ?>
+								求める人物像
+							<?php } ?>
+						</h3>
 						<ul class="list-disc">
 							<li><?php echo wp_kses_post( get_field('motomeru_1') ); ?></li>
 							<?php if (get_field('motomeru_2')) : ?>

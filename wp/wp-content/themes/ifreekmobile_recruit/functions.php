@@ -374,3 +374,14 @@ function recruitment_divisin_meta_box_remove() {
     remove_meta_box( $id, $post_type, $position );
 }
 add_action( 'admin_menu', 'recruitment_divisin_meta_box_remove');
+
+
+
+add_filter( 'author_rewrite_rules', '__return_empty_array' );
+function disable_author_archive() {
+    if( preg_match('#/author/.+#', $_SERVER['REQUEST_URI']) ){
+        wp_redirect( home_url( '/404.php' ) );
+        exit;
+    }
+}
+add_action('init', 'disable_author_archive');

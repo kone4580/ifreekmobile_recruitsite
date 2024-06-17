@@ -20,7 +20,7 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/fixed.css" media="all" />
 
 	<?php wp_deregister_script('jquery'); ?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.cmn.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.matchHeight.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.animateNumber.min.js"></script>

@@ -258,7 +258,7 @@
                     </div>
                     <div class="inner">
                         <div class="tit">
-                            <h3 class="eng">コンテンツ事業部</h3>
+                            <h3 class="eng">コンテンツソリューション事業部</h3>
                         </div>
                         <p class="inText"><?php the_field('arc_text'); ?></p>
                         <span class="arrow-gray"><i class="fas fa-angle-right"></i></span>
