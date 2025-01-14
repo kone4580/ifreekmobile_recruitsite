@@ -7544,6 +7544,11 @@ Sidebar
   color: #666;
 }
 
+.bnr_offerbox {
+  display: block;
+  margin: 40px auto 0;
+}
+
 /* ------------
 PAGENATION
 ------------- */

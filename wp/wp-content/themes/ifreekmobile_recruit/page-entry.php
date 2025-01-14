@@ -1,13 +1,7 @@
 <?php
 session_start();
-$csrf_token = bin2hex(random_bytes(32));
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST)) {
-        $error = array();
-        if (!isset($_POST["post_token"])) {
-            $error['token'] = 'error';
-        }
         if ($_POST['namae'] == '') {
             $error = [
                 'namae' => 'blank'
@@ -35,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (empty($error)) {
+            $token = bin2hex(random_bytes(32));
+            $_POST["token"] = $token;
             $_SESSION['entry'] = $_POST;
-            $_SESSION['entry']['csrf_token'] = $csrf_token;
-            $home_url = esc_url( home_url( '/' ) );
             header('Location: ' . $home_url . 'entry/confirm/');
             exit();
         }
@@ -94,14 +88,6 @@ get_header(); ?>
             <div class="bg-white">
                 <p class="mb20 text-center">必要事項をご記入の上、下記確認ボタンを押して下さい。</p>
 
-                <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    if (isset($error["token"]) && $error['token'] == 'error') { ?>
-                    <div class="token_error">
-                        <p class="help-block">不正なアクセスです</p>
-                    </div>
-                <?php }
-                } ?>
-
                 <form action="" method="post" enctype="multipart/form-data">
                     <table class="contact_table">
                         <tbody>
@@ -116,7 +102,7 @@ get_header(); ?>
                                         }
                                     } ?>">
                                     <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                        if (isset($error["namae"]) && $error['namae'] == 'blank') {
+                                        if ($error['namae'] == 'blank') {
                                             echo '<p class="help-block">お名前を入力してください。</p>';
                                         }
                                     } ?>
@@ -134,7 +120,7 @@ get_header(); ?>
                                         }
                                     } ?>">
                                     <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                        if (isset($error["kana"]) && $error['kana'] == 'blank') {
+                                        if ($error['kana'] == 'blank') {
                                             echo '<p class="help-block">ふりがなを入力してください。</p>';
                                         }
                                     } ?>
@@ -152,7 +138,7 @@ get_header(); ?>
                                         }
                                     } ?>">
                                     <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                        if (isset($error["email"]) && $error['email'] == 'blank') {
+                                        if ($error['email'] == 'blank') {
                                             echo '<p class="help-block">メールアドレスを入力してください。</p>';
                                         }
                                     } ?>
@@ -170,9 +156,9 @@ get_header(); ?>
                                         }
                                     } ?>">
                                     <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                        if (isset($error["confirm_email"]) && $error['confirm_email'] == 'blank') {
+                                        if ($error['confirm_email'] == 'blank') {
                                             echo '<p class="help-block">メールアドレス（確認用）を入力してください。</p>';
-                                        } elseif (isset($error["confirm_email"]) && $error['confirm_email'] == 'diff') {
+                                        } elseif ($error['confirm_email'] == 'diff') {
                                             echo '<p class="help-block">メールアドレスが一致しません。</p>';
                                         }
                                     } ?>
@@ -190,7 +176,7 @@ get_header(); ?>
                                         }
                                     } ?>">
                                     <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                        if (isset($error["tel"]) && $error['tel'] == 'blank') {
+                                        if ($error['tel'] == 'blank') {
                                             echo '<p class="help-block">電話番号を入力してください。</p>';
                                         }
                                     } ?>
@@ -259,14 +245,12 @@ get_header(); ?>
                         ?>
                     </div>
 
-                    <input type="hidden" name="post_token" value="<?php echo $csrf_token; ?>">
 
                     <div class="form-group form-btn">
                         <div class="input-zone">
                             <input id="btn_confirm" type="submit" value="確認画面へ" class="btn-confirm">
                         </div>
                     </div>
-
                 </form>
             </div>
 

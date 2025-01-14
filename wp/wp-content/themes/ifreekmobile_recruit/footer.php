@@ -43,7 +43,7 @@
 
         <div class="footer_right">
             <ul class="foot_nav">
-                <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>message/">MESSAGE</a></li>
+                <!-- <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>message/">MESSAGE</a></li> -->
                 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>jobs/">JOB</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>data/">DATA&amp;CULTURE</a></li>
                 <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>interview/">STAFF INTERVIEW</a></li>

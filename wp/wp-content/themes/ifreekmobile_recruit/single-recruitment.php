@@ -60,7 +60,7 @@
 				<div class="wanted_wrap">
 					<div class="con_text">
 						<h3>
-							<?php if(is_single('management_system')) { ?>
+							<?php if(is_single(array('management_system', 'management_accounting'))) { ?>
 								必須スキル
 							<?php } else { ?>
 								求める人物像

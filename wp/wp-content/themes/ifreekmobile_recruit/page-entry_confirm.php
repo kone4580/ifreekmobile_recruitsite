@@ -21,15 +21,10 @@ if (isset($_SESSION['entry']['job'])) {
 
 function send() {
     $uri = get_template_directory_uri();
-    if (isset($_SESSION['entry']['post_token']) && $_SESSION['entry']['post_token'] === $_SESSION['entry']['csrf_token']) {
-        header('Location: ' . $uri . '/assets/mailform/mailsend.php');
-        exit();
-    } else {
-        $home_url = esc_url( home_url( '/' ) );
-        header('Location: ' . $home_url . 'entry/confirm/');
-        exit();
-    }
-}
+    $_SESSION['entry']['token2'] = $_SESSION['entry']['token'];
+    header('Location: ' . $uri . '/assets/mailform/mailsend.php');
+    exit();
+ }
 if (isset($_GET['send'])) {
     send();
 }
@@ -158,9 +153,6 @@ get_header(); ?>
 
                     </tbody>
                 </table>
-
-                <p><?php echo htmlspecialchars($_SESSION['entry']['post_token'], ENT_QUOTES, 'UTF-8'); ?></p>
-                <p><?php echo htmlspecialchars($_SESSION['entry']['csrf_token'], ENT_QUOTES, 'UTF-8'); ?></p>
 
                 <div class="form-btn">
                     <div class="form-btns">

@@ -52,7 +52,7 @@
 							<p class="header-nav-item">会社を知る</p>
 							<div class="megamenu">
 								<ul class="inner_ul">
-									<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>message/">代表メッセージ</a></li>
+									<!-- <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>message/">代表メッセージ</a></li> -->
 									<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>history/">アイフリークモバイルの歴史</a></li>
 									<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>data/">データで見るアイフリークモバイル</a></li>
 									<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>welfare/">福利厚生・教育研修・働く環境</a></li>

@@ -6833,7 +6833,18 @@ Sidebar
 		color: #666;
 	}
 }
-
+.bnr_offerbox {
+	display: block;
+	width: 100%;
+	max-width: 480px;
+	margin: 40px auto 0;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: all .3s ease;
+	&:hover {
+		opacity: .8;
+	}
+}
 
 
 

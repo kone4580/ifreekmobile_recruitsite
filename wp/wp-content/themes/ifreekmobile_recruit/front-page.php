@@ -151,7 +151,7 @@
 	</div>
 
 
-	<div class="top_message animation">
+	<!-- <div class="top_message animation">
 		<div class="inner">
 			<div class="text_area">
 				<div class="top_title">
@@ -167,7 +167,7 @@
 			</div>
 		</div>
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/top_message_text.png" class="top_message_text" alt="Challenge with Happy">
-	</div>
+	</div> -->
 
 
 	<?php
