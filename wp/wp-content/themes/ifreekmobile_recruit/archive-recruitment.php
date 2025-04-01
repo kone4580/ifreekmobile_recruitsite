@@ -62,7 +62,7 @@
 <main id="main_wrap" role="main">
   <div class="page_section">
     <div class="wrap">
-      <p class="page_top_text">アイフリークグループの採用は、「能力やスキルを活かして、自分も周りもワクワクしてHAPPYになる」という価値観の共有を大切にしています。<br>採用面接、配属前面談等で本人の希望や適性等を考慮した上で、グループ内の各事業部に配属予定です。<br>配属後の処遇は、基本給・業務手当・福利厚生など基幹部分は一律ですが、ご自身の取得する資格や就業先での評価実績を考慮して決定されます。</p>
+      <p class="page_top_text">アイフリークモバイルの採用は、「能力やスキルを活かして、自分も周りもワクワクしてHAPPYになる」という価値観の共有を大切にしています。<br>採用面接、配属前面談等で本人の希望や適性等を考慮した上で、グループ内の各事業部に配属予定です。<br>配属後の処遇は、基本給・業務手当・福利厚生など基幹部分は一律ですが、ご自身の取得する資格や就業先での評価実績を考慮して決定されます。</p>
 
       <ul class="tab_navi">
         <li class="current">新卒採用</li>
@@ -75,7 +75,7 @@
           <p class="eng">RECRUITMENT TYPE</p>
         </div>
 
-        <p class="text-center mb40">2025年新卒の方向けの募集要項は各サイトにて記載しております。<br>ボタンをクリックして詳細をご確認ください。</p>
+        <p class="text-center mb40">2026年度新卒の方向けの募集要項は各サイトにて記載しております。<br>ボタンをクリックして詳細をご確認ください。</p>
 
         <?php
         $query = new WP_Query(array(
@@ -133,8 +133,6 @@
             <p>現在募集中の職種はありません</p>
           </div>
         <?php endif; ?>
-
-        <a href="https://offerbox.jp/" target="_blank" class="bnr_offerbox"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/bnr_offerbox.jpg" alt="オファーボックス"></a>
       </div>
 
 

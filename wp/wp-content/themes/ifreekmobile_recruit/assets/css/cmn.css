@@ -6466,6 +6466,53 @@ Sidebar
   -webkit-animation: popup 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
           animation: popup 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
 }
+.comp_datas .box_11 .num_text {
+  color: #E5004F;
+  text-align: center;
+  margin: 24px auto 0;
+}
+.comp_datas .box_11 .num_text .num {
+  font-size: 7.2rem;
+}
+.comp_datas .box_11 .info_g11 {
+  display: block;
+  width: 130px;
+  margin: 22px auto 20px;
+  opacity: 0;
+}
+.comp_datas .box_11.moved .info_g11 {
+  -webkit-animation: popup 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+          animation: popup 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+}
+.comp_datas .box_12 .num_flex {
+  display: flex;
+  align-items: flex-end;
+}
+.comp_datas .box_12 .num_flex > .unit {
+  font-size: 3rem;
+}
+.comp_datas .box_12 .num_text {
+  color: #E5004F;
+  text-align: center;
+  margin: 24px auto 0;
+}
+.comp_datas .box_12 .num_text .num {
+  font-size: 6rem;
+}
+.comp_datas .box_12 .num_text > .unit {
+  color: #1b1b1b;
+  font-size: 1.8rem;
+}
+.comp_datas .box_12 .info_g12 {
+  display: block;
+  width: 96px;
+  margin: 12px auto 16px;
+  opacity: 0;
+}
+.comp_datas .box_12.moved .info_g12 {
+  -webkit-animation: popup 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+          animation: popup 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+}
 
 /**************
 福利厚生
@@ -7083,7 +7130,7 @@ Sidebar
   top: 0;
   width: 100%;
   height: 100%;
-  padding: 0 160px 0 38%;
+  padding: 0 160px 0 20%;
   display: flex;
   align-items: flex-start;
   justify-content: center;

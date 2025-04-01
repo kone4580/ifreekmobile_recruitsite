@@ -111,9 +111,13 @@ $widthSPs: 559.9px;
 @mixin GradTitle {
 	color: #024d92;
 	background: linear-gradient(90deg, #83c0f4, #024d92);
-  background: -webkit-linear-gradient(0deg, #83c0f4, #024d92);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	background: -webkit-linear-gradient(0deg, #83c0f4, #024d92);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+@mixin boxShadow {
+	background: var(--white, #FFF);
+	box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.08);
 }
 
 $red: #E5004F;
@@ -292,6 +296,15 @@ Layout Set
 	padding: 56px 64px;
 	@include less_tab {
 		padding: 8vw;
+	}
+}
+.whiteBox {
+	background-color: #fff;
+	border-radius: 16px;
+	padding: 40px 80px;
+	@include less_tab {
+		padding: 24px;
+		border-radius: 8px;
 	}
 }
 
@@ -920,7 +933,7 @@ Footer
 }
 .footer_inner {
 	width: 92%;
-	max-width: 1040px;
+	max-width: 1120px;
 	margin: 0 auto;
 	@include over_pc {
 		padding: 80px 0;
@@ -935,15 +948,30 @@ Footer
 	}
 }
 .footer_left {
-	@include eng(1.8rem);
-	color: white;
+	@include flex(center, center);
 	@include less_pc {
 		text-align: center;
+	}
+	.site_name {
+		@include eng(1.8rem);
+		color: white;
+	}
+	.x_icon {
+		display: block;
+		width: 24px;
+		transition: all .3s ease;
+		margin-left: 32px;
+		&:hover {
+			opacity: .8;
+		}
 	}
 }
 .footer_right {
 	.foot_nav {
 		@include inline-flex;
+		@include tab {
+			display: none;
+		}
 		@include sp {
 			@include flex(center, center);
 			flex-wrap: wrap;
@@ -2033,15 +2061,17 @@ HOME
 #mainVisual {
 	width: 100%;
 	position: relative;
-	overflow: hidden;
 	@include over_tab {
-		height: calc(100vh - 96px);
+		height: calc(100vh - 146px);
 		max-height: 960px;
 		margin-top: 96px;
 	}
 	@include less_tab {
 		height: 72vh;
 		margin-top: 64px;
+	}
+	@include tab {
+		height: 40vh;
 	}
 	.main_inner {
 		width: 100%;
@@ -2062,6 +2092,7 @@ HOME
 			position: relative;
 			@include sp {
 				width: 88%;
+				padding-bottom: 80px;
 			}
 			.main_catch {
 				@include eng(5vw, 900);
@@ -2145,7 +2176,7 @@ HOME
 	position: absolute;
 	width: 280px;
 	right: 0;
-	bottom: 80px;
+	bottom: 100px;
 	box-shadow: 0 0 24px rgba(0,0,0,.2);
 	transform: translateX(340px);
 	animation: slideIn .5s $easeInOutSine 1s forwards;
@@ -2159,7 +2190,7 @@ HOME
 		bottom: 32px;
 	}
 	@include sp {
-		bottom: 10px;
+		bottom: 140px;
 	}
 }
 @keyframes slideIn {
@@ -2170,12 +2201,186 @@ HOME
 		transform: translateX(-32px);
 	}
 }
+.main_topics {
+	position: relative;
+	z-index: 6;
+	@include boxShadow;
+	background-color: white;
+	@include flex;
+	width: 90%;
+	z-index: 3;
+	@include over_tab {
+		width: 80vw;
+		height: 80px;
+		margin-right: auto;
+		transform: translateY(-50%);
+		@include flex;
+	}
+	@include spc {
+		width: 96vw;
+	}
+	@include tab {
+		width: 94vw;
+		height: auto;
+		padding: 8px 0;
+		margin: 24px auto 0;
+	}
+	@include sp {
+		width: 90vw;
+		padding: 10px 12px 0;
+		margin: 0 auto;
+		transform: translateY(-120px);
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 8px;
+	}
+	.title {
+		width: 240px;
+		height: 80px;
+		background-color: $blue;
+		color: white;
+		@include flex(center, center);
+		@include eng(2.4rem);
+		line-height: 1;
+		@include tab {
+			display: none;
+		}
+		@include sp {
+			display: none;
+		}
+	}
+	.whiteArea {
+		width: calc(100% - 240px);
+		background-color: white;
+		@include over_sp {
+			height: 80px;
+			@include flex;
+		}
+		@include tab {
+			width: 100%;
+		}
+		@include sp {
+			width: 100%;
+			padding-bottom: 12px;
+			background-color: transparent;
+		}
+		.newsArea {
+			width: calc(100% - 128px);
+			height: 100%;
+			@include sp {
+				width: 100%;
+			}
+			.ticker {
+				width: 100%;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+				ul {
+					width: 100%;
+					height: 100%;
+					li {
+						width: 100%;
+						display: none;
+						@include sp {
+							font-size: 1.3rem;
+						}
+						.date {
+							@include eng(1.5rem);
+							@include sp {
+								font-size: 1.3rem;
+							}
+						}
+					}
+				}
+			}
+		}
+		.main_inner_news_link {
+			width: 128px;
+			@include flex(center, center);
+			@include eng(1.5rem);
+			color: $blue;
+			padding: 8px 0;
+			position: relative;
+			@include sp {
+				margin: 0 0 0 auto;
+				padding: 5px 0;
+				background-color: $blue;
+				border-radius: 4px;
+				color: white;
+				font-size: 1.2rem;
+			}
+			&::after {
+				content: "";
+				display: block;
+				width: 60%;
+				height: 2px;
+				background-color: $blue;
+				position: absolute;
+				left: 20%;
+				bottom: 0;
+				transform-origin: center top;
+				transform: scale(0, 1);
+				transition: transform .3s;
+			}
+			&:hover {
+				&::after {
+					transform-origin: center top;
+					transform: scale(1, 1);
+				}
+			}
+		}
+	}
+}
+.top_news_item {
+	@include over_sp {
+		padding: 0 32px;
+		height: 80px;
+		display: flex;
+		align-items: center;
+	}
+	@include sp {
+		height: auto;
+		display: block;
+		padding: 10px 15px;
+	}
+	.date {
+		position: relative;
+		color: $black;
+		@include over_sp {
+			padding-right: 20px;
+			margin-right: 20px;
+		}
+		&::after {
+			@include over_sp {
+				width: 1px;
+				height: 20px;
+				content: "";
+				display: block;
+				background-color: #333;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				margin-top: -10px;
+			}
+		}
+	}
+	.top_news_title {
+		visibility: hidden;
+		color: $black;
+		@include sp {
+			line-height: 1.5;
+		}
+	}
+}
+
 .top_main_under {
 	background-color: $bgGreen;
 	width: 100%;
 	padding: 80px 0;
 	position: relative;
 	overflow: hidden;
+	@include tab {
+		padding-top: 170px;
+	}
 	@include sp {
 		padding: 64px 0;
 	}
@@ -2202,6 +2407,11 @@ HOME
 		position: absolute;
 		right: -80px;
 		top: 50px;
+		@include tab {
+			width: 146px;
+			right: -40px;
+			top: 160px;
+		}
 		@include sp {
 			width: 128px;
 			right: -40px;
@@ -2215,6 +2425,11 @@ HOME
 		position: absolute;
 		right: -88px;
 		top: 280px;
+		@include tab {
+			width: 209px;
+			right: -75px;
+			top: 320px;
+		}
 		@include sp {
 			width: 154px;
 			right: -44px;
@@ -2329,6 +2544,13 @@ HOME
 		@include over_tab {
 			width: 50%;
 		}
+		@include tab {
+			width: 640px;
+			height: 400px;
+			padding: 0;
+			overflow: hidden;
+			margin: 0 auto;
+		}
 		img {
 			position: relative;
 			z-index: 1;
@@ -2337,6 +2559,9 @@ HOME
 			max-width: 640px;
 			margin-left: auto;
 			opacity: 0;
+			@include tab {
+				@include centerItem;
+			}
 		}
 		&::after {
 			content: "";
@@ -2363,6 +2588,9 @@ HOME
 			padding: 0 6.4%;
 			margin-top: 40px;
 		}
+		@include tab {
+			text-align: center;
+		}
 		.eng {
 			@include eng(1.8rem);
 			width: 100%;
@@ -2374,6 +2602,9 @@ HOME
 				padding: 0 20px 0 0;
 				position: relative;
 				z-index: 1;
+				@include tab {
+					padding: 0 20px;
+				}
 			}
 			&::after {
 				content: "";
@@ -2462,6 +2693,10 @@ HOME
 			position: relative;
 			z-index: 1;
 			opacity: 0;
+			@include tab {
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 		.sub_tit {
 			text-align: center;
@@ -2473,12 +2708,21 @@ HOME
 			position: relative;
 			z-index: 1;
 			opacity: 0;
+			@include tab {
+				margin-left: auto;
+				margin-right: auto;
+			}
 		}
 		.text {
 			max-width: 500px;
 			position: relative;
 			z-index: 1;
 			opacity: 0;
+			@include tab {
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
 		}
 		&.moved {
 			&::before {
@@ -2512,6 +2756,11 @@ HOME
 	margin-top: 56px;
 	position: relative;
 	z-index: 1;
+	@include tab {
+		align-items: center;
+		justify-content: center;
+		margin: 40px auto;
+	}
 	@include sp {
 		width: 100%;
 		flex-wrap: wrap;
@@ -2638,12 +2887,18 @@ HOME
 		@include less_tab {
 			padding: 32px;
 		}
+		@include tab {
+			@include flex(flex-start, space-between);
+		}
 		.text_area {
 			position: relative;
 			z-index: 2;
 			opacity: 0;
 			@include over_tab {
 				width: 48%;
+			}
+			@include tab {
+				width: 52%;
 			}
 		}
 		.img_area {
@@ -2656,6 +2911,9 @@ HOME
 			@include less_tab {
 				margin-top: 40px;
 				padding-bottom: 24px;
+			}
+			@include tab {
+				width: 40%;
 			}
 		}
 	}
@@ -2677,6 +2935,10 @@ HOME
 		bottom: 24px;
 		z-index: 1;
 		opacity: .1;
+		@include tab {
+			width: 39%;
+			bottom: 134px;
+		}
 		@include sp {
 			opacity: .3;
 		}
@@ -3549,7 +3811,7 @@ Sidebar
 				border-right: 1px #ddd solid;
 			}
 		}
-		&:nth-child(n+7) {
+		&:nth-child(n+4) {
 			@include over_tab {
 				border-bottom: 1px #ddd solid;
 			}
@@ -5284,6 +5546,59 @@ Sidebar
 			}
 		}
 	}
+	.box_11 {
+		.num_text {
+			color: $red;
+			text-align: center;
+			margin: 24px auto 0;
+			.num {
+				font-size: 7.2rem;
+			}
+		}
+		.info_g11 {
+			display: block;
+			width: 130px;
+			margin: 22px auto 20px;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g11 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
+		}
+	}
+	.box_12 {
+		.num_flex {
+			display: flex;
+			align-items: flex-end;
+			> .unit {
+				font-size: 3rem;
+			}
+		}
+		.num_text {
+			color: $red;
+			text-align: center;
+			margin: 24px auto 0;
+			.num {
+				font-size: 6rem;
+			}
+			> .unit {
+				color: $black;
+				font-size: 1.8rem;
+			}
+		}
+		.info_g12 {
+			display: block;
+			width: 96px;
+			margin: 12px auto 16px;
+			opacity: 0;
+		}
+		&.moved {
+			.info_g12 {
+				animation: popup .5s $easeInOutSine forwards;
+			}
+		}
+	}
 }
 
 
@@ -5778,7 +6093,7 @@ Sidebar
 			top: 0;
 			width: 100%;
 			height: 100%;
-			padding: 0 160px 0 38%;
+			padding: 0 160px 0 20%;
 			@include flex(flex-start, center);
 			flex-direction: column;
 			@include sp {
@@ -5996,134 +6311,64 @@ Sidebar
 **************/
 .news_archive {
 	width: 100%;
-	@include inline-flex;
+	@include over_tab {
+		@include inline-flex;
+	}
 	.item {
-		background: #fff;
-		flex-shrink: 0;
-		width: 100%;
-		height: 100%;
+		display: block;
+		margin-bottom: 32px;
+		border-radius: 8px;
+		overflow: hidden;
 		position: relative;
-		@include over_tab {
+		transform: scale(0);
+		&.moved {
+			transform: scale(1);
+		}
+		@include over_sp {
 			width: 32%;
-			margin-bottom: 40px;
+			transition: all .4s ease;
 			&:not(:nth-child(3n)) {
 				margin-right: 2%;
 			}
-			&:nth-child(n+4) {
-				opacity: 0;
+		}
+		.img {
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			position: relative;
+			overflow: hidden;
+			border-radius: 8px 8px 0 0;
+			img {
+				@include transition;
+				@include centerItem;
 			}
 		}
-		@include less_tab {
-			width: 48%;
-			margin-bottom: 32px;
-			&:nth-child(odd) {
-				margin-right: 4%;
-			}
-			&:nth-child(n+3) {
-				opacity: 0;
+		.inner {
+			padding: 12px 32px 0;
+			background-color: white;
+		}
+		.news_item_head {
+			width: 100%;
+			@include flex;
+			.date {
+				@include eng(1.5rem, 400);
+				color: #666;
 			}
 		}
-		&.moved {
-			@include over_tab {
-				&:nth-child(n+4) {
-					animation: cutIn .3s $easeInOutSine forwards;
-					&:nth-child(3n+2) {
-						animation: cutIn .3s $easeInOutSine .2s forwards;
-					}
-					&:nth-child(3n) {
-						animation: cutIn .3s $easeInOutSine .4s forwards;
-					}
-				}
-			}
-			@include less_tab {
-				&:nth-child(n+3) {
-					&:nth-child(odd) {
-						animation: cutIn .3s $easeInOutSine forwards;
-					}
-					&:nth-child(even) {
-						animation: cutIn .3s $easeInOutSine .3s forwards;
-					}
-				}
-			}
-		}
-		a {
-			display: block;
-			text-decoration: none;
-			.image {
+		.title_area {
+			margin-top: 12px;
+			height: 100px;
+			h3 {
+				display: -webkit-box;
 				overflow: hidden;
-				background-color: #f3f3f3;
-				.inner {
-					width: 100%;
-					@include flex(center, center);
-					aspect-ratio: 16/9;
-					@include over_tab {
-						overflow: hidden;
-					}
-					img {
-						transition: all .3s ease;
-						height: auto;
-						max-height: 100%;
-						width: auto;
-						max-width: 200%;
-						margin: auto;
-					}
-				}
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				font-size: 1.4rem;
 			}
-			.text {
-				padding: 8px;
-				@include sp {
-					padding: 4px;
-				}
-				.date {
-					@include eng(1.5rem);
-					color: #777;
-					letter-spacing: 0;
-					transition: color .3s ease;
-					@include sp {
-						font-size: 1.2rem;
-					}
-				}
-				.tit {
-					margin-top: 4px;
-					color: $black;
-					transition: color .3s ease;
-					@include sp {
-						margin-top: 0;
-						font-size: 1.4rem;
-						line-height: 1.6;
-						display: -webkit-box;
-						overflow: hidden;
-						-webkit-line-clamp: 3;
-						-webkit-box-orient: vertical;
-					}
-				}
-				.cat_tags {
-					width: 100%;
-					@include inline-flex;
-					span {
-						background-color: $bgPink;
-						color: $gray;
-						font-size: 1.2rem;
-						text-align: center;
-						padding: 5px 16px;
-						line-height: 1;
-						border-radius: 4px;
-						margin-bottom: 4px;
-						margin-right: 4px;
-					}
-				}
-			}
-			&:hover, &:active {
-				.text {
-					.date {
-						color: $blue;
-					}
-					.tit {
-						color: $blue;
-					}
-				}
-				.image .inner img {
-					transform: scale(1.05);
+		}
+		&:hover {
+			.img {
+				img {
+					transform: scale(1.2);
 				}
 			}
 		}
@@ -6139,47 +6384,146 @@ Sidebar
 		font-size: 1.6rem;
 	}
 }
-.post_data {
-	margin-bottom: 30px;
-	@include over_sp {
-		@include flex(flex-start, space-between);
+.news_item_tag {
+	@include inline-flex;
+	.cat {
+		height: 24px;
+		padding: 0 8px;
+		border-radius: 24px;
+		color: white;
+		@include flex(center, center);
+		font-size: 1.2rem;
+		font-weight: bold;
+		background-color: #07afbf;
+		&.info {
+			background-color: rgba(237,163,121,1);
+		}
+		&.media {
+			background-color: rgba(72,208,240,1);
+		}
+		&.saiyo {
+			background-color: rgba(72,208,84,1);
+		}
+		&.other {
+			background-color: rgba(241,178,234,1);
+		}
 	}
-	p {
-		display: inline-block;
-		background-color: #f3f3f3;
-		padding: 0 15px;
-		border-radius: 20px;
-		margin-right: 3px;
-		&:last-child {
-			margin-right: 0;
-		}
-		&.news_date {
-			@include eng(1.3rem, normal);
-			color: #777;
-		}
+}
+.tag_date {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 16px;
+	@include less_tab {
+		margin-bottom: 24px;
+	}
+	.back_home {
+		margin-left: auto;
 		a {
-			color: #777;
-			&:hover {
-				color: #27b3bb;
+			@include flex(center, center);
+			color: $black;
+			span {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				@include flex(center, center);
+				background-color: $red;
+				border-radius: 32px;
+				margin-right: 8px;
+				i {
+					color: white;
+				}
 			}
 		}
 	}
 }
-.single_icatch {
-	width: 100%;
-	margin-bottom: 64px;
-	@include less_tab {
-		margin-bottom: 32px;
+.article_date {
+	margin-left: 20px;
+	@include eng(2rem);
+	@include sp {
+		@include eng(1.5rem);
 	}
-	img {
-		display: block;
+}
+.single_pageTitle {
+	width: 100%;
+	position: relative;
+	background-color: white;
+	@include over_tab {
+		padding: 160px 0 64px;
+	}
+	@include less_tab {
+		padding: 96px 0 40px;
+	}
+	.inner {
+		width: 90%;
+		max-width: 1000px;
+		z-index: 2;
 		margin: 0 auto;
-		width: auto;
-		height: auto;
-		max-width: 100%;
+		h1 {
+			color: #1b1b1b;
+			font-size: 2.4rem;
+			font-weight: bold;
+			line-height: 1.6;
+			@include spc {
+				font-size: 2rem;
+			}
+			@include less_tab {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}
+.single_info {
+	padding-bottom: 16px;
+	border-bottom: #ddd 1px solid;
+	margin-bottom: 24px;
+	@include over_tab {
+		@include flex(flex-start, space-between);
+	}
+	.date {
+		@include eng(1.7rem);
+		color: #666;
+	}
+}
+.cat_tag {
+	@include over_tab {
+		width: 50%;
+		@include flex(flex-end, flex-end);
+	}
+	@include less_tab {
+		width: 100%;
+		@include inline-flex;
+	}
+	span {
+		border: 1px $blue solid;
+		color: $blue;
+		display: inline-block;
+		padding: 1px 10px;
+		font-size: 1.3rem;
+		background-color: #fff;
+		line-height: 1.5;
+	}
+}
+.single_title {
+	font-size: 2.4rem;
+	border-bottom: 1px #333 solid;
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+	line-height: 1.5;
+	@include less_tab {
+		font-size: 1.6rem;
 	}
 }
 .single_content {
+	.thumbArea {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 40px;
+		img {
+			max-width: 100%!important;
+			height: auto;
+		}
+	}
 	*:first-child {
 		margin-top: 0;
 	}
@@ -6191,7 +6535,7 @@ Sidebar
 		margin: 15px 0;
 	}
 	h1 {
-		@extend .title2;
+		@extend .title1;
 		margin-top: 56px;
 		@include less_tab {
 			font-size: 2.1rem;
@@ -6338,8 +6682,15 @@ Sidebar
 	img {
 		height: auto;
 	}
+	.wp-block-image {
+		margin: 40px auto 0;
+		@include less_tab {
+			margin-top: 24px;
+		}
+	}
 	ul {
 		list-style: inherit;
+		margin-top: 2.4vh;
 		li {
 			list-style-type: inherit;
 			list-style-position: inside;
@@ -6347,9 +6698,49 @@ Sidebar
 	}
 	ol {
 		list-style: inherit;
+		margin-top: 2.4vh;
 		li {
 			list-style-type: decimal;
 			list-style-position: inside;
+		}
+	}
+	p {
+		margin-top: 16px;
+	}
+	.img_gallery_2 {
+		width: 100%;
+		@include inline-flex;
+		flex-wrap: wrap;
+		.item {
+			width: 49%;
+			margin-bottom: 20px;
+			&:nth-child(odd) {
+				margin-right: 2%;
+			}
+			@include sp {
+				margin-bottom: 12px;
+			}
+		}
+	}
+	.img_gallery_3 {
+		width: 100%;
+		@include inline-flex;
+		flex-wrap: wrap;
+		.item {
+			@include over_tab {
+				width: 32%;
+				margin-bottom: 20px;
+				&:not(:nth-child(3n)) {
+					margin-right: 2%;
+				}
+			}
+			@include sp {
+				width: 49%;
+				margin-bottom: 12px;
+				&:nth-child(odd) {
+					margin-right: 2%;
+				}
+			}
 		}
 	}
 }
@@ -6497,7 +6888,15 @@ Sidebar
 }
 .bnr_offerbox {
 	display: block;
+	width: 100%;
+	max-width: 480px;
 	margin: 40px auto 0;
+	border-radius: 8px;
+	overflow: hidden;
+	transition: all .3s ease;
+	&:hover {
+		opacity: .8;
+	}
 }
 
 

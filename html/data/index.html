@@ -256,6 +256,31 @@
 						<img src="../assets/images/page/info_g10.png" class="info_g10" alt="">
 						<p class="info_text">男性の割合が多いですが、<br>今後は積極的な女性の登用を目指します。</p>
 					</div>
+
+					<div class="box box_11 animation">
+						<div class="tit">
+							<h3>平均勤続勤務年数</h3>
+						</div>
+						<p class="num_text"><span id="count25" class="num count_num">0</span><span class="unit">時間/月</span></p>
+						<img src="../assets/images/page/info_g11.png" class="info_g11" alt="">
+						<p class="info_text">若手の新入社員の割合が高いです。</p>
+						<p class="font-s text-center">※2024年度実績</p>
+					</div>
+
+					<div class="box box_12 animation">
+						<div class="tit">
+							<h3>育児休業取得者数</h3>
+						</div>
+
+						<div class="num_flex">
+							<p class="num_text"><span class="unit">取得者</span><span id="count26" class="num count_num">0</span><span class="unit">名</span></p>
+							<span class="unit">/</span>
+							<p class="num_text"><span class="unit">対象者</span><span id="count27" class="num count_num">0</span><span class="unit">名</span></p>
+						</div>
+						<img src="../assets/images/page/info_g12.png" class="info_g12" alt="">
+						<p class="info_text">男性2名、女性3名の対象者中、<br>男性1名、女性3名が取得しました</p>
+						<p class="font-s text-center">※2024年度実績</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -363,6 +388,8 @@
 			var animationFlag18 = true;
 			var animationFlag19 = true;
 			var animationFlag23 = true;
+			var animationFlag24 = true;
+			var animationFlag25 = true;
 
 			$(window).on('load scroll', function(){
 				var position1 = $(".box_01").offset().top;
@@ -467,6 +494,41 @@
 						$('#count23').animateNumber({ number: 25}, 900);
 						$('#count24').animateNumber({ number: 75}, 900);
 						animationFlag23 = false;
+					}
+				}
+
+				var position11 = $(".box_11").offset().top;
+				var scroll11 = $(window).scrollTop();
+				var windowHeight11 = $(window).height();
+				if (scroll11 > position11 - windowHeight11 + windowHeight11/4){
+					if(animationFlag24) {
+						var decimal_places = 1;
+						var decimal_factor = decimal_places === 0 ? 1 : Math.pow(10, decimal_places);
+						$('#count25').animateNumber({
+							number: 3.9 * decimal_factor,
+							numberStep: function (now, tween) {
+								var floored_number = Math.floor(now) / decimal_factor,
+									target = $(tween.elem);
+
+								if (decimal_places > 0) {
+									floored_number = floored_number.toFixed(decimal_places);
+									floored_number = floored_number.toString().replace('.', '.');
+								}
+								target.text(floored_number);
+							}
+						}, 900);
+						animationFlag24 = false;
+					}
+				}
+
+				var position12 = $(".box_12").offset().top;
+				var scroll12 = $(window).scrollTop();
+				var windowHeight12 = $(window).height();
+				if (scroll12 > position12 - windowHeight12 + windowHeight12/4){
+					if(animationFlag25) {
+						$('#count26').animateNumber({ number: 4}, 400);
+						$('#count27').animateNumber({ number: 5}, 500);
+						animationFlag25 = false;
 					}
 				}
 			});

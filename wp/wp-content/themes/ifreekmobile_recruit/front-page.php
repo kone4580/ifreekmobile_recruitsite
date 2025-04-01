@@ -144,7 +144,7 @@
 				<div class="item">
 					<p class="num_tit">SECOND VISION</p>
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/top_biz01.jpg" alt="働くヒト">
-					<p class="top_biz_caption">働くヒトををHappyに</p>
+					<p class="top_biz_caption">働くヒトをHappyに</p>
 				</div>
 			</div>
 		</div>
